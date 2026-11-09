@@ -1,0 +1,25 @@
+{
+  "source": "cex",
+  "provider": "binance",
+  "symbol": "ETHUSDT",
+  "interval": "1m",
+  "start": "2025-01-01T00:00:00+00:00",
+  "end": "2025-01-01T01:00:00+00:00",
+  "expected_end": "2025-01-01T01:00:00+00:00",
+  "timestamp_unit": "us",
+  "schema_version": "binance-spot-kline-v1",
+  "synthetic": false,
+  "checksum": "84ab06bfcd55018956ab0666b4fa242f15801d4edcef93f0a2e728876967d59a",
+  "raw_file": "fixtures/cex.csv",
+  "request_parameters": {
+    "date": "2025-01-01",
+    "symbol": "ETHUSDT",
+    "interval": "1m"
+  },
+  "provenance": {
+    "url": "https://data.binance.vision/data/spot/daily/klines/ETHUSDT/1m/ETHUSDT-1m-2025-01-01.zip",
+    "archive_sha256": "26cc71cf7a2bd0232cf0e8aaaf529fc6674ba20059028023eb346232ee4dbf91",
+    "slice": "first 60 minutes UTC",
+    "synthetic": false
+  }
+}

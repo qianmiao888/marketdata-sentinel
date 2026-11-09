@@ -1,0 +1,3 @@
+    - paragraph: Requires configured provider, model, key and base URL. Failures produce a labeled deterministic fallback.
+    - paragraph: "Actual mode: deterministic · Status: fallback · Cost: unknown"
+      - paragraph: "Model is not configured: LLM_PROVIDER, LLM_BASE_URL, LLM_MODEL, LLM_API_KEY"

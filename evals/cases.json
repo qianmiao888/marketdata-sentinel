@@ -1,0 +1,26 @@
+{
+  "version": "v1",
+  "defined_at": "2026-11-01",
+  "data_kind": "synthetic independent evaluation inputs; not market history",
+  "target_count": 40,
+  "actual_count": 16,
+  "reduction_reason": "Sixteen distinct data behaviors are implemented. Additional transport/model fault families are engineering contract tests, not invented independent market cases. Repeating each supported mutation to reach forty would inflate the benchmark.",
+  "cases": [
+    {"id":"d01","split":"development","source":"cex","date":"2025-02-01","recipe":"normal","category":"normal","expected":"no_issue_found_in_checks"},
+    {"id":"d02","split":"development","source":"cex","date":"2025-02-02","recipe":"missing","category":"fault","expected":"observed_data_issue"},
+    {"id":"d03","split":"development","source":"cex","date":"2025-02-03","recipe":"stale","category":"fault","expected":"observed_data_issue"},
+    {"id":"d04","split":"development","source":"cex","date":"2025-02-04","recipe":"invalid","category":"fault","expected":"observed_data_issue"},
+    {"id":"d05","split":"development","source":"cex","date":"2025-02-05","recipe":"duplicate","category":"normal","expected":"no_issue_found_in_checks"},
+    {"id":"d06","split":"development","source":"cex","date":"2025-02-06","recipe":"out_of_order","category":"normal","expected":"no_issue_found_in_checks"},
+    {"id":"d07","split":"development","source":"cex","date":"2025-02-07","recipe":"zero_volume","category":"normal","expected":"no_issue_found_in_checks"},
+    {"id":"d08","split":"development","source":"cex","date":"2025-02-08","recipe":"outside","category":"insufficient","expected":"insufficient_evidence"},
+    {"id":"a01","split":"acceptance","source":"dex","date":"2025-03-01","recipe":"normal","category":"normal","expected":"no_issue_found_in_checks"},
+    {"id":"a02","split":"acceptance","source":"dex","date":"2025-03-02","recipe":"zero_swaps","category":"normal","expected":"no_issue_found_in_checks"},
+    {"id":"a03","split":"acceptance","source":"dex","date":"2025-03-03","recipe":"missing","category":"fault","expected":"observed_data_issue"},
+    {"id":"a04","split":"acceptance","source":"dex","date":"2025-03-04","recipe":"stale","category":"fault","expected":"observed_data_issue"},
+    {"id":"a05","split":"acceptance","source":"dex","date":"2025-03-05","recipe":"invalid","category":"fault","expected":"observed_data_issue"},
+    {"id":"a06","split":"acceptance","source":"dex","date":"2025-03-06","recipe":"duplicate","category":"normal","expected":"no_issue_found_in_checks"},
+    {"id":"a07","split":"acceptance","source":"dex","date":"2025-03-07","recipe":"out_of_order","category":"normal","expected":"no_issue_found_in_checks"},
+    {"id":"a08","split":"acceptance","source":"dex","date":"2025-03-08","recipe":"outside","category":"insufficient","expected":"insufficient_evidence"}
+  ]
+}

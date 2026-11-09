@@ -1,0 +1,18 @@
+......F.........                                                         [100%]
+================================== FAILURES ===================================
+_______ test_dex_no_block_anchor_cannot_certify_an_empty_window[sqlite] _______
+
+backend = 'sqlite'
+
+    def test_dex_no_block_anchor_cannot_certify_an_empty_window(backend):
+        _, manifest = inputs("dex")
+        manifest["blocks"] = []
+        ctx = scope(pipeline.import_snapshot("dex", [], manifest))
+        coverage = service.window_metrics(ctx)["coverage"]
+>       assert coverage["window_covered"] and not coverage["complete"]
+E       assert (False)
+
+tests\test_correctness_v2.py:150: AssertionError
+=========================== short test summary info ===========================
+FAILED tests/test_correctness_v2.py::test_dex_no_block_anchor_cannot_certify_an_empty_window[sqlite]
+1 failed, 15 passed, 12 deselected in 2.72s

@@ -1,0 +1,85 @@
+FFF                                                                      [100%]
+================================== FAILURES ===================================
+_ test_unknown_time_bad_rows_require_uncertainty_not_local_issue[sqlite-cex] __
+
+backend = 'sqlite', source = 'cex'
+
+    @pytest.mark.parametrize("source", ["cex", "dex"])
+    def test_unknown_time_bad_rows_require_uncertainty_not_local_issue(backend, source):
+        rows, manifest = inputs(source)
+        bad = copy.deepcopy(rows[0])
+        if source == "cex":
+            bad[0] = "unknown-time"
+        else:
+            bad.update(block_number="unknown-block", event_time="unknown-time")
+        ctx = scope(pipeline.import_snapshot(source, rows + [bad], manifest))
+        status = service.ingestion_status(ctx)
+        assert status["quarantined_rows"] == 0
+        assert status["quarantine_scope"] == {"in_window": 0, "outside_window": 0, "unknown_time": 1}
+        findings = service.quality_findings(ctx)
+        assert not findings["has_data_issue"] and findings["has_unresolved_evidence"]
+        assert any(f["rule"] == "unlocated_invalid_rows" for f in findings["findings"])
+        report = investigation.investigate(ctx, "Check completeness", persist=False)["report"]
+        assert report["diagnosis"] == "insufficient_evidence"
+>       assert all("did not find a data issue" not in f["statement"] for f in report["facts"])
+E       assert False
+E        +  where False = all(<generator object test_unknown_time_bad_rows_require_uncertainty_not_local_issue.<locals>.<genexpr> at 0x0000021A46FE7D30>)
+
+tests\test_correctness_v2.py:239: AssertionError
+_ test_unknown_time_bad_rows_require_uncertainty_not_local_issue[sqlite-dex] __
+
+backend = 'sqlite', source = 'dex'
+
+    @pytest.mark.parametrize("source", ["cex", "dex"])
+    def test_unknown_time_bad_rows_require_uncertainty_not_local_issue(backend, source):
+        rows, manifest = inputs(source)
+        bad = copy.deepcopy(rows[0])
+        if source == "cex":
+            bad[0] = "unknown-time"
+        else:
+            bad.update(block_number="unknown-block", event_time="unknown-time")
+        ctx = scope(pipeline.import_snapshot(source, rows + [bad], manifest))
+        status = service.ingestion_status(ctx)
+        assert status["quarantined_rows"] == 0
+        assert status["quarantine_scope"] == {"in_window": 0, "outside_window": 0, "unknown_time": 1}
+        findings = service.quality_findings(ctx)
+        assert not findings["has_data_issue"] and findings["has_unresolved_evidence"]
+        assert any(f["rule"] == "unlocated_invalid_rows" for f in findings["findings"])
+        report = investigation.investigate(ctx, "Check completeness", persist=False)["report"]
+        assert report["diagnosis"] == "insufficient_evidence"
+>       assert all("did not find a data issue" not in f["statement"] for f in report["facts"])
+E       assert False
+E        +  where False = all(<generator object test_unknown_time_bad_rows_require_uncertainty_not_local_issue.<locals>.<genexpr> at 0x0000021A46FE69B0>)
+
+tests\test_correctness_v2.py:239: AssertionError
+_____ test_existing_evaluation_artifact_is_rejected_before_any_case_runs ______
+
+tmp_path = WindowsPath('C:/Users/Lenovo/AppData/Local/Temp/pytest-of-Lenovo/pytest-31/test_existing_evaluation_artif0')
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x0000021A470E5850>
+
+    def test_existing_evaluation_artifact_is_rejected_before_any_case_runs(tmp_path, monkeypatch):
+        target = tmp_path / "prior.json"
+        target.write_bytes(b"prior-evaluation-bytes")
+        monkeypatch.setattr(evaluation, "prepare_case", lambda _: pytest.fail("old output must be rejected before evaluation"))
+        with pytest.raises(ValueError, match="already exists"):
+>           evaluation.run_evaluation(output=target)
+
+tests\test_correctness_v2.py:247: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+sentinel\evaluation.py:409: in run_evaluation
+    ctx = prepare_case(case)
+          ^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+_ = {'id': 'd01', 'split': 'development', 'source': 'cex', 'date': '2025-02-01', ...}
+
+>   monkeypatch.setattr(evaluation, "prepare_case", lambda _: pytest.fail("old output must be rejected before evaluation"))
+                                                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E   Failed: old output must be rejected before evaluation
+
+tests\test_correctness_v2.py:245: Failed
+=========================== short test summary info ===========================
+FAILED tests/test_correctness_v2.py::test_unknown_time_bad_rows_require_uncertainty_not_local_issue[sqlite-cex]
+FAILED tests/test_correctness_v2.py::test_unknown_time_bad_rows_require_uncertainty_not_local_issue[sqlite-dex]
+FAILED tests/test_correctness_v2.py::test_existing_evaluation_artifact_is_rejected_before_any_case_runs
+3 failed, 26 deselected in 0.99s

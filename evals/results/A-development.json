@@ -1,0 +1,3034 @@
+{
+  "created_at": "2026-11-01T04:36:31.180058+00:00",
+  "benchmark_version": "v1",
+  "freeze": {
+    "version": "v1",
+    "frozen_at": "2026-11-01",
+    "files": {
+      "cases.json": "7cc2888542a37e53a5c4349f5bc5b97949847d72aeb65447872f0f4fb12a752d",
+      "rubric.md": "5d58bd48d67c84634644eb5b3245d02ac32dc744d2bd092eb294c3b5b14566f3"
+    },
+    "policy": "Do not revise acceptance expectations after seeing outputs. Disclose failures or contamination."
+  },
+  "environment": {
+    "python": "3.12.9",
+    "platform": "Windows-11-10.0.26300-SP0",
+    "backend": "sqlite"
+  },
+  "split": "development",
+  "baseline": "A",
+  "data_kind": "synthetic",
+  "manual_review_status": "PENDING",
+  "limitations": [
+    "Self-authored, sixteen cases; forty-case target not reached.",
+    "Automated factual checks do not replace human semantic review."
+  ],
+  "status": "EXECUTED",
+  "results": [
+    {
+      "case_id": "d01",
+      "split": "development",
+      "category": "normal",
+      "snapshot_id": "s-09181803b2568451839dfece",
+      "score": {
+        "diagnosis": {
+          "numerator": 1,
+          "denominator": 1
+        },
+        "numeric": {
+          "numerator": 10,
+          "denominator": 10
+        },
+        "evidence": {
+          "numerator": 11,
+          "denominator": 11
+        },
+        "unknown_handling": {
+          "numerator": 0,
+          "denominator": 0
+        },
+        "success": true,
+        "manual_review": "PENDING: scope of advice, limitations, economic-cause restraint and clarity"
+      },
+      "result": {
+        "run_id": "462a7e0298d34930bc698c536d0ec237",
+        "created_at": "2026-11-01T04:36:31.286644+00:00",
+        "report": {
+          "question": "Check completeness, freshness and units for this UTC window before interpreting its volume. Cite evidence and limitations.",
+          "source": "cex",
+          "snapshot_id": "s-09181803b2568451839dfece",
+          "window": {
+            "start": "2025-02-01T00:00:00+00:00",
+            "end": "2025-02-01T00:20:00+00:00"
+          },
+          "diagnosis": "no_issue_found_in_checks",
+          "facts": [
+            {
+              "id": "fact.row_count",
+              "statement": "Observed records: 20 candles.",
+              "metric_refs": [
+                "metric.row_count"
+              ],
+              "evidence_refs": [
+                "e-9121ae9b38fa209d9923689eaeccc2fd"
+              ]
+            },
+            {
+              "id": "fact.base_volume",
+              "statement": "CEX base volume: 85.0 ETH.",
+              "metric_refs": [
+                "metric.base_volume"
+              ],
+              "evidence_refs": [
+                "e-9121ae9b38fa209d9923689eaeccc2fd"
+              ]
+            },
+            {
+              "id": "fact.quote_volume",
+              "statement": "CEX quote volume: 173594.0 USDT.",
+              "metric_refs": [
+                "metric.quote_volume"
+              ],
+              "evidence_refs": [
+                "e-9121ae9b38fa209d9923689eaeccc2fd"
+              ]
+            },
+            {
+              "id": "fact.number_of_trades",
+              "statement": "Source-reported trades: 210 trades.",
+              "metric_refs": [
+                "metric.number_of_trades"
+              ],
+              "evidence_refs": [
+                "e-9121ae9b38fa209d9923689eaeccc2fd"
+              ]
+            },
+            {
+              "id": "fact.coverage_expected",
+              "statement": "Coverage expected: 20 minutes.",
+              "metric_refs": [
+                "metric.coverage_expected"
+              ],
+              "evidence_refs": [
+                "e-9121ae9b38fa209d9923689eaeccc2fd"
+              ]
+            },
+            {
+              "id": "fact.coverage_observed",
+              "statement": "Coverage observed: 20 minutes.",
+              "metric_refs": [
+                "metric.coverage_observed"
+              ],
+              "evidence_refs": [
+                "e-9121ae9b38fa209d9923689eaeccc2fd"
+              ]
+            },
+            {
+              "id": "fact.coverage_missing",
+              "statement": "Coverage missing: 0 minutes.",
+              "metric_refs": [
+                "metric.coverage_missing"
+              ],
+              "evidence_refs": [
+                "e-9121ae9b38fa209d9923689eaeccc2fd"
+              ]
+            },
+            {
+              "id": "fact.lag_seconds",
+              "statement": "Data lag: 0 seconds relative to reference clock.",
+              "metric_refs": [
+                "metric.lag_seconds"
+              ],
+              "evidence_refs": [
+                "e-95ac932a98aa7ad865b1c645687096d4"
+              ]
+            },
+            {
+              "id": "fact.quarantined_rows",
+              "statement": "Quarantined records: 0 rows.",
+              "metric_refs": [
+                "metric.quarantined_rows"
+              ],
+              "evidence_refs": [
+                "e-95ac932a98aa7ad865b1c645687096d4"
+              ]
+            },
+            {
+              "id": "fact.change_pct",
+              "statement": "Volume change awaiting investigation: 26.66666666666666666666666666666666666666666666666666666666666666666666666666666666666666666666666667 % (equal adjacent subwindows).",
+              "metric_refs": [
+                "metric.change_pct"
+              ],
+              "evidence_refs": [
+                "e-9121ae9b38fa209d9923689eaeccc2fd"
+              ]
+            },
+            {
+              "id": "fact.checks",
+              "statement": "Implemented quality checks did not find a data issue; this is not proof of absolute correctness.",
+              "metric_refs": [],
+              "evidence_refs": [
+                "e-6880f9f3d8b20276c21ecee8949d9973"
+              ]
+            }
+          ],
+          "metrics": [
+            {
+              "id": "metric.row_count",
+              "name": "row_count",
+              "value": "20",
+              "unit": "candles",
+              "evidence_ids": [
+                "e-9121ae9b38fa209d9923689eaeccc2fd"
+              ]
+            },
+            {
+              "id": "metric.base_volume",
+              "name": "base_volume",
+              "value": "85.0",
+              "unit": "ETH",
+              "evidence_ids": [
+                "e-9121ae9b38fa209d9923689eaeccc2fd"
+              ]
+            },
+            {
+              "id": "metric.quote_volume",
+              "name": "quote_volume",
+              "value": "173594.0",
+              "unit": "USDT",
+              "evidence_ids": [
+                "e-9121ae9b38fa209d9923689eaeccc2fd"
+              ]
+            },
+            {
+              "id": "metric.number_of_trades",
+              "name": "number_of_trades",
+              "value": "210",
+              "unit": "trades",
+              "evidence_ids": [
+                "e-9121ae9b38fa209d9923689eaeccc2fd"
+              ]
+            },
+            {
+              "id": "metric.coverage_expected",
+              "name": "coverage_expected",
+              "value": "20",
+              "unit": "minutes",
+              "evidence_ids": [
+                "e-9121ae9b38fa209d9923689eaeccc2fd"
+              ]
+            },
+            {
+              "id": "metric.coverage_observed",
+              "name": "coverage_observed",
+              "value": "20",
+              "unit": "minutes",
+              "evidence_ids": [
+                "e-9121ae9b38fa209d9923689eaeccc2fd"
+              ]
+            },
+            {
+              "id": "metric.coverage_missing",
+              "name": "coverage_missing",
+              "value": "0",
+              "unit": "minutes",
+              "evidence_ids": [
+                "e-9121ae9b38fa209d9923689eaeccc2fd"
+              ]
+            },
+            {
+              "id": "metric.lag_seconds",
+              "name": "lag_seconds",
+              "value": "0",
+              "unit": "seconds relative to reference clock",
+              "evidence_ids": [
+                "e-95ac932a98aa7ad865b1c645687096d4"
+              ]
+            },
+            {
+              "id": "metric.quarantined_rows",
+              "name": "quarantined_rows",
+              "value": "0",
+              "unit": "rows",
+              "evidence_ids": [
+                "e-95ac932a98aa7ad865b1c645687096d4"
+              ]
+            },
+            {
+              "id": "metric.change_pct",
+              "name": "change_pct",
+              "value": "26.66666666666666666666666666666666666666666666666666666666666666666666666666666666666666666666666667",
+              "unit": "% (equal adjacent subwindows)",
+              "evidence_ids": [
+                "e-9121ae9b38fa209d9923689eaeccc2fd"
+              ]
+            }
+          ],
+          "evidence_refs": [
+            "e-6880f9f3d8b20276c21ecee8949d9973",
+            "e-9121ae9b38fa209d9923689eaeccc2fd",
+            "e-95ac932a98aa7ad865b1c645687096d4"
+          ],
+          "limitations": [
+            "This report is pinned to the registered input version and UTC [start, end) window; collection mode is recorded in ingestion evidence.",
+            "Only implemented completeness, freshness, format and volume checks were evaluated; no economic cause or absolute correctness is established.",
+            "CEX ETH/USDT and DEX token amounts are separate units; token0 volume is not dollar volume."
+          ],
+          "recommendations": [
+            "Compare the registered input and upstream source before drawing a stronger conclusion.",
+            "If explaining market behavior is required, obtain independent market evidence; these checks do not establish an economic cause."
+          ]
+        },
+        "model_mode": "deterministic",
+        "actual_model_mode": "deterministic",
+        "baseline": "A",
+        "execution_status": "completed",
+        "failure": null,
+        "trace": [
+          {
+            "tool": "get_ingestion_status",
+            "arguments": {
+              "source": "cex",
+              "snapshot_id": "s-09181803b2568451839dfece",
+              "window": {
+                "start": "2025-02-01T00:00:00+00:00",
+                "end": "2025-02-01T00:20:00+00:00"
+              }
+            },
+            "phase": "initial",
+            "status": "ok",
+            "output_summary": {
+              "bytes": 654,
+              "evidence_ids": [
+                "e-95ac932a98aa7ad865b1c645687096d4"
+              ]
+            },
+            "latency_ms": 15.0
+          },
+          {
+            "tool": "get_quality_findings",
+            "arguments": {
+              "source": "cex",
+              "snapshot_id": "s-09181803b2568451839dfece",
+              "window": {
+                "start": "2025-02-01T00:00:00+00:00",
+                "end": "2025-02-01T00:20:00+00:00"
+              }
+            },
+            "phase": "initial",
+            "status": "ok",
+            "output_summary": {
+              "bytes": 318,
+              "evidence_ids": [
+                "e-6880f9f3d8b20276c21ecee8949d9973",
+                "e-95ac932a98aa7ad865b1c645687096d4"
+              ]
+            },
+            "latency_ms": 0.0
+          },
+          {
+            "tool": "get_window_metrics",
+            "arguments": {
+              "source": "cex",
+              "snapshot_id": "s-09181803b2568451839dfece",
+              "window": {
+                "start": "2025-02-01T00:00:00+00:00",
+                "end": "2025-02-01T00:20:00+00:00"
+              }
+            },
+            "phase": "initial",
+            "status": "ok",
+            "output_summary": {
+              "bytes": 832,
+              "evidence_ids": [
+                "e-6880f9f3d8b20276c21ecee8949d9973",
+                "e-9121ae9b38fa209d9923689eaeccc2fd",
+                "e-95ac932a98aa7ad865b1c645687096d4"
+              ]
+            },
+            "latency_ms": 0.0
+          },
+          {
+            "tool": "get_evidence",
+            "arguments": {
+              "snapshot_id": "s-09181803b2568451839dfece",
+              "evidence_ids": [
+                "e-6880f9f3d8b20276c21ecee8949d9973",
+                "e-9121ae9b38fa209d9923689eaeccc2fd",
+                "e-95ac932a98aa7ad865b1c645687096d4"
+              ]
+            },
+            "phase": "initial",
+            "status": "ok",
+            "output_summary": {
+              "bytes": 1848,
+              "evidence_ids": [
+                "e-6880f9f3d8b20276c21ecee8949d9973",
+                "e-9121ae9b38fa209d9923689eaeccc2fd",
+                "e-95ac932a98aa7ad865b1c645687096d4"
+              ]
+            },
+            "latency_ms": 0.0
+          }
+        ],
+        "model_config": {
+          "provider": null,
+          "model": null
+        },
+        "model_calls": 0,
+        "additional_tool_calls": 0,
+        "usage": null,
+        "cost_usd": null,
+        "cost_status": "unknown",
+        "latency_ms": 15.0
+      },
+      "observed_latency_ms": 47.0
+    },
+    {
+      "case_id": "d02",
+      "split": "development",
+      "category": "fault",
+      "snapshot_id": "s-9925eb7cdc4d1a05dbead678",
+      "score": {
+        "diagnosis": {
+          "numerator": 1,
+          "denominator": 1
+        },
+        "numeric": {
+          "numerator": 10,
+          "denominator": 10
+        },
+        "evidence": {
+          "numerator": 12,
+          "denominator": 12
+        },
+        "unknown_handling": {
+          "numerator": 0,
+          "denominator": 0
+        },
+        "success": true,
+        "manual_review": "PENDING: scope of advice, limitations, economic-cause restraint and clarity"
+      },
+      "result": {
+        "run_id": "5e4c465a937b4ac5aca312d36145a92d",
+        "created_at": "2026-11-01T04:36:31.312583+00:00",
+        "report": {
+          "question": "Check completeness, freshness and units for this UTC window before interpreting its volume. Cite evidence and limitations.",
+          "source": "cex",
+          "snapshot_id": "s-9925eb7cdc4d1a05dbead678",
+          "window": {
+            "start": "2025-02-02T00:00:00+00:00",
+            "end": "2025-02-02T00:20:00+00:00"
+          },
+          "diagnosis": "observed_data_issue",
+          "facts": [
+            {
+              "id": "fact.row_count",
+              "statement": "Observed records: 17 candles.",
+              "metric_refs": [
+                "metric.row_count"
+              ],
+              "evidence_refs": [
+                "e-9014b6a1a7544faeb4e62ca6b00396d8"
+              ]
+            },
+            {
+              "id": "fact.base_volume",
+              "statement": "CEX base volume: 73.5 ETH.",
+              "metric_refs": [
+                "metric.base_volume"
+              ],
+              "evidence_refs": [
+                "e-9014b6a1a7544faeb4e62ca6b00396d8"
+              ]
+            },
+            {
+              "id": "fact.quote_volume",
+              "statement": "CEX quote volume: 150169.8 USDT.",
+              "metric_refs": [
+                "metric.quote_volume"
+              ],
+              "evidence_refs": [
+                "e-9014b6a1a7544faeb4e62ca6b00396d8"
+              ]
+            },
+            {
+              "id": "fact.number_of_trades",
+              "statement": "Source-reported trades: 174 trades.",
+              "metric_refs": [
+                "metric.number_of_trades"
+              ],
+              "evidence_refs": [
+                "e-9014b6a1a7544faeb4e62ca6b00396d8"
+              ]
+            },
+            {
+              "id": "fact.coverage_expected",
+              "statement": "Coverage expected: 20 minutes.",
+              "metric_refs": [
+                "metric.coverage_expected"
+              ],
+              "evidence_refs": [
+                "e-9014b6a1a7544faeb4e62ca6b00396d8"
+              ]
+            },
+            {
+              "id": "fact.coverage_observed",
+              "statement": "Coverage observed: 17 minutes.",
+              "metric_refs": [
+                "metric.coverage_observed"
+              ],
+              "evidence_refs": [
+                "e-9014b6a1a7544faeb4e62ca6b00396d8"
+              ]
+            },
+            {
+              "id": "fact.coverage_missing",
+              "statement": "Coverage missing: 3 minutes.",
+              "metric_refs": [
+                "metric.coverage_missing"
+              ],
+              "evidence_refs": [
+                "e-9014b6a1a7544faeb4e62ca6b00396d8"
+              ]
+            },
+            {
+              "id": "fact.lag_seconds",
+              "statement": "Data lag: 0 seconds relative to reference clock.",
+              "metric_refs": [
+                "metric.lag_seconds"
+              ],
+              "evidence_refs": [
+                "e-63ba56cd8753798e118a46bc98b8e755"
+              ]
+            },
+            {
+              "id": "fact.quarantined_rows",
+              "statement": "Quarantined records: 0 rows.",
+              "metric_refs": [
+                "metric.quarantined_rows"
+              ],
+              "evidence_refs": [
+                "e-63ba56cd8753798e118a46bc98b8e755"
+              ]
+            },
+            {
+              "id": "fact.change_pct",
+              "statement": "Volume change awaiting investigation: -9.090909090909090909090909090909090909090909090909090909090909090909090909090909090909090909090909091 % (equal adjacent subwindows).",
+              "metric_refs": [
+                "metric.change_pct"
+              ],
+              "evidence_refs": [
+                "e-9014b6a1a7544faeb4e62ca6b00396d8"
+              ]
+            },
+            {
+              "id": "fact.quality.0",
+              "statement": "Quality rule missing_candles returned error.",
+              "metric_refs": [],
+              "evidence_refs": [
+                "e-12f9511d5a3dba3b9a2b4c2c164516cc"
+              ]
+            },
+            {
+              "id": "fact.checks",
+              "statement": "Implemented quality checks observed a data issue.",
+              "metric_refs": [],
+              "evidence_refs": [
+                "e-2517e700d0ce22778559c2c2365d20f2",
+                "e-12f9511d5a3dba3b9a2b4c2c164516cc"
+              ]
+            }
+          ],
+          "metrics": [
+            {
+              "id": "metric.row_count",
+              "name": "row_count",
+              "value": "17",
+              "unit": "candles",
+              "evidence_ids": [
+                "e-9014b6a1a7544faeb4e62ca6b00396d8"
+              ]
+            },
+            {
+              "id": "metric.base_volume",
+              "name": "base_volume",
+              "value": "73.5",
+              "unit": "ETH",
+              "evidence_ids": [
+                "e-9014b6a1a7544faeb4e62ca6b00396d8"
+              ]
+            },
+            {
+              "id": "metric.quote_volume",
+              "name": "quote_volume",
+              "value": "150169.8",
+              "unit": "USDT",
+              "evidence_ids": [
+                "e-9014b6a1a7544faeb4e62ca6b00396d8"
+              ]
+            },
+            {
+              "id": "metric.number_of_trades",
+              "name": "number_of_trades",
+              "value": "174",
+              "unit": "trades",
+              "evidence_ids": [
+                "e-9014b6a1a7544faeb4e62ca6b00396d8"
+              ]
+            },
+            {
+              "id": "metric.coverage_expected",
+              "name": "coverage_expected",
+              "value": "20",
+              "unit": "minutes",
+              "evidence_ids": [
+                "e-9014b6a1a7544faeb4e62ca6b00396d8"
+              ]
+            },
+            {
+              "id": "metric.coverage_observed",
+              "name": "coverage_observed",
+              "value": "17",
+              "unit": "minutes",
+              "evidence_ids": [
+                "e-9014b6a1a7544faeb4e62ca6b00396d8"
+              ]
+            },
+            {
+              "id": "metric.coverage_missing",
+              "name": "coverage_missing",
+              "value": "3",
+              "unit": "minutes",
+              "evidence_ids": [
+                "e-9014b6a1a7544faeb4e62ca6b00396d8"
+              ]
+            },
+            {
+              "id": "metric.lag_seconds",
+              "name": "lag_seconds",
+              "value": "0",
+              "unit": "seconds relative to reference clock",
+              "evidence_ids": [
+                "e-63ba56cd8753798e118a46bc98b8e755"
+              ]
+            },
+            {
+              "id": "metric.quarantined_rows",
+              "name": "quarantined_rows",
+              "value": "0",
+              "unit": "rows",
+              "evidence_ids": [
+                "e-63ba56cd8753798e118a46bc98b8e755"
+              ]
+            },
+            {
+              "id": "metric.change_pct",
+              "name": "change_pct",
+              "value": "-9.090909090909090909090909090909090909090909090909090909090909090909090909090909090909090909090909091",
+              "unit": "% (equal adjacent subwindows)",
+              "evidence_ids": [
+                "e-9014b6a1a7544faeb4e62ca6b00396d8"
+              ]
+            }
+          ],
+          "evidence_refs": [
+            "e-12f9511d5a3dba3b9a2b4c2c164516cc",
+            "e-2517e700d0ce22778559c2c2365d20f2",
+            "e-63ba56cd8753798e118a46bc98b8e755",
+            "e-9014b6a1a7544faeb4e62ca6b00396d8"
+          ],
+          "limitations": [
+            "This report is pinned to the registered input version and UTC [start, end) window; collection mode is recorded in ingestion evidence.",
+            "Only implemented completeness, freshness, format and volume checks were evaluated; no economic cause or absolute correctness is established.",
+            "CEX ETH/USDT and DEX token amounts are separate units; token0 volume is not dollar volume."
+          ],
+          "recommendations": [
+            "Inspect coverage and raw evidence for the selected UTC window.",
+            "Use the deterministic restore task to rebuild an isolated snapshot from registered raw inputs."
+          ]
+        },
+        "model_mode": "deterministic",
+        "actual_model_mode": "deterministic",
+        "baseline": "A",
+        "execution_status": "completed",
+        "failure": null,
+        "trace": [
+          {
+            "tool": "get_ingestion_status",
+            "arguments": {
+              "source": "cex",
+              "snapshot_id": "s-9925eb7cdc4d1a05dbead678",
+              "window": {
+                "start": "2025-02-02T00:00:00+00:00",
+                "end": "2025-02-02T00:20:00+00:00"
+              }
+            },
+            "phase": "initial",
+            "status": "ok",
+            "output_summary": {
+              "bytes": 708,
+              "evidence_ids": [
+                "e-63ba56cd8753798e118a46bc98b8e755"
+              ]
+            },
+            "latency_ms": 0.0
+          },
+          {
+            "tool": "get_quality_findings",
+            "arguments": {
+              "source": "cex",
+              "snapshot_id": "s-9925eb7cdc4d1a05dbead678",
+              "window": {
+                "start": "2025-02-02T00:00:00+00:00",
+                "end": "2025-02-02T00:20:00+00:00"
+              }
+            },
+            "phase": "initial",
+            "status": "ok",
+            "output_summary": {
+              "bytes": 670,
+              "evidence_ids": [
+                "e-12f9511d5a3dba3b9a2b4c2c164516cc",
+                "e-2517e700d0ce22778559c2c2365d20f2",
+                "e-63ba56cd8753798e118a46bc98b8e755"
+              ]
+            },
+            "latency_ms": 0.0
+          },
+          {
+            "tool": "get_window_metrics",
+            "arguments": {
+              "source": "cex",
+              "snapshot_id": "s-9925eb7cdc4d1a05dbead678",
+              "window": {
+                "start": "2025-02-02T00:00:00+00:00",
+                "end": "2025-02-02T00:20:00+00:00"
+              }
+            },
+            "phase": "initial",
+            "status": "ok",
+            "output_summary": {
+              "bytes": 928,
+              "evidence_ids": [
+                "e-12f9511d5a3dba3b9a2b4c2c164516cc",
+                "e-2517e700d0ce22778559c2c2365d20f2",
+                "e-63ba56cd8753798e118a46bc98b8e755",
+                "e-9014b6a1a7544faeb4e62ca6b00396d8"
+              ]
+            },
+            "latency_ms": 15.0
+          },
+          {
+            "tool": "get_evidence",
+            "arguments": {
+              "snapshot_id": "s-9925eb7cdc4d1a05dbead678",
+              "evidence_ids": [
+                "e-12f9511d5a3dba3b9a2b4c2c164516cc",
+                "e-2517e700d0ce22778559c2c2365d20f2",
+                "e-63ba56cd8753798e118a46bc98b8e755",
+                "e-9014b6a1a7544faeb4e62ca6b00396d8"
+              ]
+            },
+            "phase": "initial",
+            "status": "ok",
+            "output_summary": {
+              "bytes": 2729,
+              "evidence_ids": [
+                "e-12f9511d5a3dba3b9a2b4c2c164516cc",
+                "e-2517e700d0ce22778559c2c2365d20f2",
+                "e-63ba56cd8753798e118a46bc98b8e755",
+                "e-9014b6a1a7544faeb4e62ca6b00396d8"
+              ]
+            },
+            "latency_ms": 0.0
+          }
+        ],
+        "model_config": {
+          "provider": null,
+          "model": null
+        },
+        "model_calls": 0,
+        "additional_tool_calls": 0,
+        "usage": null,
+        "cost_usd": null,
+        "cost_status": "unknown",
+        "latency_ms": 15.0
+      },
+      "observed_latency_ms": 31.0
+    },
+    {
+      "case_id": "d03",
+      "split": "development",
+      "category": "fault",
+      "snapshot_id": "s-6a090723b3cf7335da0e1de5",
+      "score": {
+        "diagnosis": {
+          "numerator": 1,
+          "denominator": 1
+        },
+        "numeric": {
+          "numerator": 10,
+          "denominator": 10
+        },
+        "evidence": {
+          "numerator": 13,
+          "denominator": 13
+        },
+        "unknown_handling": {
+          "numerator": 0,
+          "denominator": 0
+        },
+        "success": true,
+        "manual_review": "PENDING: scope of advice, limitations, economic-cause restraint and clarity"
+      },
+      "result": {
+        "run_id": "bb6ab01cb098465eae0125956717c156",
+        "created_at": "2026-11-01T04:36:31.339850+00:00",
+        "report": {
+          "question": "Check completeness, freshness and units for this UTC window before interpreting its volume. Cite evidence and limitations.",
+          "source": "cex",
+          "snapshot_id": "s-6a090723b3cf7335da0e1de5",
+          "window": {
+            "start": "2025-02-03T00:00:00+00:00",
+            "end": "2025-02-03T00:20:00+00:00"
+          },
+          "diagnosis": "observed_data_issue",
+          "facts": [
+            {
+              "id": "fact.row_count",
+              "statement": "Observed records: 15 candles.",
+              "metric_refs": [
+                "metric.row_count"
+              ],
+              "evidence_refs": [
+                "e-940d03649546ef5d7ac300478aa9f7f4"
+              ]
+            },
+            {
+              "id": "fact.base_volume",
+              "statement": "CEX base volume: 63.0 ETH.",
+              "metric_refs": [
+                "metric.base_volume"
+              ],
+              "evidence_refs": [
+                "e-940d03649546ef5d7ac300478aa9f7f4"
+              ]
+            },
+            {
+              "id": "fact.quote_volume",
+              "statement": "CEX quote volume: 128611.0 USDT.",
+              "metric_refs": [
+                "metric.quote_volume"
+              ],
+              "evidence_refs": [
+                "e-940d03649546ef5d7ac300478aa9f7f4"
+              ]
+            },
+            {
+              "id": "fact.number_of_trades",
+              "statement": "Source-reported trades: 120 trades.",
+              "metric_refs": [
+                "metric.number_of_trades"
+              ],
+              "evidence_refs": [
+                "e-940d03649546ef5d7ac300478aa9f7f4"
+              ]
+            },
+            {
+              "id": "fact.coverage_expected",
+              "statement": "Coverage expected: 20 minutes.",
+              "metric_refs": [
+                "metric.coverage_expected"
+              ],
+              "evidence_refs": [
+                "e-940d03649546ef5d7ac300478aa9f7f4"
+              ]
+            },
+            {
+              "id": "fact.coverage_observed",
+              "statement": "Coverage observed: 15 minutes.",
+              "metric_refs": [
+                "metric.coverage_observed"
+              ],
+              "evidence_refs": [
+                "e-940d03649546ef5d7ac300478aa9f7f4"
+              ]
+            },
+            {
+              "id": "fact.coverage_missing",
+              "statement": "Coverage missing: 5 minutes.",
+              "metric_refs": [
+                "metric.coverage_missing"
+              ],
+              "evidence_refs": [
+                "e-940d03649546ef5d7ac300478aa9f7f4"
+              ]
+            },
+            {
+              "id": "fact.lag_seconds",
+              "statement": "Data lag: 300 seconds relative to reference clock.",
+              "metric_refs": [
+                "metric.lag_seconds"
+              ],
+              "evidence_refs": [
+                "e-daaa7ae5e1819e92b1f7bd7364223887"
+              ]
+            },
+            {
+              "id": "fact.quarantined_rows",
+              "statement": "Quarantined records: 0 rows.",
+              "metric_refs": [
+                "metric.quarantined_rows"
+              ],
+              "evidence_refs": [
+                "e-daaa7ae5e1819e92b1f7bd7364223887"
+              ]
+            },
+            {
+              "id": "fact.change_pct",
+              "statement": "Volume change awaiting investigation: -40.50632911392405063291139240506329113924050632911392405063291139240506329113924050632911392405063291 % (equal adjacent subwindows).",
+              "metric_refs": [
+                "metric.change_pct"
+              ],
+              "evidence_refs": [
+                "e-940d03649546ef5d7ac300478aa9f7f4"
+              ]
+            },
+            {
+              "id": "fact.quality.0",
+              "statement": "Quality rule missing_candles returned error.",
+              "metric_refs": [],
+              "evidence_refs": [
+                "e-31b08598fb5cf21db0aafdcad852d819"
+              ]
+            },
+            {
+              "id": "fact.quality.1",
+              "statement": "Quality rule stale_data returned error.",
+              "metric_refs": [],
+              "evidence_refs": [
+                "e-d6ed4ac5f33aab25660bb0ac85c378e4"
+              ]
+            },
+            {
+              "id": "fact.checks",
+              "statement": "Implemented quality checks observed a data issue.",
+              "metric_refs": [],
+              "evidence_refs": [
+                "e-c591b7c30c078acb0ab0a15d3306c8fc",
+                "e-31b08598fb5cf21db0aafdcad852d819",
+                "e-d6ed4ac5f33aab25660bb0ac85c378e4"
+              ]
+            }
+          ],
+          "metrics": [
+            {
+              "id": "metric.row_count",
+              "name": "row_count",
+              "value": "15",
+              "unit": "candles",
+              "evidence_ids": [
+                "e-940d03649546ef5d7ac300478aa9f7f4"
+              ]
+            },
+            {
+              "id": "metric.base_volume",
+              "name": "base_volume",
+              "value": "63.0",
+              "unit": "ETH",
+              "evidence_ids": [
+                "e-940d03649546ef5d7ac300478aa9f7f4"
+              ]
+            },
+            {
+              "id": "metric.quote_volume",
+              "name": "quote_volume",
+              "value": "128611.0",
+              "unit": "USDT",
+              "evidence_ids": [
+                "e-940d03649546ef5d7ac300478aa9f7f4"
+              ]
+            },
+            {
+              "id": "metric.number_of_trades",
+              "name": "number_of_trades",
+              "value": "120",
+              "unit": "trades",
+              "evidence_ids": [
+                "e-940d03649546ef5d7ac300478aa9f7f4"
+              ]
+            },
+            {
+              "id": "metric.coverage_expected",
+              "name": "coverage_expected",
+              "value": "20",
+              "unit": "minutes",
+              "evidence_ids": [
+                "e-940d03649546ef5d7ac300478aa9f7f4"
+              ]
+            },
+            {
+              "id": "metric.coverage_observed",
+              "name": "coverage_observed",
+              "value": "15",
+              "unit": "minutes",
+              "evidence_ids": [
+                "e-940d03649546ef5d7ac300478aa9f7f4"
+              ]
+            },
+            {
+              "id": "metric.coverage_missing",
+              "name": "coverage_missing",
+              "value": "5",
+              "unit": "minutes",
+              "evidence_ids": [
+                "e-940d03649546ef5d7ac300478aa9f7f4"
+              ]
+            },
+            {
+              "id": "metric.lag_seconds",
+              "name": "lag_seconds",
+              "value": "300",
+              "unit": "seconds relative to reference clock",
+              "evidence_ids": [
+                "e-daaa7ae5e1819e92b1f7bd7364223887"
+              ]
+            },
+            {
+              "id": "metric.quarantined_rows",
+              "name": "quarantined_rows",
+              "value": "0",
+              "unit": "rows",
+              "evidence_ids": [
+                "e-daaa7ae5e1819e92b1f7bd7364223887"
+              ]
+            },
+            {
+              "id": "metric.change_pct",
+              "name": "change_pct",
+              "value": "-40.50632911392405063291139240506329113924050632911392405063291139240506329113924050632911392405063291",
+              "unit": "% (equal adjacent subwindows)",
+              "evidence_ids": [
+                "e-940d03649546ef5d7ac300478aa9f7f4"
+              ]
+            }
+          ],
+          "evidence_refs": [
+            "e-31b08598fb5cf21db0aafdcad852d819",
+            "e-940d03649546ef5d7ac300478aa9f7f4",
+            "e-c591b7c30c078acb0ab0a15d3306c8fc",
+            "e-d6ed4ac5f33aab25660bb0ac85c378e4",
+            "e-daaa7ae5e1819e92b1f7bd7364223887"
+          ],
+          "limitations": [
+            "This report is pinned to the registered input version and UTC [start, end) window; collection mode is recorded in ingestion evidence.",
+            "Only implemented completeness, freshness, format and volume checks were evaluated; no economic cause or absolute correctness is established.",
+            "CEX ETH/USDT and DEX token amounts are separate units; token0 volume is not dollar volume."
+          ],
+          "recommendations": [
+            "Inspect coverage and raw evidence for the selected UTC window.",
+            "Use the deterministic restore task to rebuild an isolated snapshot from registered raw inputs."
+          ]
+        },
+        "model_mode": "deterministic",
+        "actual_model_mode": "deterministic",
+        "baseline": "A",
+        "execution_status": "completed",
+        "failure": null,
+        "trace": [
+          {
+            "tool": "get_ingestion_status",
+            "arguments": {
+              "source": "cex",
+              "snapshot_id": "s-6a090723b3cf7335da0e1de5",
+              "window": {
+                "start": "2025-02-03T00:00:00+00:00",
+                "end": "2025-02-03T00:20:00+00:00"
+              }
+            },
+            "phase": "initial",
+            "status": "ok",
+            "output_summary": {
+              "bytes": 766,
+              "evidence_ids": [
+                "e-daaa7ae5e1819e92b1f7bd7364223887"
+              ]
+            },
+            "latency_ms": 0.0
+          },
+          {
+            "tool": "get_quality_findings",
+            "arguments": {
+              "source": "cex",
+              "snapshot_id": "s-6a090723b3cf7335da0e1de5",
+              "window": {
+                "start": "2025-02-03T00:00:00+00:00",
+                "end": "2025-02-03T00:20:00+00:00"
+              }
+            },
+            "phase": "initial",
+            "status": "ok",
+            "output_summary": {
+              "bytes": 1037,
+              "evidence_ids": [
+                "e-31b08598fb5cf21db0aafdcad852d819",
+                "e-c591b7c30c078acb0ab0a15d3306c8fc",
+                "e-d6ed4ac5f33aab25660bb0ac85c378e4",
+                "e-daaa7ae5e1819e92b1f7bd7364223887"
+              ]
+            },
+            "latency_ms": 0.0
+          },
+          {
+            "tool": "get_window_metrics",
+            "arguments": {
+              "source": "cex",
+              "snapshot_id": "s-6a090723b3cf7335da0e1de5",
+              "window": {
+                "start": "2025-02-03T00:00:00+00:00",
+                "end": "2025-02-03T00:20:00+00:00"
+              }
+            },
+            "phase": "initial",
+            "status": "ok",
+            "output_summary": {
+              "bytes": 984,
+              "evidence_ids": [
+                "e-31b08598fb5cf21db0aafdcad852d819",
+                "e-940d03649546ef5d7ac300478aa9f7f4",
+                "e-c591b7c30c078acb0ab0a15d3306c8fc",
+                "e-d6ed4ac5f33aab25660bb0ac85c378e4",
+                "e-daaa7ae5e1819e92b1f7bd7364223887"
+              ]
+            },
+            "latency_ms": 0.0
+          },
+          {
+            "tool": "get_evidence",
+            "arguments": {
+              "snapshot_id": "s-6a090723b3cf7335da0e1de5",
+              "evidence_ids": [
+                "e-31b08598fb5cf21db0aafdcad852d819",
+                "e-940d03649546ef5d7ac300478aa9f7f4",
+                "e-c591b7c30c078acb0ab0a15d3306c8fc",
+                "e-d6ed4ac5f33aab25660bb0ac85c378e4",
+                "e-daaa7ae5e1819e92b1f7bd7364223887"
+              ]
+            },
+            "phase": "initial",
+            "status": "ok",
+            "output_summary": {
+              "bytes": 3602,
+              "evidence_ids": [
+                "e-31b08598fb5cf21db0aafdcad852d819",
+                "e-940d03649546ef5d7ac300478aa9f7f4",
+                "e-c591b7c30c078acb0ab0a15d3306c8fc",
+                "e-d6ed4ac5f33aab25660bb0ac85c378e4",
+                "e-daaa7ae5e1819e92b1f7bd7364223887"
+              ]
+            },
+            "latency_ms": 0.0
+          }
+        ],
+        "model_config": {
+          "provider": null,
+          "model": null
+        },
+        "model_calls": 0,
+        "additional_tool_calls": 0,
+        "usage": null,
+        "cost_usd": null,
+        "cost_status": "unknown",
+        "latency_ms": 0.0
+      },
+      "observed_latency_ms": 32.0
+    },
+    {
+      "case_id": "d04",
+      "split": "development",
+      "category": "fault",
+      "snapshot_id": "s-874cfb869580e8559ddce7d2",
+      "score": {
+        "diagnosis": {
+          "numerator": 1,
+          "denominator": 1
+        },
+        "numeric": {
+          "numerator": 10,
+          "denominator": 10
+        },
+        "evidence": {
+          "numerator": 13,
+          "denominator": 13
+        },
+        "unknown_handling": {
+          "numerator": 0,
+          "denominator": 0
+        },
+        "success": true,
+        "manual_review": "PENDING: scope of advice, limitations, economic-cause restraint and clarity"
+      },
+      "result": {
+        "run_id": "c647d9611f8942a0bbc95593cc749763",
+        "created_at": "2026-11-01T04:36:31.368050+00:00",
+        "report": {
+          "question": "Check completeness, freshness and units for this UTC window before interpreting its volume. Cite evidence and limitations.",
+          "source": "cex",
+          "snapshot_id": "s-874cfb869580e8559ddce7d2",
+          "window": {
+            "start": "2025-02-04T00:00:00+00:00",
+            "end": "2025-02-04T00:20:00+00:00"
+          },
+          "diagnosis": "observed_data_issue",
+          "facts": [
+            {
+              "id": "fact.row_count",
+              "statement": "Observed records: 19 candles.",
+              "metric_refs": [
+                "metric.row_count"
+              ],
+              "evidence_refs": [
+                "e-2f0f0469d07d3187bf87e77216ff5f56"
+              ]
+            },
+            {
+              "id": "fact.base_volume",
+              "statement": "CEX base volume: 87.4 ETH.",
+              "metric_refs": [
+                "metric.base_volume"
+              ],
+              "evidence_refs": [
+                "e-2f0f0469d07d3187bf87e77216ff5f56"
+              ]
+            },
+            {
+              "id": "fact.quote_volume",
+              "statement": "CEX quote volume: 178790.0 USDT.",
+              "metric_refs": [
+                "metric.quote_volume"
+              ],
+              "evidence_refs": [
+                "e-2f0f0469d07d3187bf87e77216ff5f56"
+              ]
+            },
+            {
+              "id": "fact.number_of_trades",
+              "statement": "Source-reported trades: 209 trades.",
+              "metric_refs": [
+                "metric.number_of_trades"
+              ],
+              "evidence_refs": [
+                "e-2f0f0469d07d3187bf87e77216ff5f56"
+              ]
+            },
+            {
+              "id": "fact.coverage_expected",
+              "statement": "Coverage expected: 20 minutes.",
+              "metric_refs": [
+                "metric.coverage_expected"
+              ],
+              "evidence_refs": [
+                "e-2f0f0469d07d3187bf87e77216ff5f56"
+              ]
+            },
+            {
+              "id": "fact.coverage_observed",
+              "statement": "Coverage observed: 19 minutes.",
+              "metric_refs": [
+                "metric.coverage_observed"
+              ],
+              "evidence_refs": [
+                "e-2f0f0469d07d3187bf87e77216ff5f56"
+              ]
+            },
+            {
+              "id": "fact.coverage_missing",
+              "statement": "Coverage missing: 1 minutes.",
+              "metric_refs": [
+                "metric.coverage_missing"
+              ],
+              "evidence_refs": [
+                "e-2f0f0469d07d3187bf87e77216ff5f56"
+              ]
+            },
+            {
+              "id": "fact.lag_seconds",
+              "statement": "Data lag: 0 seconds relative to reference clock.",
+              "metric_refs": [
+                "metric.lag_seconds"
+              ],
+              "evidence_refs": [
+                "e-9106f7ef0bf5690ee81dccac219b3fbf"
+              ]
+            },
+            {
+              "id": "fact.quarantined_rows",
+              "statement": "Quarantined records: 1 rows.",
+              "metric_refs": [
+                "metric.quarantined_rows"
+              ],
+              "evidence_refs": [
+                "e-9106f7ef0bf5690ee81dccac219b3fbf"
+              ]
+            },
+            {
+              "id": "fact.change_pct",
+              "statement": "Volume change awaiting investigation: 36.85636856368563685636856368563685636856368563685636856368563685636856368563685636856368563685636856 % (equal adjacent subwindows).",
+              "metric_refs": [
+                "metric.change_pct"
+              ],
+              "evidence_refs": [
+                "e-2f0f0469d07d3187bf87e77216ff5f56"
+              ]
+            },
+            {
+              "id": "fact.quality.0",
+              "statement": "Quality rule missing_candles returned error.",
+              "metric_refs": [],
+              "evidence_refs": [
+                "e-3513020e431a4159ed508be9b1440b10"
+              ]
+            },
+            {
+              "id": "fact.quality.1",
+              "statement": "Quality rule invalid_rows returned error.",
+              "metric_refs": [],
+              "evidence_refs": [
+                "e-5be4b4360f5ab44e375f0ea0991600d4"
+              ]
+            },
+            {
+              "id": "fact.checks",
+              "statement": "Implemented quality checks observed a data issue.",
+              "metric_refs": [],
+              "evidence_refs": [
+                "e-ca0e75296bcb9a9bab27546bf323c2a3",
+                "e-3513020e431a4159ed508be9b1440b10",
+                "e-5be4b4360f5ab44e375f0ea0991600d4"
+              ]
+            }
+          ],
+          "metrics": [
+            {
+              "id": "metric.row_count",
+              "name": "row_count",
+              "value": "19",
+              "unit": "candles",
+              "evidence_ids": [
+                "e-2f0f0469d07d3187bf87e77216ff5f56"
+              ]
+            },
+            {
+              "id": "metric.base_volume",
+              "name": "base_volume",
+              "value": "87.4",
+              "unit": "ETH",
+              "evidence_ids": [
+                "e-2f0f0469d07d3187bf87e77216ff5f56"
+              ]
+            },
+            {
+              "id": "metric.quote_volume",
+              "name": "quote_volume",
+              "value": "178790.0",
+              "unit": "USDT",
+              "evidence_ids": [
+                "e-2f0f0469d07d3187bf87e77216ff5f56"
+              ]
+            },
+            {
+              "id": "metric.number_of_trades",
+              "name": "number_of_trades",
+              "value": "209",
+              "unit": "trades",
+              "evidence_ids": [
+                "e-2f0f0469d07d3187bf87e77216ff5f56"
+              ]
+            },
+            {
+              "id": "metric.coverage_expected",
+              "name": "coverage_expected",
+              "value": "20",
+              "unit": "minutes",
+              "evidence_ids": [
+                "e-2f0f0469d07d3187bf87e77216ff5f56"
+              ]
+            },
+            {
+              "id": "metric.coverage_observed",
+              "name": "coverage_observed",
+              "value": "19",
+              "unit": "minutes",
+              "evidence_ids": [
+                "e-2f0f0469d07d3187bf87e77216ff5f56"
+              ]
+            },
+            {
+              "id": "metric.coverage_missing",
+              "name": "coverage_missing",
+              "value": "1",
+              "unit": "minutes",
+              "evidence_ids": [
+                "e-2f0f0469d07d3187bf87e77216ff5f56"
+              ]
+            },
+            {
+              "id": "metric.lag_seconds",
+              "name": "lag_seconds",
+              "value": "0",
+              "unit": "seconds relative to reference clock",
+              "evidence_ids": [
+                "e-9106f7ef0bf5690ee81dccac219b3fbf"
+              ]
+            },
+            {
+              "id": "metric.quarantined_rows",
+              "name": "quarantined_rows",
+              "value": "1",
+              "unit": "rows",
+              "evidence_ids": [
+                "e-9106f7ef0bf5690ee81dccac219b3fbf"
+              ]
+            },
+            {
+              "id": "metric.change_pct",
+              "name": "change_pct",
+              "value": "36.85636856368563685636856368563685636856368563685636856368563685636856368563685636856368563685636856",
+              "unit": "% (equal adjacent subwindows)",
+              "evidence_ids": [
+                "e-2f0f0469d07d3187bf87e77216ff5f56"
+              ]
+            }
+          ],
+          "evidence_refs": [
+            "e-2f0f0469d07d3187bf87e77216ff5f56",
+            "e-3513020e431a4159ed508be9b1440b10",
+            "e-5be4b4360f5ab44e375f0ea0991600d4",
+            "e-9106f7ef0bf5690ee81dccac219b3fbf",
+            "e-ca0e75296bcb9a9bab27546bf323c2a3"
+          ],
+          "limitations": [
+            "This report is pinned to the registered input version and UTC [start, end) window; collection mode is recorded in ingestion evidence.",
+            "Only implemented completeness, freshness, format and volume checks were evaluated; no economic cause or absolute correctness is established.",
+            "CEX ETH/USDT and DEX token amounts are separate units; token0 volume is not dollar volume."
+          ],
+          "recommendations": [
+            "Inspect coverage and raw evidence for the selected UTC window.",
+            "Use the deterministic restore task to rebuild an isolated snapshot from registered raw inputs."
+          ]
+        },
+        "model_mode": "deterministic",
+        "actual_model_mode": "deterministic",
+        "baseline": "A",
+        "execution_status": "completed",
+        "failure": null,
+        "trace": [
+          {
+            "tool": "get_ingestion_status",
+            "arguments": {
+              "source": "cex",
+              "snapshot_id": "s-874cfb869580e8559ddce7d2",
+              "window": {
+                "start": "2025-02-04T00:00:00+00:00",
+                "end": "2025-02-04T00:20:00+00:00"
+              }
+            },
+            "phase": "initial",
+            "status": "ok",
+            "output_summary": {
+              "bytes": 652,
+              "evidence_ids": [
+                "e-9106f7ef0bf5690ee81dccac219b3fbf"
+              ]
+            },
+            "latency_ms": 0.0
+          },
+          {
+            "tool": "get_quality_findings",
+            "arguments": {
+              "source": "cex",
+              "snapshot_id": "s-874cfb869580e8559ddce7d2",
+              "window": {
+                "start": "2025-02-04T00:00:00+00:00",
+                "end": "2025-02-04T00:20:00+00:00"
+              }
+            },
+            "phase": "initial",
+            "status": "ok",
+            "output_summary": {
+              "bytes": 958,
+              "evidence_ids": [
+                "e-3513020e431a4159ed508be9b1440b10",
+                "e-5be4b4360f5ab44e375f0ea0991600d4",
+                "e-9106f7ef0bf5690ee81dccac219b3fbf",
+                "e-ca0e75296bcb9a9bab27546bf323c2a3"
+              ]
+            },
+            "latency_ms": 0.0
+          },
+          {
+            "tool": "get_window_metrics",
+            "arguments": {
+              "source": "cex",
+              "snapshot_id": "s-874cfb869580e8559ddce7d2",
+              "window": {
+                "start": "2025-02-04T00:00:00+00:00",
+                "end": "2025-02-04T00:20:00+00:00"
+              }
+            },
+            "phase": "initial",
+            "status": "ok",
+            "output_summary": {
+              "bytes": 871,
+              "evidence_ids": [
+                "e-2f0f0469d07d3187bf87e77216ff5f56",
+                "e-3513020e431a4159ed508be9b1440b10",
+                "e-5be4b4360f5ab44e375f0ea0991600d4",
+                "e-9106f7ef0bf5690ee81dccac219b3fbf",
+                "e-ca0e75296bcb9a9bab27546bf323c2a3"
+              ]
+            },
+            "latency_ms": 0.0
+          },
+          {
+            "tool": "get_evidence",
+            "arguments": {
+              "snapshot_id": "s-874cfb869580e8559ddce7d2",
+              "evidence_ids": [
+                "e-2f0f0469d07d3187bf87e77216ff5f56",
+                "e-3513020e431a4159ed508be9b1440b10",
+                "e-5be4b4360f5ab44e375f0ea0991600d4",
+                "e-9106f7ef0bf5690ee81dccac219b3fbf",
+                "e-ca0e75296bcb9a9bab27546bf323c2a3"
+              ]
+            },
+            "phase": "initial",
+            "status": "ok",
+            "output_summary": {
+              "bytes": 3217,
+              "evidence_ids": [
+                "e-2f0f0469d07d3187bf87e77216ff5f56",
+                "e-3513020e431a4159ed508be9b1440b10",
+                "e-5be4b4360f5ab44e375f0ea0991600d4",
+                "e-9106f7ef0bf5690ee81dccac219b3fbf",
+                "e-ca0e75296bcb9a9bab27546bf323c2a3"
+              ]
+            },
+            "latency_ms": 0.0
+          }
+        ],
+        "model_config": {
+          "provider": null,
+          "model": null
+        },
+        "model_calls": 0,
+        "additional_tool_calls": 0,
+        "usage": null,
+        "cost_usd": null,
+        "cost_status": "unknown",
+        "latency_ms": 0.0
+      },
+      "observed_latency_ms": 15.0
+    },
+    {
+      "case_id": "d05",
+      "split": "development",
+      "category": "normal",
+      "snapshot_id": "s-0dd89bf6bfa2faf76c9806a9",
+      "score": {
+        "diagnosis": {
+          "numerator": 1,
+          "denominator": 1
+        },
+        "numeric": {
+          "numerator": 10,
+          "denominator": 10
+        },
+        "evidence": {
+          "numerator": 11,
+          "denominator": 11
+        },
+        "unknown_handling": {
+          "numerator": 0,
+          "denominator": 0
+        },
+        "success": true,
+        "manual_review": "PENDING: scope of advice, limitations, economic-cause restraint and clarity"
+      },
+      "result": {
+        "run_id": "2ef7e648f76743568377b8e58b4999c7",
+        "created_at": "2026-11-01T04:36:31.396443+00:00",
+        "report": {
+          "question": "Check completeness, freshness and units for this UTC window before interpreting its volume. Cite evidence and limitations.",
+          "source": "cex",
+          "snapshot_id": "s-0dd89bf6bfa2faf76c9806a9",
+          "window": {
+            "start": "2025-02-05T00:00:00+00:00",
+            "end": "2025-02-05T00:20:00+00:00"
+          },
+          "diagnosis": "no_issue_found_in_checks",
+          "facts": [
+            {
+              "id": "fact.row_count",
+              "statement": "Observed records: 20 candles.",
+              "metric_refs": [
+                "metric.row_count"
+              ],
+              "evidence_refs": [
+                "e-84f19ecdbbb553828f2636b872e61071"
+              ]
+            },
+            {
+              "id": "fact.base_volume",
+              "statement": "CEX base volume: 93.0 ETH.",
+              "metric_refs": [
+                "metric.base_volume"
+              ],
+              "evidence_refs": [
+                "e-84f19ecdbbb553828f2636b872e61071"
+              ]
+            },
+            {
+              "id": "fact.quote_volume",
+              "statement": "CEX quote volume: 190298.0 USDT.",
+              "metric_refs": [
+                "metric.quote_volume"
+              ],
+              "evidence_refs": [
+                "e-84f19ecdbbb553828f2636b872e61071"
+              ]
+            },
+            {
+              "id": "fact.number_of_trades",
+              "statement": "Source-reported trades: 210 trades.",
+              "metric_refs": [
+                "metric.number_of_trades"
+              ],
+              "evidence_refs": [
+                "e-84f19ecdbbb553828f2636b872e61071"
+              ]
+            },
+            {
+              "id": "fact.coverage_expected",
+              "statement": "Coverage expected: 20 minutes.",
+              "metric_refs": [
+                "metric.coverage_expected"
+              ],
+              "evidence_refs": [
+                "e-84f19ecdbbb553828f2636b872e61071"
+              ]
+            },
+            {
+              "id": "fact.coverage_observed",
+              "statement": "Coverage observed: 20 minutes.",
+              "metric_refs": [
+                "metric.coverage_observed"
+              ],
+              "evidence_refs": [
+                "e-84f19ecdbbb553828f2636b872e61071"
+              ]
+            },
+            {
+              "id": "fact.coverage_missing",
+              "statement": "Coverage missing: 0 minutes.",
+              "metric_refs": [
+                "metric.coverage_missing"
+              ],
+              "evidence_refs": [
+                "e-84f19ecdbbb553828f2636b872e61071"
+              ]
+            },
+            {
+              "id": "fact.lag_seconds",
+              "statement": "Data lag: 0 seconds relative to reference clock.",
+              "metric_refs": [
+                "metric.lag_seconds"
+              ],
+              "evidence_refs": [
+                "e-8a08dc6d68858854e26a4216b4a0e44b"
+              ]
+            },
+            {
+              "id": "fact.quarantined_rows",
+              "statement": "Quarantined records: 0 rows.",
+              "metric_refs": [
+                "metric.quarantined_rows"
+              ],
+              "evidence_refs": [
+                "e-8a08dc6d68858854e26a4216b4a0e44b"
+              ]
+            },
+            {
+              "id": "fact.change_pct",
+              "statement": "Volume change awaiting investigation: 24.09638554216867469879518072289156626506024096385542168674698795180722891566265060240963855421686747 % (equal adjacent subwindows).",
+              "metric_refs": [
+                "metric.change_pct"
+              ],
+              "evidence_refs": [
+                "e-84f19ecdbbb553828f2636b872e61071"
+              ]
+            },
+            {
+              "id": "fact.checks",
+              "statement": "Implemented quality checks did not find a data issue; this is not proof of absolute correctness.",
+              "metric_refs": [],
+              "evidence_refs": [
+                "e-4b8f03b50f0f411093b02669008a1986"
+              ]
+            }
+          ],
+          "metrics": [
+            {
+              "id": "metric.row_count",
+              "name": "row_count",
+              "value": "20",
+              "unit": "candles",
+              "evidence_ids": [
+                "e-84f19ecdbbb553828f2636b872e61071"
+              ]
+            },
+            {
+              "id": "metric.base_volume",
+              "name": "base_volume",
+              "value": "93.0",
+              "unit": "ETH",
+              "evidence_ids": [
+                "e-84f19ecdbbb553828f2636b872e61071"
+              ]
+            },
+            {
+              "id": "metric.quote_volume",
+              "name": "quote_volume",
+              "value": "190298.0",
+              "unit": "USDT",
+              "evidence_ids": [
+                "e-84f19ecdbbb553828f2636b872e61071"
+              ]
+            },
+            {
+              "id": "metric.number_of_trades",
+              "name": "number_of_trades",
+              "value": "210",
+              "unit": "trades",
+              "evidence_ids": [
+                "e-84f19ecdbbb553828f2636b872e61071"
+              ]
+            },
+            {
+              "id": "metric.coverage_expected",
+              "name": "coverage_expected",
+              "value": "20",
+              "unit": "minutes",
+              "evidence_ids": [
+                "e-84f19ecdbbb553828f2636b872e61071"
+              ]
+            },
+            {
+              "id": "metric.coverage_observed",
+              "name": "coverage_observed",
+              "value": "20",
+              "unit": "minutes",
+              "evidence_ids": [
+                "e-84f19ecdbbb553828f2636b872e61071"
+              ]
+            },
+            {
+              "id": "metric.coverage_missing",
+              "name": "coverage_missing",
+              "value": "0",
+              "unit": "minutes",
+              "evidence_ids": [
+                "e-84f19ecdbbb553828f2636b872e61071"
+              ]
+            },
+            {
+              "id": "metric.lag_seconds",
+              "name": "lag_seconds",
+              "value": "0",
+              "unit": "seconds relative to reference clock",
+              "evidence_ids": [
+                "e-8a08dc6d68858854e26a4216b4a0e44b"
+              ]
+            },
+            {
+              "id": "metric.quarantined_rows",
+              "name": "quarantined_rows",
+              "value": "0",
+              "unit": "rows",
+              "evidence_ids": [
+                "e-8a08dc6d68858854e26a4216b4a0e44b"
+              ]
+            },
+            {
+              "id": "metric.change_pct",
+              "name": "change_pct",
+              "value": "24.09638554216867469879518072289156626506024096385542168674698795180722891566265060240963855421686747",
+              "unit": "% (equal adjacent subwindows)",
+              "evidence_ids": [
+                "e-84f19ecdbbb553828f2636b872e61071"
+              ]
+            }
+          ],
+          "evidence_refs": [
+            "e-4b8f03b50f0f411093b02669008a1986",
+            "e-84f19ecdbbb553828f2636b872e61071",
+            "e-8a08dc6d68858854e26a4216b4a0e44b"
+          ],
+          "limitations": [
+            "This report is pinned to the registered input version and UTC [start, end) window; collection mode is recorded in ingestion evidence.",
+            "Only implemented completeness, freshness, format and volume checks were evaluated; no economic cause or absolute correctness is established.",
+            "CEX ETH/USDT and DEX token amounts are separate units; token0 volume is not dollar volume."
+          ],
+          "recommendations": [
+            "Compare the registered input and upstream source before drawing a stronger conclusion.",
+            "If explaining market behavior is required, obtain independent market evidence; these checks do not establish an economic cause."
+          ]
+        },
+        "model_mode": "deterministic",
+        "actual_model_mode": "deterministic",
+        "baseline": "A",
+        "execution_status": "completed",
+        "failure": null,
+        "trace": [
+          {
+            "tool": "get_ingestion_status",
+            "arguments": {
+              "source": "cex",
+              "snapshot_id": "s-0dd89bf6bfa2faf76c9806a9",
+              "window": {
+                "start": "2025-02-05T00:00:00+00:00",
+                "end": "2025-02-05T00:20:00+00:00"
+              }
+            },
+            "phase": "initial",
+            "status": "ok",
+            "output_summary": {
+              "bytes": 654,
+              "evidence_ids": [
+                "e-8a08dc6d68858854e26a4216b4a0e44b"
+              ]
+            },
+            "latency_ms": 16.0
+          },
+          {
+            "tool": "get_quality_findings",
+            "arguments": {
+              "source": "cex",
+              "snapshot_id": "s-0dd89bf6bfa2faf76c9806a9",
+              "window": {
+                "start": "2025-02-05T00:00:00+00:00",
+                "end": "2025-02-05T00:20:00+00:00"
+              }
+            },
+            "phase": "initial",
+            "status": "ok",
+            "output_summary": {
+              "bytes": 318,
+              "evidence_ids": [
+                "e-4b8f03b50f0f411093b02669008a1986",
+                "e-8a08dc6d68858854e26a4216b4a0e44b"
+              ]
+            },
+            "latency_ms": 0.0
+          },
+          {
+            "tool": "get_window_metrics",
+            "arguments": {
+              "source": "cex",
+              "snapshot_id": "s-0dd89bf6bfa2faf76c9806a9",
+              "window": {
+                "start": "2025-02-05T00:00:00+00:00",
+                "end": "2025-02-05T00:20:00+00:00"
+              }
+            },
+            "phase": "initial",
+            "status": "ok",
+            "output_summary": {
+              "bytes": 832,
+              "evidence_ids": [
+                "e-4b8f03b50f0f411093b02669008a1986",
+                "e-84f19ecdbbb553828f2636b872e61071",
+                "e-8a08dc6d68858854e26a4216b4a0e44b"
+              ]
+            },
+            "latency_ms": 0.0
+          },
+          {
+            "tool": "get_evidence",
+            "arguments": {
+              "snapshot_id": "s-0dd89bf6bfa2faf76c9806a9",
+              "evidence_ids": [
+                "e-4b8f03b50f0f411093b02669008a1986",
+                "e-84f19ecdbbb553828f2636b872e61071",
+                "e-8a08dc6d68858854e26a4216b4a0e44b"
+              ]
+            },
+            "phase": "initial",
+            "status": "ok",
+            "output_summary": {
+              "bytes": 1848,
+              "evidence_ids": [
+                "e-4b8f03b50f0f411093b02669008a1986",
+                "e-84f19ecdbbb553828f2636b872e61071",
+                "e-8a08dc6d68858854e26a4216b4a0e44b"
+              ]
+            },
+            "latency_ms": 0.0
+          }
+        ],
+        "model_config": {
+          "provider": null,
+          "model": null
+        },
+        "model_calls": 0,
+        "additional_tool_calls": 0,
+        "usage": null,
+        "cost_usd": null,
+        "cost_status": "unknown",
+        "latency_ms": 16.0
+      },
+      "observed_latency_ms": 32.0
+    },
+    {
+      "case_id": "d06",
+      "split": "development",
+      "category": "normal",
+      "snapshot_id": "s-4373a0e90a39e22bd01be54a",
+      "score": {
+        "diagnosis": {
+          "numerator": 1,
+          "denominator": 1
+        },
+        "numeric": {
+          "numerator": 10,
+          "denominator": 10
+        },
+        "evidence": {
+          "numerator": 11,
+          "denominator": 11
+        },
+        "unknown_handling": {
+          "numerator": 0,
+          "denominator": 0
+        },
+        "success": true,
+        "manual_review": "PENDING: scope of advice, limitations, economic-cause restraint and clarity"
+      },
+      "result": {
+        "run_id": "b2ba64266ee64c18a54c77f90a9c046d",
+        "created_at": "2026-11-01T04:36:31.426154+00:00",
+        "report": {
+          "question": "Check completeness, freshness and units for this UTC window before interpreting its volume. Cite evidence and limitations.",
+          "source": "cex",
+          "snapshot_id": "s-4373a0e90a39e22bd01be54a",
+          "window": {
+            "start": "2025-02-06T00:00:00+00:00",
+            "end": "2025-02-06T00:20:00+00:00"
+          },
+          "diagnosis": "no_issue_found_in_checks",
+          "facts": [
+            {
+              "id": "fact.row_count",
+              "statement": "Observed records: 20 candles.",
+              "metric_refs": [
+                "metric.row_count"
+              ],
+              "evidence_refs": [
+                "e-91e6a34edad2c005bc0a8bd5fe274f5f"
+              ]
+            },
+            {
+              "id": "fact.base_volume",
+              "statement": "CEX base volume: 95.0 ETH.",
+              "metric_refs": [
+                "metric.base_volume"
+              ],
+              "evidence_refs": [
+                "e-91e6a34edad2c005bc0a8bd5fe274f5f"
+              ]
+            },
+            {
+              "id": "fact.quote_volume",
+              "statement": "CEX quote volume: 194484.0 USDT.",
+              "metric_refs": [
+                "metric.quote_volume"
+              ],
+              "evidence_refs": [
+                "e-91e6a34edad2c005bc0a8bd5fe274f5f"
+              ]
+            },
+            {
+              "id": "fact.number_of_trades",
+              "statement": "Source-reported trades: 210 trades.",
+              "metric_refs": [
+                "metric.number_of_trades"
+              ],
+              "evidence_refs": [
+                "e-91e6a34edad2c005bc0a8bd5fe274f5f"
+              ]
+            },
+            {
+              "id": "fact.coverage_expected",
+              "statement": "Coverage expected: 20 minutes.",
+              "metric_refs": [
+                "metric.coverage_expected"
+              ],
+              "evidence_refs": [
+                "e-91e6a34edad2c005bc0a8bd5fe274f5f"
+              ]
+            },
+            {
+              "id": "fact.coverage_observed",
+              "statement": "Coverage observed: 20 minutes.",
+              "metric_refs": [
+                "metric.coverage_observed"
+              ],
+              "evidence_refs": [
+                "e-91e6a34edad2c005bc0a8bd5fe274f5f"
+              ]
+            },
+            {
+              "id": "fact.coverage_missing",
+              "statement": "Coverage missing: 0 minutes.",
+              "metric_refs": [
+                "metric.coverage_missing"
+              ],
+              "evidence_refs": [
+                "e-91e6a34edad2c005bc0a8bd5fe274f5f"
+              ]
+            },
+            {
+              "id": "fact.lag_seconds",
+              "statement": "Data lag: 0 seconds relative to reference clock.",
+              "metric_refs": [
+                "metric.lag_seconds"
+              ],
+              "evidence_refs": [
+                "e-d699d235028011e1948641a11a617c1d"
+              ]
+            },
+            {
+              "id": "fact.quarantined_rows",
+              "statement": "Quarantined records: 0 rows.",
+              "metric_refs": [
+                "metric.quarantined_rows"
+              ],
+              "evidence_refs": [
+                "e-d699d235028011e1948641a11a617c1d"
+              ]
+            },
+            {
+              "id": "fact.change_pct",
+              "statement": "Volume change awaiting investigation: 23.52941176470588235294117647058823529411764705882352941176470588235294117647058823529411764705882353 % (equal adjacent subwindows).",
+              "metric_refs": [
+                "metric.change_pct"
+              ],
+              "evidence_refs": [
+                "e-91e6a34edad2c005bc0a8bd5fe274f5f"
+              ]
+            },
+            {
+              "id": "fact.checks",
+              "statement": "Implemented quality checks did not find a data issue; this is not proof of absolute correctness.",
+              "metric_refs": [],
+              "evidence_refs": [
+                "e-257f20b329c4c9c3455787c6910e30ad"
+              ]
+            }
+          ],
+          "metrics": [
+            {
+              "id": "metric.row_count",
+              "name": "row_count",
+              "value": "20",
+              "unit": "candles",
+              "evidence_ids": [
+                "e-91e6a34edad2c005bc0a8bd5fe274f5f"
+              ]
+            },
+            {
+              "id": "metric.base_volume",
+              "name": "base_volume",
+              "value": "95.0",
+              "unit": "ETH",
+              "evidence_ids": [
+                "e-91e6a34edad2c005bc0a8bd5fe274f5f"
+              ]
+            },
+            {
+              "id": "metric.quote_volume",
+              "name": "quote_volume",
+              "value": "194484.0",
+              "unit": "USDT",
+              "evidence_ids": [
+                "e-91e6a34edad2c005bc0a8bd5fe274f5f"
+              ]
+            },
+            {
+              "id": "metric.number_of_trades",
+              "name": "number_of_trades",
+              "value": "210",
+              "unit": "trades",
+              "evidence_ids": [
+                "e-91e6a34edad2c005bc0a8bd5fe274f5f"
+              ]
+            },
+            {
+              "id": "metric.coverage_expected",
+              "name": "coverage_expected",
+              "value": "20",
+              "unit": "minutes",
+              "evidence_ids": [
+                "e-91e6a34edad2c005bc0a8bd5fe274f5f"
+              ]
+            },
+            {
+              "id": "metric.coverage_observed",
+              "name": "coverage_observed",
+              "value": "20",
+              "unit": "minutes",
+              "evidence_ids": [
+                "e-91e6a34edad2c005bc0a8bd5fe274f5f"
+              ]
+            },
+            {
+              "id": "metric.coverage_missing",
+              "name": "coverage_missing",
+              "value": "0",
+              "unit": "minutes",
+              "evidence_ids": [
+                "e-91e6a34edad2c005bc0a8bd5fe274f5f"
+              ]
+            },
+            {
+              "id": "metric.lag_seconds",
+              "name": "lag_seconds",
+              "value": "0",
+              "unit": "seconds relative to reference clock",
+              "evidence_ids": [
+                "e-d699d235028011e1948641a11a617c1d"
+              ]
+            },
+            {
+              "id": "metric.quarantined_rows",
+              "name": "quarantined_rows",
+              "value": "0",
+              "unit": "rows",
+              "evidence_ids": [
+                "e-d699d235028011e1948641a11a617c1d"
+              ]
+            },
+            {
+              "id": "metric.change_pct",
+              "name": "change_pct",
+              "value": "23.52941176470588235294117647058823529411764705882352941176470588235294117647058823529411764705882353",
+              "unit": "% (equal adjacent subwindows)",
+              "evidence_ids": [
+                "e-91e6a34edad2c005bc0a8bd5fe274f5f"
+              ]
+            }
+          ],
+          "evidence_refs": [
+            "e-257f20b329c4c9c3455787c6910e30ad",
+            "e-91e6a34edad2c005bc0a8bd5fe274f5f",
+            "e-d699d235028011e1948641a11a617c1d"
+          ],
+          "limitations": [
+            "This report is pinned to the registered input version and UTC [start, end) window; collection mode is recorded in ingestion evidence.",
+            "Only implemented completeness, freshness, format and volume checks were evaluated; no economic cause or absolute correctness is established.",
+            "CEX ETH/USDT and DEX token amounts are separate units; token0 volume is not dollar volume."
+          ],
+          "recommendations": [
+            "Compare the registered input and upstream source before drawing a stronger conclusion.",
+            "If explaining market behavior is required, obtain independent market evidence; these checks do not establish an economic cause."
+          ]
+        },
+        "model_mode": "deterministic",
+        "actual_model_mode": "deterministic",
+        "baseline": "A",
+        "execution_status": "completed",
+        "failure": null,
+        "trace": [
+          {
+            "tool": "get_ingestion_status",
+            "arguments": {
+              "source": "cex",
+              "snapshot_id": "s-4373a0e90a39e22bd01be54a",
+              "window": {
+                "start": "2025-02-06T00:00:00+00:00",
+                "end": "2025-02-06T00:20:00+00:00"
+              }
+            },
+            "phase": "initial",
+            "status": "ok",
+            "output_summary": {
+              "bytes": 654,
+              "evidence_ids": [
+                "e-d699d235028011e1948641a11a617c1d"
+              ]
+            },
+            "latency_ms": 0.0
+          },
+          {
+            "tool": "get_quality_findings",
+            "arguments": {
+              "source": "cex",
+              "snapshot_id": "s-4373a0e90a39e22bd01be54a",
+              "window": {
+                "start": "2025-02-06T00:00:00+00:00",
+                "end": "2025-02-06T00:20:00+00:00"
+              }
+            },
+            "phase": "initial",
+            "status": "ok",
+            "output_summary": {
+              "bytes": 318,
+              "evidence_ids": [
+                "e-257f20b329c4c9c3455787c6910e30ad",
+                "e-d699d235028011e1948641a11a617c1d"
+              ]
+            },
+            "latency_ms": 16.0
+          },
+          {
+            "tool": "get_window_metrics",
+            "arguments": {
+              "source": "cex",
+              "snapshot_id": "s-4373a0e90a39e22bd01be54a",
+              "window": {
+                "start": "2025-02-06T00:00:00+00:00",
+                "end": "2025-02-06T00:20:00+00:00"
+              }
+            },
+            "phase": "initial",
+            "status": "ok",
+            "output_summary": {
+              "bytes": 832,
+              "evidence_ids": [
+                "e-257f20b329c4c9c3455787c6910e30ad",
+                "e-91e6a34edad2c005bc0a8bd5fe274f5f",
+                "e-d699d235028011e1948641a11a617c1d"
+              ]
+            },
+            "latency_ms": 0.0
+          },
+          {
+            "tool": "get_evidence",
+            "arguments": {
+              "snapshot_id": "s-4373a0e90a39e22bd01be54a",
+              "evidence_ids": [
+                "e-257f20b329c4c9c3455787c6910e30ad",
+                "e-91e6a34edad2c005bc0a8bd5fe274f5f",
+                "e-d699d235028011e1948641a11a617c1d"
+              ]
+            },
+            "phase": "initial",
+            "status": "ok",
+            "output_summary": {
+              "bytes": 1848,
+              "evidence_ids": [
+                "e-257f20b329c4c9c3455787c6910e30ad",
+                "e-91e6a34edad2c005bc0a8bd5fe274f5f",
+                "e-d699d235028011e1948641a11a617c1d"
+              ]
+            },
+            "latency_ms": 0.0
+          }
+        ],
+        "model_config": {
+          "provider": null,
+          "model": null
+        },
+        "model_calls": 0,
+        "additional_tool_calls": 0,
+        "usage": null,
+        "cost_usd": null,
+        "cost_status": "unknown",
+        "latency_ms": 16.0
+      },
+      "observed_latency_ms": 31.0
+    },
+    {
+      "case_id": "d07",
+      "split": "development",
+      "category": "normal",
+      "snapshot_id": "s-6488150c3947687c04f7ff41",
+      "score": {
+        "diagnosis": {
+          "numerator": 1,
+          "denominator": 1
+        },
+        "numeric": {
+          "numerator": 9,
+          "denominator": 9
+        },
+        "evidence": {
+          "numerator": 10,
+          "denominator": 10
+        },
+        "unknown_handling": {
+          "numerator": 0,
+          "denominator": 0
+        },
+        "success": true,
+        "manual_review": "PENDING: scope of advice, limitations, economic-cause restraint and clarity"
+      },
+      "result": {
+        "run_id": "b10760587d15499db461bcb1131aafc6",
+        "created_at": "2026-11-01T04:36:31.454572+00:00",
+        "report": {
+          "question": "Check completeness, freshness and units for this UTC window before interpreting its volume. Cite evidence and limitations.",
+          "source": "cex",
+          "snapshot_id": "s-6488150c3947687c04f7ff41",
+          "window": {
+            "start": "2025-02-07T00:00:00+00:00",
+            "end": "2025-02-07T00:20:00+00:00"
+          },
+          "diagnosis": "no_issue_found_in_checks",
+          "facts": [
+            {
+              "id": "fact.row_count",
+              "statement": "Observed records: 20 candles.",
+              "metric_refs": [
+                "metric.row_count"
+              ],
+              "evidence_refs": [
+                "e-229242ca3fc88418083f9b0cf8613f0c"
+              ]
+            },
+            {
+              "id": "fact.base_volume",
+              "statement": "CEX base volume: 0 ETH.",
+              "metric_refs": [
+                "metric.base_volume"
+              ],
+              "evidence_refs": [
+                "e-229242ca3fc88418083f9b0cf8613f0c"
+              ]
+            },
+            {
+              "id": "fact.quote_volume",
+              "statement": "CEX quote volume: 0 USDT.",
+              "metric_refs": [
+                "metric.quote_volume"
+              ],
+              "evidence_refs": [
+                "e-229242ca3fc88418083f9b0cf8613f0c"
+              ]
+            },
+            {
+              "id": "fact.number_of_trades",
+              "statement": "Source-reported trades: 0 trades.",
+              "metric_refs": [
+                "metric.number_of_trades"
+              ],
+              "evidence_refs": [
+                "e-229242ca3fc88418083f9b0cf8613f0c"
+              ]
+            },
+            {
+              "id": "fact.coverage_expected",
+              "statement": "Coverage expected: 20 minutes.",
+              "metric_refs": [
+                "metric.coverage_expected"
+              ],
+              "evidence_refs": [
+                "e-229242ca3fc88418083f9b0cf8613f0c"
+              ]
+            },
+            {
+              "id": "fact.coverage_observed",
+              "statement": "Coverage observed: 20 minutes.",
+              "metric_refs": [
+                "metric.coverage_observed"
+              ],
+              "evidence_refs": [
+                "e-229242ca3fc88418083f9b0cf8613f0c"
+              ]
+            },
+            {
+              "id": "fact.coverage_missing",
+              "statement": "Coverage missing: 0 minutes.",
+              "metric_refs": [
+                "metric.coverage_missing"
+              ],
+              "evidence_refs": [
+                "e-229242ca3fc88418083f9b0cf8613f0c"
+              ]
+            },
+            {
+              "id": "fact.lag_seconds",
+              "statement": "Data lag: 0 seconds relative to reference clock.",
+              "metric_refs": [
+                "metric.lag_seconds"
+              ],
+              "evidence_refs": [
+                "e-606620295a7fddffd2c6da9024b8f7f9"
+              ]
+            },
+            {
+              "id": "fact.quarantined_rows",
+              "statement": "Quarantined records: 0 rows.",
+              "metric_refs": [
+                "metric.quarantined_rows"
+              ],
+              "evidence_refs": [
+                "e-606620295a7fddffd2c6da9024b8f7f9"
+              ]
+            },
+            {
+              "id": "fact.checks",
+              "statement": "Implemented quality checks did not find a data issue; this is not proof of absolute correctness.",
+              "metric_refs": [],
+              "evidence_refs": [
+                "e-8b4a0650003afb21efd3d7255e09ca3a"
+              ]
+            }
+          ],
+          "metrics": [
+            {
+              "id": "metric.row_count",
+              "name": "row_count",
+              "value": "20",
+              "unit": "candles",
+              "evidence_ids": [
+                "e-229242ca3fc88418083f9b0cf8613f0c"
+              ]
+            },
+            {
+              "id": "metric.base_volume",
+              "name": "base_volume",
+              "value": "0",
+              "unit": "ETH",
+              "evidence_ids": [
+                "e-229242ca3fc88418083f9b0cf8613f0c"
+              ]
+            },
+            {
+              "id": "metric.quote_volume",
+              "name": "quote_volume",
+              "value": "0",
+              "unit": "USDT",
+              "evidence_ids": [
+                "e-229242ca3fc88418083f9b0cf8613f0c"
+              ]
+            },
+            {
+              "id": "metric.number_of_trades",
+              "name": "number_of_trades",
+              "value": "0",
+              "unit": "trades",
+              "evidence_ids": [
+                "e-229242ca3fc88418083f9b0cf8613f0c"
+              ]
+            },
+            {
+              "id": "metric.coverage_expected",
+              "name": "coverage_expected",
+              "value": "20",
+              "unit": "minutes",
+              "evidence_ids": [
+                "e-229242ca3fc88418083f9b0cf8613f0c"
+              ]
+            },
+            {
+              "id": "metric.coverage_observed",
+              "name": "coverage_observed",
+              "value": "20",
+              "unit": "minutes",
+              "evidence_ids": [
+                "e-229242ca3fc88418083f9b0cf8613f0c"
+              ]
+            },
+            {
+              "id": "metric.coverage_missing",
+              "name": "coverage_missing",
+              "value": "0",
+              "unit": "minutes",
+              "evidence_ids": [
+                "e-229242ca3fc88418083f9b0cf8613f0c"
+              ]
+            },
+            {
+              "id": "metric.lag_seconds",
+              "name": "lag_seconds",
+              "value": "0",
+              "unit": "seconds relative to reference clock",
+              "evidence_ids": [
+                "e-606620295a7fddffd2c6da9024b8f7f9"
+              ]
+            },
+            {
+              "id": "metric.quarantined_rows",
+              "name": "quarantined_rows",
+              "value": "0",
+              "unit": "rows",
+              "evidence_ids": [
+                "e-606620295a7fddffd2c6da9024b8f7f9"
+              ]
+            }
+          ],
+          "evidence_refs": [
+            "e-229242ca3fc88418083f9b0cf8613f0c",
+            "e-606620295a7fddffd2c6da9024b8f7f9",
+            "e-8b4a0650003afb21efd3d7255e09ca3a"
+          ],
+          "limitations": [
+            "This report is pinned to the registered input version and UTC [start, end) window; collection mode is recorded in ingestion evidence.",
+            "Only implemented completeness, freshness, format and volume checks were evaluated; no economic cause or absolute correctness is established.",
+            "CEX ETH/USDT and DEX token amounts are separate units; token0 volume is not dollar volume."
+          ],
+          "recommendations": [
+            "Compare the registered input and upstream source before drawing a stronger conclusion.",
+            "If explaining market behavior is required, obtain independent market evidence; these checks do not establish an economic cause."
+          ]
+        },
+        "model_mode": "deterministic",
+        "actual_model_mode": "deterministic",
+        "baseline": "A",
+        "execution_status": "completed",
+        "failure": null,
+        "trace": [
+          {
+            "tool": "get_ingestion_status",
+            "arguments": {
+              "source": "cex",
+              "snapshot_id": "s-6488150c3947687c04f7ff41",
+              "window": {
+                "start": "2025-02-07T00:00:00+00:00",
+                "end": "2025-02-07T00:20:00+00:00"
+              }
+            },
+            "phase": "initial",
+            "status": "ok",
+            "output_summary": {
+              "bytes": 654,
+              "evidence_ids": [
+                "e-606620295a7fddffd2c6da9024b8f7f9"
+              ]
+            },
+            "latency_ms": 0.0
+          },
+          {
+            "tool": "get_quality_findings",
+            "arguments": {
+              "source": "cex",
+              "snapshot_id": "s-6488150c3947687c04f7ff41",
+              "window": {
+                "start": "2025-02-07T00:00:00+00:00",
+                "end": "2025-02-07T00:20:00+00:00"
+              }
+            },
+            "phase": "initial",
+            "status": "ok",
+            "output_summary": {
+              "bytes": 318,
+              "evidence_ids": [
+                "e-606620295a7fddffd2c6da9024b8f7f9",
+                "e-8b4a0650003afb21efd3d7255e09ca3a"
+              ]
+            },
+            "latency_ms": 0.0
+          },
+          {
+            "tool": "get_window_metrics",
+            "arguments": {
+              "source": "cex",
+              "snapshot_id": "s-6488150c3947687c04f7ff41",
+              "window": {
+                "start": "2025-02-07T00:00:00+00:00",
+                "end": "2025-02-07T00:20:00+00:00"
+              }
+            },
+            "phase": "initial",
+            "status": "ok",
+            "output_summary": {
+              "bytes": 719,
+              "evidence_ids": [
+                "e-229242ca3fc88418083f9b0cf8613f0c",
+                "e-606620295a7fddffd2c6da9024b8f7f9",
+                "e-8b4a0650003afb21efd3d7255e09ca3a"
+              ]
+            },
+            "latency_ms": 16.0
+          },
+          {
+            "tool": "get_evidence",
+            "arguments": {
+              "snapshot_id": "s-6488150c3947687c04f7ff41",
+              "evidence_ids": [
+                "e-229242ca3fc88418083f9b0cf8613f0c",
+                "e-606620295a7fddffd2c6da9024b8f7f9",
+                "e-8b4a0650003afb21efd3d7255e09ca3a"
+              ]
+            },
+            "phase": "initial",
+            "status": "ok",
+            "output_summary": {
+              "bytes": 1735,
+              "evidence_ids": [
+                "e-229242ca3fc88418083f9b0cf8613f0c",
+                "e-606620295a7fddffd2c6da9024b8f7f9",
+                "e-8b4a0650003afb21efd3d7255e09ca3a"
+              ]
+            },
+            "latency_ms": 0.0
+          }
+        ],
+        "model_config": {
+          "provider": null,
+          "model": null
+        },
+        "model_calls": 0,
+        "additional_tool_calls": 0,
+        "usage": null,
+        "cost_usd": null,
+        "cost_status": "unknown",
+        "latency_ms": 16.0
+      },
+      "observed_latency_ms": 31.0
+    },
+    {
+      "case_id": "d08",
+      "split": "development",
+      "category": "insufficient",
+      "snapshot_id": "s-dfff13f7bafbe773905aa434",
+      "score": {
+        "diagnosis": {
+          "numerator": 1,
+          "denominator": 1
+        },
+        "numeric": {
+          "numerator": 8,
+          "denominator": 8
+        },
+        "evidence": {
+          "numerator": 11,
+          "denominator": 11
+        },
+        "unknown_handling": {
+          "numerator": 1,
+          "denominator": 1
+        },
+        "success": true,
+        "manual_review": "PENDING: scope of advice, limitations, economic-cause restraint and clarity"
+      },
+      "result": {
+        "run_id": "9924c442a4c9499f9d4057396330465d",
+        "created_at": "2026-11-01T04:36:31.480326+00:00",
+        "report": {
+          "question": "Check completeness, freshness and units for this UTC window before interpreting its volume. Cite evidence and limitations.",
+          "source": "cex",
+          "snapshot_id": "s-dfff13f7bafbe773905aa434",
+          "window": {
+            "start": "2025-02-08T00:20:00+00:00",
+            "end": "2025-02-08T00:21:00+00:00"
+          },
+          "diagnosis": "insufficient_evidence",
+          "facts": [
+            {
+              "id": "fact.row_count",
+              "statement": "Observed records: 0 candles.",
+              "metric_refs": [
+                "metric.row_count"
+              ],
+              "evidence_refs": [
+                "e-1923478e9e2bf9a6bad6cbd0855b8071"
+              ]
+            },
+            {
+              "id": "fact.base_volume",
+              "statement": "CEX base volume: 0 ETH.",
+              "metric_refs": [
+                "metric.base_volume"
+              ],
+              "evidence_refs": [
+                "e-1923478e9e2bf9a6bad6cbd0855b8071"
+              ]
+            },
+            {
+              "id": "fact.quote_volume",
+              "statement": "CEX quote volume: 0 USDT.",
+              "metric_refs": [
+                "metric.quote_volume"
+              ],
+              "evidence_refs": [
+                "e-1923478e9e2bf9a6bad6cbd0855b8071"
+              ]
+            },
+            {
+              "id": "fact.coverage_expected",
+              "statement": "Coverage expected: 1 minutes.",
+              "metric_refs": [
+                "metric.coverage_expected"
+              ],
+              "evidence_refs": [
+                "e-1923478e9e2bf9a6bad6cbd0855b8071"
+              ]
+            },
+            {
+              "id": "fact.coverage_observed",
+              "statement": "Coverage observed: 0 minutes.",
+              "metric_refs": [
+                "metric.coverage_observed"
+              ],
+              "evidence_refs": [
+                "e-1923478e9e2bf9a6bad6cbd0855b8071"
+              ]
+            },
+            {
+              "id": "fact.coverage_missing",
+              "statement": "Coverage missing: 1 minutes.",
+              "metric_refs": [
+                "metric.coverage_missing"
+              ],
+              "evidence_refs": [
+                "e-1923478e9e2bf9a6bad6cbd0855b8071"
+              ]
+            },
+            {
+              "id": "fact.lag_seconds",
+              "statement": "Data lag: 0 seconds relative to reference clock.",
+              "metric_refs": [
+                "metric.lag_seconds"
+              ],
+              "evidence_refs": [
+                "e-410d9dbc32e56745cb1615af5190c62c"
+              ]
+            },
+            {
+              "id": "fact.quarantined_rows",
+              "statement": "Quarantined records: 0 rows.",
+              "metric_refs": [
+                "metric.quarantined_rows"
+              ],
+              "evidence_refs": [
+                "e-410d9dbc32e56745cb1615af5190c62c"
+              ]
+            },
+            {
+              "id": "fact.quality.0",
+              "statement": "Quality rule window_outside_snapshot returned warning.",
+              "metric_refs": [],
+              "evidence_refs": [
+                "e-43b034ca7638f822b935b2b9ed26290b"
+              ]
+            },
+            {
+              "id": "fact.quality.1",
+              "statement": "Quality rule missing_candles returned error.",
+              "metric_refs": [],
+              "evidence_refs": [
+                "e-a6b4f3967d9884e77ff972e52d274fb7"
+              ]
+            },
+            {
+              "id": "fact.checks",
+              "statement": "Implemented quality checks observed a data issue.",
+              "metric_refs": [],
+              "evidence_refs": [
+                "e-3711fb2700b8a4573421d8a7dcc492ff",
+                "e-43b034ca7638f822b935b2b9ed26290b",
+                "e-a6b4f3967d9884e77ff972e52d274fb7"
+              ]
+            }
+          ],
+          "metrics": [
+            {
+              "id": "metric.row_count",
+              "name": "row_count",
+              "value": "0",
+              "unit": "candles",
+              "evidence_ids": [
+                "e-1923478e9e2bf9a6bad6cbd0855b8071"
+              ]
+            },
+            {
+              "id": "metric.base_volume",
+              "name": "base_volume",
+              "value": "0",
+              "unit": "ETH",
+              "evidence_ids": [
+                "e-1923478e9e2bf9a6bad6cbd0855b8071"
+              ]
+            },
+            {
+              "id": "metric.quote_volume",
+              "name": "quote_volume",
+              "value": "0",
+              "unit": "USDT",
+              "evidence_ids": [
+                "e-1923478e9e2bf9a6bad6cbd0855b8071"
+              ]
+            },
+            {
+              "id": "metric.coverage_expected",
+              "name": "coverage_expected",
+              "value": "1",
+              "unit": "minutes",
+              "evidence_ids": [
+                "e-1923478e9e2bf9a6bad6cbd0855b8071"
+              ]
+            },
+            {
+              "id": "metric.coverage_observed",
+              "name": "coverage_observed",
+              "value": "0",
+              "unit": "minutes",
+              "evidence_ids": [
+                "e-1923478e9e2bf9a6bad6cbd0855b8071"
+              ]
+            },
+            {
+              "id": "metric.coverage_missing",
+              "name": "coverage_missing",
+              "value": "1",
+              "unit": "minutes",
+              "evidence_ids": [
+                "e-1923478e9e2bf9a6bad6cbd0855b8071"
+              ]
+            },
+            {
+              "id": "metric.lag_seconds",
+              "name": "lag_seconds",
+              "value": "0",
+              "unit": "seconds relative to reference clock",
+              "evidence_ids": [
+                "e-410d9dbc32e56745cb1615af5190c62c"
+              ]
+            },
+            {
+              "id": "metric.quarantined_rows",
+              "name": "quarantined_rows",
+              "value": "0",
+              "unit": "rows",
+              "evidence_ids": [
+                "e-410d9dbc32e56745cb1615af5190c62c"
+              ]
+            }
+          ],
+          "evidence_refs": [
+            "e-1923478e9e2bf9a6bad6cbd0855b8071",
+            "e-3711fb2700b8a4573421d8a7dcc492ff",
+            "e-410d9dbc32e56745cb1615af5190c62c",
+            "e-43b034ca7638f822b935b2b9ed26290b",
+            "e-a6b4f3967d9884e77ff972e52d274fb7"
+          ],
+          "limitations": [
+            "This report is pinned to the registered input version and UTC [start, end) window; collection mode is recorded in ingestion evidence.",
+            "Only implemented completeness, freshness, format and volume checks were evaluated; no economic cause or absolute correctness is established.",
+            "CEX ETH/USDT and DEX token amounts are separate units; token0 volume is not dollar volume.",
+            "Coverage or completed checks are insufficient, or the question requires evidence outside this workbench."
+          ],
+          "recommendations": [
+            "Compare the registered input and upstream source before drawing a stronger conclusion.",
+            "If explaining market behavior is required, obtain independent market evidence; these checks do not establish an economic cause."
+          ]
+        },
+        "model_mode": "deterministic",
+        "actual_model_mode": "deterministic",
+        "baseline": "A",
+        "execution_status": "completed",
+        "failure": null,
+        "trace": [
+          {
+            "tool": "get_ingestion_status",
+            "arguments": {
+              "source": "cex",
+              "snapshot_id": "s-dfff13f7bafbe773905aa434",
+              "window": {
+                "start": "2025-02-08T00:20:00+00:00",
+                "end": "2025-02-08T00:21:00+00:00"
+              }
+            },
+            "phase": "initial",
+            "status": "ok",
+            "output_summary": {
+              "bytes": 681,
+              "evidence_ids": [
+                "e-410d9dbc32e56745cb1615af5190c62c"
+              ]
+            },
+            "latency_ms": 0.0
+          },
+          {
+            "tool": "get_quality_findings",
+            "arguments": {
+              "source": "cex",
+              "snapshot_id": "s-dfff13f7bafbe773905aa434",
+              "window": {
+                "start": "2025-02-08T00:20:00+00:00",
+                "end": "2025-02-08T00:21:00+00:00"
+              }
+            },
+            "phase": "initial",
+            "status": "ok",
+            "output_summary": {
+              "bytes": 983,
+              "evidence_ids": [
+                "e-3711fb2700b8a4573421d8a7dcc492ff",
+                "e-410d9dbc32e56745cb1615af5190c62c",
+                "e-43b034ca7638f822b935b2b9ed26290b",
+                "e-a6b4f3967d9884e77ff972e52d274fb7"
+              ]
+            },
+            "latency_ms": 0.0
+          },
+          {
+            "tool": "get_window_metrics",
+            "arguments": {
+              "source": "cex",
+              "snapshot_id": "s-dfff13f7bafbe773905aa434",
+              "window": {
+                "start": "2025-02-08T00:20:00+00:00",
+                "end": "2025-02-08T00:21:00+00:00"
+              }
+            },
+            "phase": "initial",
+            "status": "ok",
+            "output_summary": {
+              "bytes": 753,
+              "evidence_ids": [
+                "e-1923478e9e2bf9a6bad6cbd0855b8071",
+                "e-3711fb2700b8a4573421d8a7dcc492ff",
+                "e-410d9dbc32e56745cb1615af5190c62c",
+                "e-43b034ca7638f822b935b2b9ed26290b",
+                "e-a6b4f3967d9884e77ff972e52d274fb7"
+              ]
+            },
+            "latency_ms": 0.0
+          },
+          {
+            "tool": "get_evidence",
+            "arguments": {
+              "snapshot_id": "s-dfff13f7bafbe773905aa434",
+              "evidence_ids": [
+                "e-1923478e9e2bf9a6bad6cbd0855b8071",
+                "e-3711fb2700b8a4573421d8a7dcc492ff",
+                "e-410d9dbc32e56745cb1615af5190c62c",
+                "e-43b034ca7638f822b935b2b9ed26290b",
+                "e-a6b4f3967d9884e77ff972e52d274fb7"
+              ]
+            },
+            "phase": "initial",
+            "status": "ok",
+            "output_summary": {
+              "bytes": 3178,
+              "evidence_ids": [
+                "e-1923478e9e2bf9a6bad6cbd0855b8071",
+                "e-3711fb2700b8a4573421d8a7dcc492ff",
+                "e-410d9dbc32e56745cb1615af5190c62c",
+                "e-43b034ca7638f822b935b2b9ed26290b",
+                "e-a6b4f3967d9884e77ff972e52d274fb7"
+              ]
+            },
+            "latency_ms": 0.0
+          }
+        ],
+        "model_config": {
+          "provider": null,
+          "model": null
+        },
+        "model_calls": 0,
+        "additional_tool_calls": 0,
+        "usage": null,
+        "cost_usd": null,
+        "cost_status": "unknown",
+        "latency_ms": 0.0
+      },
+      "observed_latency_ms": 31.0
+    }
+  ],
+  "summary": {
+    "all": {
+      "diagnosis": {
+        "numerator": 8,
+        "denominator": 8
+      },
+      "numeric": {
+        "numerator": 77,
+        "denominator": 77
+      },
+      "evidence": {
+        "numerator": 92,
+        "denominator": 92
+      },
+      "unknown_handling": {
+        "numerator": 1,
+        "denominator": 1
+      },
+      "success": {
+        "numerator": 8,
+        "denominator": 8
+      }
+    },
+    "normal": {
+      "diagnosis": {
+        "numerator": 4,
+        "denominator": 4
+      },
+      "numeric": {
+        "numerator": 39,
+        "denominator": 39
+      },
+      "evidence": {
+        "numerator": 43,
+        "denominator": 43
+      },
+      "unknown_handling": {
+        "numerator": 0,
+        "denominator": 0
+      },
+      "success": {
+        "numerator": 4,
+        "denominator": 4
+      }
+    },
+    "fault": {
+      "diagnosis": {
+        "numerator": 3,
+        "denominator": 3
+      },
+      "numeric": {
+        "numerator": 30,
+        "denominator": 30
+      },
+      "evidence": {
+        "numerator": 38,
+        "denominator": 38
+      },
+      "unknown_handling": {
+        "numerator": 0,
+        "denominator": 0
+      },
+      "success": {
+        "numerator": 3,
+        "denominator": 3
+      }
+    },
+    "insufficient": {
+      "diagnosis": {
+        "numerator": 1,
+        "denominator": 1
+      },
+      "numeric": {
+        "numerator": 8,
+        "denominator": 8
+      },
+      "evidence": {
+        "numerator": 11,
+        "denominator": 11
+      },
+      "unknown_handling": {
+        "numerator": 1,
+        "denominator": 1
+      },
+      "success": {
+        "numerator": 1,
+        "denominator": 1
+      }
+    }
+  },
+  "failures": []
+}

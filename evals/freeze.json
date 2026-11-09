@@ -1,0 +1,9 @@
+{
+  "version": "v1",
+  "frozen_at": "2026-11-01",
+  "files": {
+    "cases.json": "7cc2888542a37e53a5c4349f5bc5b97949847d72aeb65447872f0f4fb12a752d",
+    "rubric.md": "5d58bd48d67c84634644eb5b3245d02ac32dc744d2bd092eb294c3b5b14566f3"
+  },
+  "policy": "Do not revise acceptance expectations after seeing outputs. Disclose failures or contamination."
+}

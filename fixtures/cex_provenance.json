@@ -1,0 +1,6 @@
+{
+  "url": "https://data.binance.vision/data/spot/daily/klines/ETHUSDT/1m/ETHUSDT-1m-2025-01-01.zip",
+  "archive_sha256": "26cc71cf7a2bd0232cf0e8aaaf529fc6674ba20059028023eb346232ee4dbf91",
+  "slice": "first 60 minutes UTC",
+  "synthetic": false
+}

@@ -1,0 +1,89 @@
+{
+  "created_at": "2026-11-01T04:49:16.505781+00:00",
+  "platform": "Windows-11-10.0.26300-SP0",
+  "python": "3.12.9 (tags/v3.12.9:fdb8142, Feb  4 2025, 15:27:58) [MSC v.1942 64 bit (AMD64)]",
+  "cpu": "Intel64 Family 6 Model 183 Stepping 1, GenuineIntel",
+  "dependencies": {
+    "fastapi": "0.162.0",
+    "streamlit": "1.66.1",
+    "sqlalchemy": "2.1.6",
+    "alembic": "1.20.1",
+    "psycopg": "3.3.6",
+    "pytest": "9.2.0",
+    "ruff": "0.17.3"
+  },
+  "checks": [
+    {
+      "name": "lint",
+      "status": "PASS",
+      "exit_code": 0,
+      "started_at": "2026-11-01T04:49:16.665575+00:00",
+      "elapsed_seconds": 0.119642,
+      "command": [
+        "ruff",
+        "check",
+        "."
+      ],
+      "log": "lint.txt"
+    },
+    {
+      "name": "format",
+      "status": "PASS",
+      "exit_code": 0,
+      "started_at": "2026-11-01T04:49:16.785217+00:00",
+      "elapsed_seconds": 0.144514,
+      "command": [
+        "ruff",
+        "format",
+        "--check",
+        "."
+      ],
+      "log": "format.txt"
+    },
+    {
+      "name": "offline",
+      "status": "PASS",
+      "exit_code": 0,
+      "started_at": "2026-11-01T04:49:16.929731+00:00",
+      "elapsed_seconds": 4.851515,
+      "command": [
+        "pytest",
+        "-m",
+        "not postgres and not external and not live_llm",
+        "-q"
+      ],
+      "log": "offline.txt"
+    },
+    {
+      "name": "postgres",
+      "status": "PASS",
+      "exit_code": 0,
+      "started_at": "2026-11-01T04:49:21.781246+00:00",
+      "elapsed_seconds": 2.938159,
+      "command": [
+        "pytest",
+        "-m",
+        "postgres",
+        "-q"
+      ],
+      "log": "postgres.txt"
+    },
+    {
+      "name": "external-cex",
+      "status": "PASS",
+      "exit_code": 0,
+      "started_at": "2026-11-01T04:49:24.720419+00:00",
+      "elapsed_seconds": 8.259648,
+      "command": [
+        "pytest",
+        "tests/test_external.py",
+        "-k",
+        "binance",
+        "-q"
+      ],
+      "log": "external-cex.txt"
+    }
+  ],
+  "live_llm": "NOT RUN: no provider/model/key configured",
+  "docker_compose": "NOT RUN: Docker unavailable"
+}

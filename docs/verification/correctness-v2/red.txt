@@ -1,0 +1,253 @@
+FFFFFFFFFFF                                                              [100%]
+================================== FAILURES ===================================
+__________ test_fallback_report_success_is_not_live_model_success[B] __________
+
+baseline = 'B'
+
+    @pytest.mark.parametrize("baseline", ["B", "C"])
+    def test_fallback_report_success_is_not_live_model_success(baseline):
+        def row(actual, status, correct, **extra):
+            return {"category": "fault", "result": {
+                "model_mode": "live_llm", "actual_model_mode": actual,
+                "execution_status": status, "model_calls": 1, "failure": None, **extra,
+            }, "score": {"success": correct, **{
+                k: {"numerator": int(correct), "denominator": 1}
+                for k in ("diagnosis", "numeric", "evidence", "unknown_handling")
+            }}}
+        rows = [row("live_llm", "completed", True), row("live_llm", "completed", False),
+                row("deterministic", "fallback", True, failure={"type":"Timeout"}),
+                row("test_adapter", "completed", True, model_mode="test_adapter"),
+                row("live_llm", "failed", False, failure={"type":"InvalidJSON"})]
+>       totals = evaluation.summarize(rows, baseline=baseline)["all"]
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       TypeError: summarize() got an unexpected keyword argument 'baseline'
+
+tests\test_correctness_v2.py:73: TypeError
+__________ test_fallback_report_success_is_not_live_model_success[C] __________
+
+baseline = 'C'
+
+    @pytest.mark.parametrize("baseline", ["B", "C"])
+    def test_fallback_report_success_is_not_live_model_success(baseline):
+        def row(actual, status, correct, **extra):
+            return {"category": "fault", "result": {
+                "model_mode": "live_llm", "actual_model_mode": actual,
+                "execution_status": status, "model_calls": 1, "failure": None, **extra,
+            }, "score": {"success": correct, **{
+                k: {"numerator": int(correct), "denominator": 1}
+                for k in ("diagnosis", "numeric", "evidence", "unknown_handling")
+            }}}
+        rows = [row("live_llm", "completed", True), row("live_llm", "completed", False),
+                row("deterministic", "fallback", True, failure={"type":"Timeout"}),
+                row("test_adapter", "completed", True, model_mode="test_adapter"),
+                row("live_llm", "failed", False, failure={"type":"InvalidJSON"})]
+>       totals = evaluation.summarize(rows, baseline=baseline)["all"]
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       TypeError: summarize() got an unexpected keyword argument 'baseline'
+
+tests\test_correctness_v2.py:73: TypeError
+__ test_identical_duplicates_and_conflicting_values_are_distinct[sqlite-cex] __
+
+backend = 'sqlite', source = 'cex'
+
+    @pytest.mark.parametrize("source", ["cex", "dex"])
+    def test_identical_duplicates_and_conflicting_values_are_distinct(backend, source):
+        rows, manifest = inputs(source)
+        first = rows[0]
+        conflict = copy.deepcopy(first)
+        conflict[5 if source == "cex" else "amount0"] = "999.123" if source == "cex" else "999123000"
+        payload = [first, copy.deepcopy(first), conflict]
+        item = pipeline.import_snapshot(source, payload, manifest)
+        ctx = scope(item)
+        status = service.ingestion_status(ctx)
+>       assert status["identical_duplicates"] == 1
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       KeyError: 'identical_duplicates'
+
+tests\test_correctness_v2.py:90: KeyError
+__ test_identical_duplicates_and_conflicting_values_are_distinct[sqlite-dex] __
+
+backend = 'sqlite', source = 'dex'
+
+    @pytest.mark.parametrize("source", ["cex", "dex"])
+    def test_identical_duplicates_and_conflicting_values_are_distinct(backend, source):
+        rows, manifest = inputs(source)
+        first = rows[0]
+        conflict = copy.deepcopy(first)
+        conflict[5 if source == "cex" else "amount0"] = "999.123" if source == "cex" else "999123000"
+        payload = [first, copy.deepcopy(first), conflict]
+        item = pipeline.import_snapshot(source, payload, manifest)
+        ctx = scope(item)
+        status = service.ingestion_status(ctx)
+>       assert status["identical_duplicates"] == 1
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       KeyError: 'identical_duplicates'
+
+tests\test_correctness_v2.py:90: KeyError
+______ test_outside_bad_rows_do_not_contaminate_query_window[sqlite-cex] ______
+
+backend = 'sqlite', source = 'cex'
+
+    @pytest.mark.parametrize("source", ["cex", "dex"])
+    def test_outside_bad_rows_do_not_contaminate_query_window(backend, source):
+        rows, manifest = inputs(source)
+        bad = copy.deepcopy(rows[-1])
+        bad[5 if source == "cex" else "amount0"] = "not-a-number"
+        item = pipeline.import_snapshot(source, rows + [bad], manifest)
+        ctx = scope(item)
+        short = ctx.model_copy(update={"end":ctx.start + timedelta(minutes=2 if source == "cex" else 1)})
+        status = service.ingestion_status(short)
+>       assert status["quarantined_rows"] == 0
+E       assert 1 == 0
+
+tests\test_correctness_v2.py:114: AssertionError
+______ test_outside_bad_rows_do_not_contaminate_query_window[sqlite-dex] ______
+
+backend = 'sqlite', source = 'dex'
+
+    @pytest.mark.parametrize("source", ["cex", "dex"])
+    def test_outside_bad_rows_do_not_contaminate_query_window(backend, source):
+        rows, manifest = inputs(source)
+        bad = copy.deepcopy(rows[-1])
+        bad[5 if source == "cex" else "amount0"] = "not-a-number"
+        item = pipeline.import_snapshot(source, rows + [bad], manifest)
+        ctx = scope(item)
+        short = ctx.model_copy(update={"end":ctx.start + timedelta(minutes=2 if source == "cex" else 1)})
+        status = service.ingestion_status(short)
+>       assert status["quarantined_rows"] == 0
+E       assert 1 == 0
+
+tests\test_correctness_v2.py:114: AssertionError
+_ test_unknown_time_bad_rows_require_uncertainty_not_local_issue[sqlite-cex] __
+
+backend = 'sqlite', source = 'cex'
+
+    @pytest.mark.parametrize("source", ["cex", "dex"])
+    def test_unknown_time_bad_rows_require_uncertainty_not_local_issue(backend, source):
+        rows, manifest = inputs(source)
+        bad = copy.deepcopy(rows[0])
+        if source == "cex":
+            bad[0] = "unknown-time"
+        else:
+            bad.update(block_number="unknown-block", event_time="unknown-time")
+        ctx = scope(pipeline.import_snapshot(source, rows + [bad], manifest))
+        status = service.ingestion_status(ctx)
+>       assert status["quarantined_rows"] == 0
+E       assert 1 == 0
+
+tests\test_correctness_v2.py:131: AssertionError
+_ test_unknown_time_bad_rows_require_uncertainty_not_local_issue[sqlite-dex] __
+
+backend = 'sqlite', source = 'dex'
+
+    @pytest.mark.parametrize("source", ["cex", "dex"])
+    def test_unknown_time_bad_rows_require_uncertainty_not_local_issue(backend, source):
+        rows, manifest = inputs(source)
+        bad = copy.deepcopy(rows[0])
+        if source == "cex":
+            bad[0] = "unknown-time"
+        else:
+            bad.update(block_number="unknown-block", event_time="unknown-time")
+        ctx = scope(pipeline.import_snapshot(source, rows + [bad], manifest))
+        status = service.ingestion_status(ctx)
+>       assert status["quarantined_rows"] == 0
+E       assert 1 == 0
+
+tests\test_correctness_v2.py:131: AssertionError
+_ test_dex_empty_time_window_uses_overlapping_predecessor_block[sqlite-between] _
+
+backend = 'sqlite', position = 'between'
+
+    @pytest.mark.parametrize("position", ["between", "trailing", "irregular"])
+    def test_dex_empty_time_window_uses_overlapping_predecessor_block(backend, position):
+        _, manifest = inputs("dex")
+        if position == "irregular":
+            for b in manifest["blocks"][2:]:
+                b["timestamp"] = (pipeline.utc(b["timestamp"]) + timedelta(seconds=36)).isoformat()
+            manifest["end"] = manifest["expected_end"] = (pipeline.utc(manifest["end"]) + timedelta(seconds=36)).isoformat()
+        item = pipeline.import_snapshot("dex", [], manifest)
+        base = scope(item)
+        if position == "trailing":
+            start = pipeline.utc(manifest["blocks"][-1]["timestamp"]) + timedelta(seconds=1)
+            end = base.end - timedelta(seconds=1)
+            predecessor = manifest["blocks"][-1]["number"]
+        else:
+            start = base.start + timedelta(seconds=15)
+            end = base.start + timedelta(seconds=40 if position == "irregular" else 20)
+            predecessor = manifest["blocks"][1]["number"]
+        ctx = base.model_copy(update={"start":start, "end":end})
+        metrics = service.window_metrics(ctx)
+        assert metrics["row_count"] == 0
+>       assert metrics["coverage"]["expected"] == 1
+E       assert 0 == 1
+
+tests\test_correctness_v2.py:159: AssertionError
+_ test_dex_empty_time_window_uses_overlapping_predecessor_block[sqlite-trailing] _
+
+backend = 'sqlite', position = 'trailing'
+
+    @pytest.mark.parametrize("position", ["between", "trailing", "irregular"])
+    def test_dex_empty_time_window_uses_overlapping_predecessor_block(backend, position):
+        _, manifest = inputs("dex")
+        if position == "irregular":
+            for b in manifest["blocks"][2:]:
+                b["timestamp"] = (pipeline.utc(b["timestamp"]) + timedelta(seconds=36)).isoformat()
+            manifest["end"] = manifest["expected_end"] = (pipeline.utc(manifest["end"]) + timedelta(seconds=36)).isoformat()
+        item = pipeline.import_snapshot("dex", [], manifest)
+        base = scope(item)
+        if position == "trailing":
+            start = pipeline.utc(manifest["blocks"][-1]["timestamp"]) + timedelta(seconds=1)
+            end = base.end - timedelta(seconds=1)
+            predecessor = manifest["blocks"][-1]["number"]
+        else:
+            start = base.start + timedelta(seconds=15)
+            end = base.start + timedelta(seconds=40 if position == "irregular" else 20)
+            predecessor = manifest["blocks"][1]["number"]
+        ctx = base.model_copy(update={"start":start, "end":end})
+        metrics = service.window_metrics(ctx)
+        assert metrics["row_count"] == 0
+>       assert metrics["coverage"]["expected"] == 1
+E       assert 0 == 1
+
+tests\test_correctness_v2.py:159: AssertionError
+_ test_dex_empty_time_window_uses_overlapping_predecessor_block[sqlite-irregular] _
+
+backend = 'sqlite', position = 'irregular'
+
+    @pytest.mark.parametrize("position", ["between", "trailing", "irregular"])
+    def test_dex_empty_time_window_uses_overlapping_predecessor_block(backend, position):
+        _, manifest = inputs("dex")
+        if position == "irregular":
+            for b in manifest["blocks"][2:]:
+                b["timestamp"] = (pipeline.utc(b["timestamp"]) + timedelta(seconds=36)).isoformat()
+            manifest["end"] = manifest["expected_end"] = (pipeline.utc(manifest["end"]) + timedelta(seconds=36)).isoformat()
+        item = pipeline.import_snapshot("dex", [], manifest)
+        base = scope(item)
+        if position == "trailing":
+            start = pipeline.utc(manifest["blocks"][-1]["timestamp"]) + timedelta(seconds=1)
+            end = base.end - timedelta(seconds=1)
+            predecessor = manifest["blocks"][-1]["number"]
+        else:
+            start = base.start + timedelta(seconds=15)
+            end = base.start + timedelta(seconds=40 if position == "irregular" else 20)
+            predecessor = manifest["blocks"][1]["number"]
+        ctx = base.model_copy(update={"start":start, "end":end})
+        metrics = service.window_metrics(ctx)
+        assert metrics["row_count"] == 0
+>       assert metrics["coverage"]["expected"] == 1
+E       assert 0 == 1
+
+tests\test_correctness_v2.py:159: AssertionError
+=========================== short test summary info ===========================
+FAILED tests/test_correctness_v2.py::test_fallback_report_success_is_not_live_model_success[B]
+FAILED tests/test_correctness_v2.py::test_fallback_report_success_is_not_live_model_success[C]
+FAILED tests/test_correctness_v2.py::test_identical_duplicates_and_conflicting_values_are_distinct[sqlite-cex]
+FAILED tests/test_correctness_v2.py::test_identical_duplicates_and_conflicting_values_are_distinct[sqlite-dex]
+FAILED tests/test_correctness_v2.py::test_outside_bad_rows_do_not_contaminate_query_window[sqlite-cex]
+FAILED tests/test_correctness_v2.py::test_outside_bad_rows_do_not_contaminate_query_window[sqlite-dex]
+FAILED tests/test_correctness_v2.py::test_unknown_time_bad_rows_require_uncertainty_not_local_issue[sqlite-cex]
+FAILED tests/test_correctness_v2.py::test_unknown_time_bad_rows_require_uncertainty_not_local_issue[sqlite-dex]
+FAILED tests/test_correctness_v2.py::test_dex_empty_time_window_uses_overlapping_predecessor_block[sqlite-between]
+FAILED tests/test_correctness_v2.py::test_dex_empty_time_window_uses_overlapping_predecessor_block[sqlite-trailing]
+FAILED tests/test_correctness_v2.py::test_dex_empty_time_window_uses_overlapping_predecessor_block[sqlite-irregular]
+11 failed, 9 deselected in 1.58s

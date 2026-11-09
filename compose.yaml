@@ -1,0 +1,51 @@
+services:
+  db:
+    image: postgres:17.2
+    environment:
+      POSTGRES_USER: sentinel
+      POSTGRES_PASSWORD: local-demo-only
+      POSTGRES_DB: sentinel
+    ports: ["127.0.0.1:5432:5432"]
+    volumes: ["postgres-data:/var/lib/postgresql/data"]
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U sentinel"]
+      interval: 3s
+      timeout: 3s
+      retries: 20
+  init:
+    build: .
+    environment:
+      DATABASE_URL: postgresql+psycopg://sentinel:local-demo-only@db:5432/sentinel
+    depends_on:
+      db: {condition: service_healthy}
+    command: ["sh", "-c", "alembic upgrade head && python -m sentinel.cli seed"]
+  api:
+    build: .
+    environment:
+      DATABASE_URL: postgresql+psycopg://sentinel:local-demo-only@db:5432/sentinel
+      LLM_PROVIDER: ${LLM_PROVIDER:-}
+      LLM_BASE_URL: ${LLM_BASE_URL:-}
+      LLM_MODEL: ${LLM_MODEL:-}
+      LLM_API_KEY: ${LLM_API_KEY:-}
+      LLM_INPUT_USD_PER_MILLION: ${LLM_INPUT_USD_PER_MILLION:-}
+      LLM_OUTPUT_USD_PER_MILLION: ${LLM_OUTPUT_USD_PER_MILLION:-}
+    depends_on:
+      init: {condition: service_completed_successfully}
+    ports: ["127.0.0.1:8000:8000"]
+  ui:
+    build: .
+    environment:
+      SENTINEL_API_URL: http://api:8000
+    depends_on: [api]
+    command: ["streamlit", "run", "sentinel/ui.py", "--server.address", "0.0.0.0", "--browser.gatherUsageStats", "false"]
+    ports: ["127.0.0.1:8501:8501"]
+  worker:
+    build: .
+    profiles: ["worker"]
+    environment:
+      DATABASE_URL: postgresql+psycopg://sentinel:local-demo-only@db:5432/sentinel
+    depends_on:
+      init: {condition: service_completed_successfully}
+    command: ["python", "-m", "sentinel.cli", "worker", "--source", "cex", "--interval", "86400"]
+volumes:
+  postgres-data:

@@ -1,0 +1,13 @@
+{
+  "timestamp": "2026-11-01T04:51:46.347705+00:00",
+  "endpoint": "https://ethereum-rpc.publicnode.com",
+  "range_inclusive": [
+    19000000,
+    19000019
+  ],
+  "source": "https://ethereum.publicnode.com/",
+  "status": "BLOCKED",
+  "http_status": 403,
+  "error_type": "HTTPStatusError",
+  "note": "No access restriction bypass attempted; successful standalone chainId earlier returned0x1."
+}

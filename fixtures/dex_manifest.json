@@ -1,0 +1,132 @@
+{
+  "source": "dex",
+  "provider": "ethereum-json-rpc",
+  "chain_id": 1,
+  "pool": "0x8ad599c3a0ff1de082011efddc58f1908eb6e6d8",
+  "fee": 3000,
+  "start": "2024-01-15T00:00:00+00:00",
+  "end": "2024-01-15T00:04:00+00:00",
+  "expected_end": "2024-01-15T00:04:00+00:00",
+  "schema_version": "uniswap-v3-swap-v1",
+  "synthetic": true,
+  "blocks": [
+    {
+      "number": 19000000,
+      "hash": "0xc9df2a068dd7f81108f560158f9aa02c826d2f75f4a8acdee4c04c7555a20881",
+      "timestamp": "2024-01-15T00:00:00+00:00"
+    },
+    {
+      "number": 19000001,
+      "hash": "0x9c7bbbd8a63b847de249e4e1f4aaad723284940d2fe821499ca0f0e5740a7810",
+      "timestamp": "2024-01-15T00:00:12+00:00"
+    },
+    {
+      "number": 19000002,
+      "hash": "0x5072e630de58d119cd67d3ca6ec38ca7243ba98b2e60dcadcf941c7df441d0fe",
+      "timestamp": "2024-01-15T00:00:24+00:00"
+    },
+    {
+      "number": 19000003,
+      "hash": "0xb6b18c54684f4ae727cc45d54168337fe0c078eed352917f7aef5bd97115f5e1",
+      "timestamp": "2024-01-15T00:00:36+00:00"
+    },
+    {
+      "number": 19000004,
+      "hash": "0x309818d722dbaf9350e43b6fb42019d196cca78d69088fc16aefdea41cd3d2ea",
+      "timestamp": "2024-01-15T00:00:48+00:00"
+    },
+    {
+      "number": 19000005,
+      "hash": "0xd69e52852a16d823f1e770d0321270bdda6f78997443b2e0451860c3b048fa28",
+      "timestamp": "2024-01-15T00:01:00+00:00"
+    },
+    {
+      "number": 19000006,
+      "hash": "0xb86b5b57eae58120398aab02c15b348744d69a437061204adf988eeaee77960b",
+      "timestamp": "2024-01-15T00:01:12+00:00"
+    },
+    {
+      "number": 19000007,
+      "hash": "0x8a1ebfeb76081d7f071c5a7c0068efe0fec9275c35c6fbd30f0289d5b1e801c2",
+      "timestamp": "2024-01-15T00:01:24+00:00"
+    },
+    {
+      "number": 19000008,
+      "hash": "0x4150117c535d0e2bf107cb76c31deac3a8ba2721ac9c3ffcf0eee6d160d3163f",
+      "timestamp": "2024-01-15T00:01:36+00:00"
+    },
+    {
+      "number": 19000009,
+      "hash": "0x00d06dbf1b8b3f06c9ea919c85b84c55f872dc815423d016db6340bfc8bbd3fa",
+      "timestamp": "2024-01-15T00:01:48+00:00"
+    },
+    {
+      "number": 19000010,
+      "hash": "0x093c5e79f0558cf44caa7bd7b71792936613a09ae09b6f9cb820805d8dbcbd59",
+      "timestamp": "2024-01-15T00:02:00+00:00"
+    },
+    {
+      "number": 19000011,
+      "hash": "0x51544940d920673b20086dc1f2299fe74493422f41c4a4e3602bd4666224b6f2",
+      "timestamp": "2024-01-15T00:02:12+00:00"
+    },
+    {
+      "number": 19000012,
+      "hash": "0xa6e1401f4ff9de366538667505888fb6c8ac45eda44cf5b5f8091adb55677e84",
+      "timestamp": "2024-01-15T00:02:24+00:00"
+    },
+    {
+      "number": 19000013,
+      "hash": "0xef70f9d38c57b1d8fd6426286a0d8b8f916fb6b5bfec3300cc881d1a71ba4519",
+      "timestamp": "2024-01-15T00:02:36+00:00"
+    },
+    {
+      "number": 19000014,
+      "hash": "0x823eb39b960b74d315bdd2544e9d2b4d6336a6aca9e1485fcb9e5536460b7847",
+      "timestamp": "2024-01-15T00:02:48+00:00"
+    },
+    {
+      "number": 19000015,
+      "hash": "0x9df2a6f800f70402244a3ad5640427e999c2524f2ff373acd803c022bc134516",
+      "timestamp": "2024-01-15T00:03:00+00:00"
+    },
+    {
+      "number": 19000016,
+      "hash": "0x1d690594e3759d90a7a0bd84e37dc885e60126f53a1752e816112cd7371fefe0",
+      "timestamp": "2024-01-15T00:03:12+00:00"
+    },
+    {
+      "number": 19000017,
+      "hash": "0x46db0ddce6ce2daa18206e8b4f6d4c500e49824ce58cd96c41525d04ec85dc7d",
+      "timestamp": "2024-01-15T00:03:24+00:00"
+    },
+    {
+      "number": 19000018,
+      "hash": "0x367018da32b99c26a5ed965fd4a80c6d88b7d3a7a1d2be6a12772d063ec52099",
+      "timestamp": "2024-01-15T00:03:36+00:00"
+    },
+    {
+      "number": 19000019,
+      "hash": "0xf687d0cabb9895598fa5321f3d0182b1b741d648a0dd793cf5e51565495e4bca",
+      "timestamp": "2024-01-15T00:03:48+00:00"
+    }
+  ],
+  "token0": {
+    "symbol": "USDC",
+    "address": "0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48",
+    "decimals": 6
+  },
+  "token1": {
+    "symbol": "WETH",
+    "address": "0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2",
+    "decimals": 18
+  },
+  "raw_file": "fixtures/dex.json",
+  "checksum": "38b9d2e82986aeb60fe67d25a087db3fc9130c19131184da30b994b093addda2",
+  "request_parameters": {
+    "fromBlock": 19000000,
+    "toBlock": 19000019
+  },
+  "metadata_reference": "https://developers.uniswap.org/docs/sdks/v3/guides/pool-data",
+  "metadata_verification": "configured from official SDK example; connected mode must eth_call verify pool and tokens; synthetic block hashes/events do not assert historical observations"
+}

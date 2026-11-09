@@ -1,0 +1,30 @@
+{
+  "created_at": "2026-11-01T04:36:41.605661+00:00",
+  "benchmark_version": "v1",
+  "freeze": {
+    "version": "v1",
+    "frozen_at": "2026-11-01",
+    "files": {
+      "cases.json": "7cc2888542a37e53a5c4349f5bc5b97949847d72aeb65447872f0f4fb12a752d",
+      "rubric.md": "5d58bd48d67c84634644eb5b3245d02ac32dc744d2bd092eb294c3b5b14566f3"
+    },
+    "policy": "Do not revise acceptance expectations after seeing outputs. Disclose failures or contamination."
+  },
+  "environment": {
+    "python": "3.12.9",
+    "platform": "Windows-11-10.0.26300-SP0",
+    "backend": "sqlite"
+  },
+  "split": "all",
+  "baseline": "B",
+  "data_kind": "synthetic",
+  "manual_review_status": "PENDING",
+  "limitations": [
+    "Self-authored, sixteen cases; forty-case target not reached.",
+    "Automated factual checks do not replace human semantic review."
+  ],
+  "status": "NOT RUN",
+  "reason": "Real model baseline requires --live and explicit model configuration",
+  "results": [],
+  "summary": {}
+}

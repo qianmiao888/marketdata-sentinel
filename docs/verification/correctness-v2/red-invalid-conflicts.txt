@@ -1,0 +1,72 @@
+FFFF                                                                     [100%]
+================================== FAILURES ===================================
+_ test_conflicting_key_is_retained_even_when_one_value_cannot_be_parsed[sqlite-False-cex] _
+
+backend = 'sqlite', source = 'cex', invalid_first = False
+
+    @pytest.mark.parametrize("source", ["cex", "dex"])
+    @pytest.mark.parametrize("invalid_first", [False, True])
+    def test_conflicting_key_is_retained_even_when_one_value_cannot_be_parsed(backend, source, invalid_first):
+        rows, manifest = inputs(source)
+        bad = copy.deepcopy(rows[0])
+        bad[5 if source == "cex" else "amount0"] = "invalid-value"
+        payload = [bad, rows[0]] if invalid_first else [rows[0], bad]
+        ctx = scope(pipeline.import_snapshot(source, payload, manifest))
+>       assert service.ingestion_status(ctx)["record_conflicts"] == 1
+E       assert 0 == 1
+
+tests\test_correctness_v2.py:148: AssertionError
+_ test_conflicting_key_is_retained_even_when_one_value_cannot_be_parsed[sqlite-False-dex] _
+
+backend = 'sqlite', source = 'dex', invalid_first = False
+
+    @pytest.mark.parametrize("source", ["cex", "dex"])
+    @pytest.mark.parametrize("invalid_first", [False, True])
+    def test_conflicting_key_is_retained_even_when_one_value_cannot_be_parsed(backend, source, invalid_first):
+        rows, manifest = inputs(source)
+        bad = copy.deepcopy(rows[0])
+        bad[5 if source == "cex" else "amount0"] = "invalid-value"
+        payload = [bad, rows[0]] if invalid_first else [rows[0], bad]
+        ctx = scope(pipeline.import_snapshot(source, payload, manifest))
+>       assert service.ingestion_status(ctx)["record_conflicts"] == 1
+E       assert 0 == 1
+
+tests\test_correctness_v2.py:148: AssertionError
+_ test_conflicting_key_is_retained_even_when_one_value_cannot_be_parsed[sqlite-True-cex] _
+
+backend = 'sqlite', source = 'cex', invalid_first = True
+
+    @pytest.mark.parametrize("source", ["cex", "dex"])
+    @pytest.mark.parametrize("invalid_first", [False, True])
+    def test_conflicting_key_is_retained_even_when_one_value_cannot_be_parsed(backend, source, invalid_first):
+        rows, manifest = inputs(source)
+        bad = copy.deepcopy(rows[0])
+        bad[5 if source == "cex" else "amount0"] = "invalid-value"
+        payload = [bad, rows[0]] if invalid_first else [rows[0], bad]
+        ctx = scope(pipeline.import_snapshot(source, payload, manifest))
+>       assert service.ingestion_status(ctx)["record_conflicts"] == 1
+E       assert 0 == 1
+
+tests\test_correctness_v2.py:148: AssertionError
+_ test_conflicting_key_is_retained_even_when_one_value_cannot_be_parsed[sqlite-True-dex] _
+
+backend = 'sqlite', source = 'dex', invalid_first = True
+
+    @pytest.mark.parametrize("source", ["cex", "dex"])
+    @pytest.mark.parametrize("invalid_first", [False, True])
+    def test_conflicting_key_is_retained_even_when_one_value_cannot_be_parsed(backend, source, invalid_first):
+        rows, manifest = inputs(source)
+        bad = copy.deepcopy(rows[0])
+        bad[5 if source == "cex" else "amount0"] = "invalid-value"
+        payload = [bad, rows[0]] if invalid_first else [rows[0], bad]
+        ctx = scope(pipeline.import_snapshot(source, payload, manifest))
+>       assert service.ingestion_status(ctx)["record_conflicts"] == 1
+E       assert 0 == 1
+
+tests\test_correctness_v2.py:148: AssertionError
+=========================== short test summary info ===========================
+FAILED tests/test_correctness_v2.py::test_conflicting_key_is_retained_even_when_one_value_cannot_be_parsed[sqlite-False-cex]
+FAILED tests/test_correctness_v2.py::test_conflicting_key_is_retained_even_when_one_value_cannot_be_parsed[sqlite-False-dex]
+FAILED tests/test_correctness_v2.py::test_conflicting_key_is_retained_even_when_one_value_cannot_be_parsed[sqlite-True-cex]
+FAILED tests/test_correctness_v2.py::test_conflicting_key_is_retained_even_when_one_value_cannot_be_parsed[sqlite-True-dex]
+4 failed, 33 deselected in 1.12s

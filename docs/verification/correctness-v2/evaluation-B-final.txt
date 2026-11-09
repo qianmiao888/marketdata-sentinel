@@ -1,0 +1,7 @@
+{
+  "status": "NOT RUN",
+  "baseline": "B",
+  "split": "all",
+  "summary": {},
+  "failures": null
+}

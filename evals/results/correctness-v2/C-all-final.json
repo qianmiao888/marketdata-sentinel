@@ -1,0 +1,41 @@
+{
+  "created_at": "2026-11-01T07:56:09.335767+00:00",
+  "benchmark_version": "v1",
+  "scoring_version": "correctness-v2",
+  "product_scope": "Rule diagnosis + model evidence organization",
+  "implementation_files_sha256": {
+    "sentinel/evaluation.py": "e804943bc45164ec59f2a554de9318e35c9b0b45b45bf856acaa9630428a5022",
+    "sentinel/pipeline.py": "d15275d74643c8e00767e3bdc69f65ba9d69395bbd3610b594b575ccb03537a2",
+    "sentinel/service.py": "bb4ab83233a827dbf411ef1ea425576ca0326305be8c64bddb3bd89cbdfbb1a0",
+    "sentinel/investigation.py": "a7c2a8f8ee3e06a9429086382b731df6489eb77fa2d1e58227e2868f7346d511",
+    "sentinel/llm.py": "72a047b98169ab27280a28eb84b4fdc20d2f2b2d6bcb0aead1b8884e76df3648",
+    "uv.lock": "a9c96d799d4a2a09077862b0fdd60406027923d0be22ae19dfd627526f1702bd"
+  },
+  "planned_cases": 16,
+  "freeze": {
+    "version": "v1",
+    "frozen_at": "2026-11-01",
+    "files": {
+      "cases.json": "7cc2888542a37e53a5c4349f5bc5b97949847d72aeb65447872f0f4fb12a752d",
+      "rubric.md": "5d58bd48d67c84634644eb5b3245d02ac32dc744d2bd092eb294c3b5b14566f3"
+    },
+    "policy": "Do not revise acceptance expectations after seeing outputs. Disclose failures or contamination."
+  },
+  "environment": {
+    "python": "3.12.9",
+    "platform": "Windows-11-10.0.26300-SP0",
+    "backend": "postgresql"
+  },
+  "split": "all",
+  "baseline": "C",
+  "data_kind": "synthetic",
+  "manual_review_status": "PENDING",
+  "limitations": [
+    "Self-authored, sixteen cases; forty-case target not reached.",
+    "Automated factual checks do not replace human semantic review."
+  ],
+  "status": "NOT RUN",
+  "reason": "Real model baseline requires --live and explicit model configuration",
+  "results": [],
+  "summary": {}
+}

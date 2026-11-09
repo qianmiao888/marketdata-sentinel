@@ -1,0 +1,27 @@
+name: verify
+on: [push, pull_request]
+jobs:
+  offline-and-postgres:
+    runs-on: ubuntu-latest
+    services:
+      postgres:
+        image: postgres:17.2
+        env:
+          POSTGRES_USER: sentinel
+          POSTGRES_PASSWORD: sentinel
+          POSTGRES_DB: sentinel_test
+        ports: ["5432:5432"]
+        options: >-
+          --health-cmd "pg_isready -U sentinel"
+          --health-interval 3s --health-timeout 3s --health-retries 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: astral-sh/setup-uv@v5
+        with: {version: "0.6.8"}
+      - run: uv sync --all-extras --frozen
+      - run: uv run ruff check .
+      - run: uv run ruff format --check .
+      - run: uv run pytest -m "not postgres and not external and not live_llm"
+      - run: uv run pytest -m postgres
+        env:
+          TEST_POSTGRES_URL: postgresql+psycopg://sentinel:sentinel@127.0.0.1:5432/sentinel_test

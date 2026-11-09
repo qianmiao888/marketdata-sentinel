@@ -1,0 +1,41 @@
+[project]
+name = "marketdata-sentinel"
+version = "0.1.0"
+description = "Reproducible market data quality and evidence-grounded investigation workbench"
+readme = "README.md"
+requires-python = ">=3.12,<3.14"
+dependencies = [
+  "fastapi>=0.115,<1", "uvicorn>=0.34,<1", "sqlalchemy>=2.0.38,<3",
+  "alembic>=1.14,<2", "psycopg[binary]>=3.2,<4", "httpx>=0.28,<1",
+  "pydantic>=2.10,<3", "streamlit>=1.42,<2", "pandas>=2.2,<3",
+  "python-dotenv>=1.0,<2", "filelock>=3.17,<4", "altair>=5,<7"
+]
+
+[project.optional-dependencies]
+dev = ["pytest>=8.3,<10", "ruff>=0.11,<1"]
+
+[project.scripts]
+sentinel = "sentinel.cli:main"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.hatch.build.targets.wheel]
+packages = ["sentinel"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+markers = [
+ "postgres: requires explicit TEST_POSTGRES_URL (real PostgreSQL)",
+ "external: opt-in public data network smoke test",
+ "live_llm: opt-in real model evaluation requiring credentials"
+]
+
+[tool.ruff]
+target-version = "py312"
+line-length = 100
+extend-exclude = [".local", ".venv", "data"]
+
+[tool.ruff.lint]
+select = ["E4", "E7", "E9", "F", "I"]

@@ -1,0 +1,67 @@
+{
+  "checked_at": "2026-11-01T07:56:09.793865+00:00",
+  "old_files": [
+    {
+      "path": "D:\\web3 intern\\marketdata-sentinel\\evals\\results\\A-acceptance.json",
+      "sha256": "BB499475981126288AB270151963CA9B1D19C7D9F9D558D697677006AF1D638C",
+      "unchanged": true
+    },
+    {
+      "path": "D:\\web3 intern\\marketdata-sentinel\\evals\\results\\A-acceptance.md",
+      "sha256": "CBBE4E0F9A068B082B042B28F2EEF71D5E5BE69213547890BEB1F432C0821A0A",
+      "unchanged": true
+    },
+    {
+      "path": "D:\\web3 intern\\marketdata-sentinel\\evals\\results\\A-all.json",
+      "sha256": "91F4CB2396E42D89BC55EC1514B23E5392932670554D8CD8E01F2E97BFDB898D",
+      "unchanged": true
+    },
+    {
+      "path": "D:\\web3 intern\\marketdata-sentinel\\evals\\results\\A-all.md",
+      "sha256": "1A295CE1FDE9FD7C6693A0C18B5F222F5E49FA67F1E18F41AEA80D000CDE1F28",
+      "unchanged": true
+    },
+    {
+      "path": "D:\\web3 intern\\marketdata-sentinel\\evals\\results\\A-development.json",
+      "sha256": "BB5078F4AED207A7D33C9EFA93E1777F560314777D04B6735922E390263B7323",
+      "unchanged": true
+    },
+    {
+      "path": "D:\\web3 intern\\marketdata-sentinel\\evals\\results\\A-development.md",
+      "sha256": "A6E1382623B91F53B3D154ABEB7F4C1190A0A1B0F77C75878384C659229C8048",
+      "unchanged": true
+    },
+    {
+      "path": "D:\\web3 intern\\marketdata-sentinel\\evals\\results\\A-initial-before-comparison-fix.json",
+      "sha256": "2FF3AE90AC394273C92C4EBFE9F78E0DAFE7A34EF489E0AD8BD51FD315B31363",
+      "unchanged": true
+    },
+    {
+      "path": "D:\\web3 intern\\marketdata-sentinel\\evals\\results\\A-initial-before-comparison-fix.md",
+      "sha256": "7D24EE3CE6D87FD212776C680D91547810BA13D96D617B99666AF18A3BDEB9D5",
+      "unchanged": true
+    },
+    {
+      "path": "D:\\web3 intern\\marketdata-sentinel\\evals\\results\\B-all.json",
+      "sha256": "F602D4422346C2144411805A077C1FFCDF95C7B813EEE7463AC64598D7575524",
+      "unchanged": true
+    },
+    {
+      "path": "D:\\web3 intern\\marketdata-sentinel\\evals\\results\\B-all.md",
+      "sha256": "6747E334013D86C63C2673481E1F0CC0B61A1CFE50770FE388D00FC11993546E",
+      "unchanged": true
+    },
+    {
+      "path": "D:\\web3 intern\\marketdata-sentinel\\evals\\results\\C-all.json",
+      "sha256": "3CE27594E6094350B5B5213400721B93CB9A7CEDDA6542A2DFDD3D1A317736C2",
+      "unchanged": true
+    },
+    {
+      "path": "D:\\web3 intern\\marketdata-sentinel\\evals\\results\\C-all.md",
+      "sha256": "772BD61291C6FA32E4CDE56438FB97DF6E0ED183F096A6EECF3C021863FD7666",
+      "unchanged": true
+    }
+  ],
+  "freeze_version": "v1",
+  "all_unchanged": true
+}

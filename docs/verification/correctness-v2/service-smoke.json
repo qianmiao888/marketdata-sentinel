@@ -1,0 +1,11 @@
+{
+  "created_at": "2026-11-01T07:56:10.206990+00:00",
+  "api_http": 200,
+  "ui_health_http": 200,
+  "quality_version": "quality-v2",
+  "report_id": "41bdbbcd1f944557ad27726c5a8214d8",
+  "diagnosis": "no_issue_found_in_checks",
+  "diagnostic_mode": "rules",
+  "model_role": "evidence_organization",
+  "snapshot_id": "s-d2f57864759bf75b9284f59c"
+}

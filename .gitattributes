@@ -1,0 +1,5 @@
+# Raw inputs and frozen verification artifacts are checksummed as bytes.
+# Preserve their existing line endings on every platform.
+fixtures/** -text
+evals/** -text
+docs/verification/** -text

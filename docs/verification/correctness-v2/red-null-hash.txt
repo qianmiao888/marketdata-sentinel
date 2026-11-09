@@ -1,0 +1,56 @@
+F                                                                        [100%]
+================================== FAILURES ===================================
+____ test_null_dex_hash_is_quarantined_using_registered_block_time[sqlite] ____
+
+backend = 'sqlite'
+
+    def test_null_dex_hash_is_quarantined_using_registered_block_time(backend):
+        rows, manifest = inputs("dex")
+        bad = {**rows[0], "block_hash":None}
+>       ctx = scope(pipeline.import_snapshot("dex", rows + [bad], manifest))
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests\test_correctness_v2.py:180: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+sentinel\pipeline.py:359: in import_snapshot
+    event_time, time_basis = row_event_time(source, row, manifest)
+                             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+source = 'dex'
+row = {'block_number': 19000000, 'block_hash': None, 'tx_hash': '0xa2c1de3526ebb88e1277f0a15f7286a665bf76bfe6a090721de34d74093a7c7a', 'log_index': 0, ...}
+manifest = {'source': 'dex', 'provider': 'ethereum-json-rpc', 'chain_id': 1, 'pool': '0x8ad599c3a0ff1de082011efddc58f1908eb6e6d8', ...}
+
+    def row_event_time(source, row, manifest):
+        """Recover time independently of value validation, without guessing units.
+    
+        A registered block number scopes the rejected row, even when its hash is
+        invalid; this does not certify that row as a canonical event.
+        Also used when reading pre-v2 quarantines, so old raw evidence is preserved.
+        """
+        try:
+            if source == "cex":
+                expected = "us" if utc(manifest["start"]).date().isoformat() >= "2025-01-01" else "ms"
+                if manifest.get("timestamp_unit") != expected:
+                    return None, "unresolved"
+                ticks = int(row[0])
+                event = datetime(1970, 1, 1, tzinfo=UTC) + timedelta(
+                    microseconds=ticks if expected == "us" else ticks * 1000
+                )
+                if event.second or event.microsecond:
+                    return None, "unresolved"
+                return iso(event), "cex_open_time"
+            number = int(row["block_number"])
+            block = next(b for b in manifest["blocks"] if b["number"] == number)
+            basis = (
+                "canonical_block"
+>               if row["block_hash"].lower() == block["hash"].lower()
+                   ^^^^^^^^^^^^^^^^^^^^^^^
+                else "registered_block_reference"
+            )
+E           AttributeError: 'NoneType' object has no attribute 'lower'
+
+sentinel\pipeline.py:167: AttributeError
+=========================== short test summary info ===========================
+FAILED tests/test_correctness_v2.py::test_null_dex_hash_is_quarantined_using_registered_block_time[sqlite]
+1 failed, 38 deselected in 0.97s
