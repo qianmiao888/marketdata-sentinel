@@ -1,0 +1,44 @@
+{
+  "desktop": {
+    "width": 1440,
+    "height": 1000
+  },
+  "narrow": {
+    "width": 390,
+    "height": 844,
+    "pageWidth": 390
+  },
+  "checks": [
+    {
+      "name": "scope_change_hides_exports",
+      "pass": true
+    },
+    {
+      "name": "invalid_window_hides_exports",
+      "pass": true
+    },
+    {
+      "name": "advanced_engineering_available",
+      "pass": true
+    },
+    {
+      "name": "dex_explicitly_synthetic",
+      "pass": true
+    },
+    {
+      "name": "faq_has_no_broken_repository_relative_web_links",
+      "pass": true
+    }
+  ],
+  "checkedAtUtc": "2026-11-13T15:51:23.308Z",
+  "validationType": "Agent-operated real browser; not human usability research",
+  "screenshots": [
+    "desktop-check.jpg",
+    "desktop-recovery.jpg",
+    "desktop-english.jpg",
+    "narrow.jpg",
+    "scope-change.jpg",
+    "invalid-window.jpg",
+    "advanced-dex.jpg"
+  ]
+}

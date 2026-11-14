@@ -1,3 +1,5 @@
+> 2026-11-13 更新：当前可运行工作台与本轮证据见[作品入口](workbench/index.md)。以下保留历史实施记录，各测试数字属于各自记录日期。
+
 # Implementation and verification status
 
 Current repair scope: **rule diagnosis + model evidence organization**. See [correctness-v2.md](correctness-v2.md) for four corrected behaviors, red-before-green logs, current78 offline/21 PostgreSQL passes, and separated system/model accounting. Original delivery records remain historical; current logs are [verification/correctness-v2/final/results.json](verification/correctness-v2/final/results.json).

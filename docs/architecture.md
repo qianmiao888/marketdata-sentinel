@@ -94,3 +94,14 @@ Every baseline begins with the same status, findings and metrics. Registered evi
 The persisted report validates scope, canonical fact content, exact metric values, references and supporting quality evidence. `observed_data_issue`, `no_issue_found_in_checks`, and `insufficient_evidence` remain distinct. A failing tool/model, invalid report, unavailable provider or exhausted budget produces an explicit fallback with requested and actual modes. No model hidden reasoning is requested or saved. Tool traces record arguments, output sizes/evidence IDs, status and latency.
 
 The live transport has a 45-second model deadline, at most four model calls, six additional tool steps, a 10-second request timeout, one transient HTTP retry, and 1,200 output tokens per call. Real provider/model/base URL/key are configured through environment variables; no model name or price is assumed. Missing usage or prices remain unknown. The real model adapter is implemented and contract-tested; live model evaluation remains NOT RUN. See `implementation-status.md` and `evaluation.md` for dated executed results and remaining external conditions.
+
+
+## Workbench communication extension (2026-11-13)
+
+The original collectors, tables and query/report contracts remain in place. `sentinel.communication` validates persisted report scope, content-addressed evidence and fact catalogs before building a `CommunicationBundle`. Templates produce Chinese/English Markdown and an issue brief from that bundle. Exact metric strings are preserved; only UI reading displays are rounded.
+
+`POST /recoveries` takes `{ "before_run_id": "..." }`, derives its context server-side, replays registered raw inputs and investigates the identical UTC window. A `recovery_result` in the existing Evidence table records separate replay and verification statuses plus before/after report IDs; no schema migration is needed. Failures retain the original report and an explicit failed/unresolved receipt where storage is available.
+
+`GET /investigations/{run_id}/communication` optionally accepts `recovery_id`. Unrelated receipts and source/window mismatches are rejected. The bundle contains frozen report metrics/evidence, provenance, draft status, optional version comparison, bilingual Markdown and issue Markdown. Missing evidence or altered numeric facts fail closed. The business UI hides previous results after a context/question/mode change; historical reports remain explicitly pinned. Advanced Engineering retains the prior UI.
+
+This adds local content delivery, not publication approval, multi-user ticket management or human validation. See the [implementation review](workbench/engineering.md).

@@ -1,0 +1,10 @@
+{
+  "checked_at_utc": "2026-11-14T01:19:48.973266+00:00",
+  "saved_file": "http/evidence.json",
+  "saved_file_sha256": "ba6a53f408896c6e56b2ecbac916604389a007451fdf9a5f86c5a5c2c4f51fed",
+  "evidence_entries_checked": 11,
+  "all_hashes_match": true,
+  "markdown_zh_matches_saved_bundle": true,
+  "markdown_en_matches_saved_bundle": true,
+  "issue_matches_saved_bundle": true
+}

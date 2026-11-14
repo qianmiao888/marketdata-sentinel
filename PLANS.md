@@ -1,3 +1,5 @@
+> 2026-11-13 更新：当前可运行工作台与本轮证据见[作品入口](docs/workbench/index.md)。以下保留历史实施记录，各测试数字属于各自记录日期。
+
 # MarketData Sentinel implementation plan
 
 Specification: ../MarketDataSentinel_Codex开发提示词.md (read in full 2026-11-01).

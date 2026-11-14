@@ -1,0 +1,561 @@
+{
+  "algorithm": "e- + pipeline.digest({kind, payload})[:32]; only id/kind transport fields excluded",
+  "registered_payloads_unchanged": true,
+  "hash_checks": [
+    {
+      "location": "evidence[0]",
+      "id": "e-8d661b61b34ed767f638ba4e07bcf018",
+      "recomputed_id": "e-8d661b61b34ed767f638ba4e07bcf018",
+      "matches": true
+    },
+    {
+      "location": "evidence[1]",
+      "id": "e-9ea63d18e16ca3c1b114f9072d0559a2",
+      "recomputed_id": "e-9ea63d18e16ca3c1b114f9072d0559a2",
+      "matches": true
+    },
+    {
+      "location": "evidence[2]",
+      "id": "e-de74e0a06d75c309743364ef8c8be39b",
+      "recomputed_id": "e-de74e0a06d75c309743364ef8c8be39b",
+      "matches": true
+    },
+    {
+      "location": "evidence[3]",
+      "id": "e-e1beec2ca77f32534e6e9cbdee0feee2",
+      "recomputed_id": "e-e1beec2ca77f32534e6e9cbdee0feee2",
+      "matches": true
+    },
+    {
+      "location": "comparison.versions[0].evidence[0]",
+      "id": "e-8d661b61b34ed767f638ba4e07bcf018",
+      "recomputed_id": "e-8d661b61b34ed767f638ba4e07bcf018",
+      "matches": true
+    },
+    {
+      "location": "comparison.versions[0].evidence[1]",
+      "id": "e-9ea63d18e16ca3c1b114f9072d0559a2",
+      "recomputed_id": "e-9ea63d18e16ca3c1b114f9072d0559a2",
+      "matches": true
+    },
+    {
+      "location": "comparison.versions[0].evidence[2]",
+      "id": "e-de74e0a06d75c309743364ef8c8be39b",
+      "recomputed_id": "e-de74e0a06d75c309743364ef8c8be39b",
+      "matches": true
+    },
+    {
+      "location": "comparison.versions[0].evidence[3]",
+      "id": "e-e1beec2ca77f32534e6e9cbdee0feee2",
+      "recomputed_id": "e-e1beec2ca77f32534e6e9cbdee0feee2",
+      "matches": true
+    },
+    {
+      "location": "comparison.versions[1].evidence[0]",
+      "id": "e-72c482c68748377631f96303684895f4",
+      "recomputed_id": "e-72c482c68748377631f96303684895f4",
+      "matches": true
+    },
+    {
+      "location": "comparison.versions[1].evidence[1]",
+      "id": "e-9bfbac4880b9e98dd1c2c6c4c7291a81",
+      "recomputed_id": "e-9bfbac4880b9e98dd1c2c6c4c7291a81",
+      "matches": true
+    },
+    {
+      "location": "comparison.versions[1].evidence[2]",
+      "id": "e-9c7516030448d76219df8e5da45cb882",
+      "recomputed_id": "e-9c7516030448d76219df8e5da45cb882",
+      "matches": true
+    }
+  ],
+  "fact_checks": [
+    {
+      "location": "evidence",
+      "document": "markdown_zh",
+      "snapshot_id": "s-fd9247e2bf8d19aad3323bdb",
+      "metric": "row_count",
+      "value": "57",
+      "unit": "candles",
+      "matches": true
+    },
+    {
+      "location": "evidence",
+      "document": "markdown_zh",
+      "snapshot_id": "s-fd9247e2bf8d19aad3323bdb",
+      "metric": "base_volume",
+      "value": "6933.44030000",
+      "unit": "ETH",
+      "matches": true
+    },
+    {
+      "location": "evidence",
+      "document": "markdown_zh",
+      "snapshot_id": "s-fd9247e2bf8d19aad3323bdb",
+      "metric": "quote_volume",
+      "value": "23244130.10138200",
+      "unit": "USDT",
+      "matches": true
+    },
+    {
+      "location": "evidence",
+      "document": "markdown_zh",
+      "snapshot_id": "s-fd9247e2bf8d19aad3323bdb",
+      "metric": "coverage_expected",
+      "value": "60",
+      "unit": "minutes",
+      "matches": true
+    },
+    {
+      "location": "evidence",
+      "document": "markdown_zh",
+      "snapshot_id": "s-fd9247e2bf8d19aad3323bdb",
+      "metric": "coverage_observed",
+      "value": "57",
+      "unit": "minutes",
+      "matches": true
+    },
+    {
+      "location": "evidence",
+      "document": "markdown_zh",
+      "snapshot_id": "s-fd9247e2bf8d19aad3323bdb",
+      "metric": "coverage_missing",
+      "value": "3",
+      "unit": "minutes",
+      "matches": true
+    },
+    {
+      "location": "evidence",
+      "document": "markdown_en",
+      "snapshot_id": "s-fd9247e2bf8d19aad3323bdb",
+      "metric": "row_count",
+      "value": "57",
+      "unit": "candles",
+      "matches": true
+    },
+    {
+      "location": "evidence",
+      "document": "markdown_en",
+      "snapshot_id": "s-fd9247e2bf8d19aad3323bdb",
+      "metric": "base_volume",
+      "value": "6933.44030000",
+      "unit": "ETH",
+      "matches": true
+    },
+    {
+      "location": "evidence",
+      "document": "markdown_en",
+      "snapshot_id": "s-fd9247e2bf8d19aad3323bdb",
+      "metric": "quote_volume",
+      "value": "23244130.10138200",
+      "unit": "USDT",
+      "matches": true
+    },
+    {
+      "location": "evidence",
+      "document": "markdown_en",
+      "snapshot_id": "s-fd9247e2bf8d19aad3323bdb",
+      "metric": "coverage_expected",
+      "value": "60",
+      "unit": "minutes",
+      "matches": true
+    },
+    {
+      "location": "evidence",
+      "document": "markdown_en",
+      "snapshot_id": "s-fd9247e2bf8d19aad3323bdb",
+      "metric": "coverage_observed",
+      "value": "57",
+      "unit": "minutes",
+      "matches": true
+    },
+    {
+      "location": "evidence",
+      "document": "markdown_en",
+      "snapshot_id": "s-fd9247e2bf8d19aad3323bdb",
+      "metric": "coverage_missing",
+      "value": "3",
+      "unit": "minutes",
+      "matches": true
+    },
+    {
+      "location": "evidence",
+      "document": "issue_markdown",
+      "snapshot_id": "s-fd9247e2bf8d19aad3323bdb",
+      "metric": "row_count",
+      "value": "57",
+      "unit": "candles",
+      "matches": true
+    },
+    {
+      "location": "evidence",
+      "document": "issue_markdown",
+      "snapshot_id": "s-fd9247e2bf8d19aad3323bdb",
+      "metric": "base_volume",
+      "value": "6933.44030000",
+      "unit": "ETH",
+      "matches": true
+    },
+    {
+      "location": "evidence",
+      "document": "issue_markdown",
+      "snapshot_id": "s-fd9247e2bf8d19aad3323bdb",
+      "metric": "quote_volume",
+      "value": "23244130.10138200",
+      "unit": "USDT",
+      "matches": true
+    },
+    {
+      "location": "evidence",
+      "document": "issue_markdown",
+      "snapshot_id": "s-fd9247e2bf8d19aad3323bdb",
+      "metric": "coverage_expected",
+      "value": "60",
+      "unit": "minutes",
+      "matches": true
+    },
+    {
+      "location": "evidence",
+      "document": "issue_markdown",
+      "snapshot_id": "s-fd9247e2bf8d19aad3323bdb",
+      "metric": "coverage_observed",
+      "value": "57",
+      "unit": "minutes",
+      "matches": true
+    },
+    {
+      "location": "evidence",
+      "document": "issue_markdown",
+      "snapshot_id": "s-fd9247e2bf8d19aad3323bdb",
+      "metric": "coverage_missing",
+      "value": "3",
+      "unit": "minutes",
+      "matches": true
+    },
+    {
+      "location": "comparison.versions[0].evidence",
+      "document": "markdown_zh",
+      "snapshot_id": "s-fd9247e2bf8d19aad3323bdb",
+      "metric": "row_count",
+      "value": "57",
+      "unit": "candles",
+      "matches": true
+    },
+    {
+      "location": "comparison.versions[0].evidence",
+      "document": "markdown_zh",
+      "snapshot_id": "s-fd9247e2bf8d19aad3323bdb",
+      "metric": "base_volume",
+      "value": "6933.44030000",
+      "unit": "ETH",
+      "matches": true
+    },
+    {
+      "location": "comparison.versions[0].evidence",
+      "document": "markdown_zh",
+      "snapshot_id": "s-fd9247e2bf8d19aad3323bdb",
+      "metric": "quote_volume",
+      "value": "23244130.10138200",
+      "unit": "USDT",
+      "matches": true
+    },
+    {
+      "location": "comparison.versions[0].evidence",
+      "document": "markdown_zh",
+      "snapshot_id": "s-fd9247e2bf8d19aad3323bdb",
+      "metric": "coverage_expected",
+      "value": "60",
+      "unit": "minutes",
+      "matches": true
+    },
+    {
+      "location": "comparison.versions[0].evidence",
+      "document": "markdown_zh",
+      "snapshot_id": "s-fd9247e2bf8d19aad3323bdb",
+      "metric": "coverage_observed",
+      "value": "57",
+      "unit": "minutes",
+      "matches": true
+    },
+    {
+      "location": "comparison.versions[0].evidence",
+      "document": "markdown_zh",
+      "snapshot_id": "s-fd9247e2bf8d19aad3323bdb",
+      "metric": "coverage_missing",
+      "value": "3",
+      "unit": "minutes",
+      "matches": true
+    },
+    {
+      "location": "comparison.versions[0].evidence",
+      "document": "markdown_en",
+      "snapshot_id": "s-fd9247e2bf8d19aad3323bdb",
+      "metric": "row_count",
+      "value": "57",
+      "unit": "candles",
+      "matches": true
+    },
+    {
+      "location": "comparison.versions[0].evidence",
+      "document": "markdown_en",
+      "snapshot_id": "s-fd9247e2bf8d19aad3323bdb",
+      "metric": "base_volume",
+      "value": "6933.44030000",
+      "unit": "ETH",
+      "matches": true
+    },
+    {
+      "location": "comparison.versions[0].evidence",
+      "document": "markdown_en",
+      "snapshot_id": "s-fd9247e2bf8d19aad3323bdb",
+      "metric": "quote_volume",
+      "value": "23244130.10138200",
+      "unit": "USDT",
+      "matches": true
+    },
+    {
+      "location": "comparison.versions[0].evidence",
+      "document": "markdown_en",
+      "snapshot_id": "s-fd9247e2bf8d19aad3323bdb",
+      "metric": "coverage_expected",
+      "value": "60",
+      "unit": "minutes",
+      "matches": true
+    },
+    {
+      "location": "comparison.versions[0].evidence",
+      "document": "markdown_en",
+      "snapshot_id": "s-fd9247e2bf8d19aad3323bdb",
+      "metric": "coverage_observed",
+      "value": "57",
+      "unit": "minutes",
+      "matches": true
+    },
+    {
+      "location": "comparison.versions[0].evidence",
+      "document": "markdown_en",
+      "snapshot_id": "s-fd9247e2bf8d19aad3323bdb",
+      "metric": "coverage_missing",
+      "value": "3",
+      "unit": "minutes",
+      "matches": true
+    },
+    {
+      "location": "comparison.versions[0].evidence",
+      "document": "issue_markdown",
+      "snapshot_id": "s-fd9247e2bf8d19aad3323bdb",
+      "metric": "row_count",
+      "value": "57",
+      "unit": "candles",
+      "matches": true
+    },
+    {
+      "location": "comparison.versions[0].evidence",
+      "document": "issue_markdown",
+      "snapshot_id": "s-fd9247e2bf8d19aad3323bdb",
+      "metric": "base_volume",
+      "value": "6933.44030000",
+      "unit": "ETH",
+      "matches": true
+    },
+    {
+      "location": "comparison.versions[0].evidence",
+      "document": "issue_markdown",
+      "snapshot_id": "s-fd9247e2bf8d19aad3323bdb",
+      "metric": "quote_volume",
+      "value": "23244130.10138200",
+      "unit": "USDT",
+      "matches": true
+    },
+    {
+      "location": "comparison.versions[0].evidence",
+      "document": "issue_markdown",
+      "snapshot_id": "s-fd9247e2bf8d19aad3323bdb",
+      "metric": "coverage_expected",
+      "value": "60",
+      "unit": "minutes",
+      "matches": true
+    },
+    {
+      "location": "comparison.versions[0].evidence",
+      "document": "issue_markdown",
+      "snapshot_id": "s-fd9247e2bf8d19aad3323bdb",
+      "metric": "coverage_observed",
+      "value": "57",
+      "unit": "minutes",
+      "matches": true
+    },
+    {
+      "location": "comparison.versions[0].evidence",
+      "document": "issue_markdown",
+      "snapshot_id": "s-fd9247e2bf8d19aad3323bdb",
+      "metric": "coverage_missing",
+      "value": "3",
+      "unit": "minutes",
+      "matches": true
+    },
+    {
+      "location": "comparison.versions[1].evidence",
+      "document": "markdown_zh",
+      "snapshot_id": "s-d2f57864759bf75b9284f59c",
+      "metric": "row_count",
+      "value": "60",
+      "unit": "candles",
+      "matches": true
+    },
+    {
+      "location": "comparison.versions[1].evidence",
+      "document": "markdown_zh",
+      "snapshot_id": "s-d2f57864759bf75b9284f59c",
+      "metric": "base_volume",
+      "value": "8894.44440000",
+      "unit": "ETH",
+      "matches": true
+    },
+    {
+      "location": "comparison.versions[1].evidence",
+      "document": "markdown_zh",
+      "snapshot_id": "s-d2f57864759bf75b9284f59c",
+      "metric": "quote_volume",
+      "value": "29821272.00821100",
+      "unit": "USDT",
+      "matches": true
+    },
+    {
+      "location": "comparison.versions[1].evidence",
+      "document": "markdown_zh",
+      "snapshot_id": "s-d2f57864759bf75b9284f59c",
+      "metric": "coverage_expected",
+      "value": "60",
+      "unit": "minutes",
+      "matches": true
+    },
+    {
+      "location": "comparison.versions[1].evidence",
+      "document": "markdown_zh",
+      "snapshot_id": "s-d2f57864759bf75b9284f59c",
+      "metric": "coverage_observed",
+      "value": "60",
+      "unit": "minutes",
+      "matches": true
+    },
+    {
+      "location": "comparison.versions[1].evidence",
+      "document": "markdown_zh",
+      "snapshot_id": "s-d2f57864759bf75b9284f59c",
+      "metric": "coverage_missing",
+      "value": "0",
+      "unit": "minutes",
+      "matches": true
+    },
+    {
+      "location": "comparison.versions[1].evidence",
+      "document": "markdown_en",
+      "snapshot_id": "s-d2f57864759bf75b9284f59c",
+      "metric": "row_count",
+      "value": "60",
+      "unit": "candles",
+      "matches": true
+    },
+    {
+      "location": "comparison.versions[1].evidence",
+      "document": "markdown_en",
+      "snapshot_id": "s-d2f57864759bf75b9284f59c",
+      "metric": "base_volume",
+      "value": "8894.44440000",
+      "unit": "ETH",
+      "matches": true
+    },
+    {
+      "location": "comparison.versions[1].evidence",
+      "document": "markdown_en",
+      "snapshot_id": "s-d2f57864759bf75b9284f59c",
+      "metric": "quote_volume",
+      "value": "29821272.00821100",
+      "unit": "USDT",
+      "matches": true
+    },
+    {
+      "location": "comparison.versions[1].evidence",
+      "document": "markdown_en",
+      "snapshot_id": "s-d2f57864759bf75b9284f59c",
+      "metric": "coverage_expected",
+      "value": "60",
+      "unit": "minutes",
+      "matches": true
+    },
+    {
+      "location": "comparison.versions[1].evidence",
+      "document": "markdown_en",
+      "snapshot_id": "s-d2f57864759bf75b9284f59c",
+      "metric": "coverage_observed",
+      "value": "60",
+      "unit": "minutes",
+      "matches": true
+    },
+    {
+      "location": "comparison.versions[1].evidence",
+      "document": "markdown_en",
+      "snapshot_id": "s-d2f57864759bf75b9284f59c",
+      "metric": "coverage_missing",
+      "value": "0",
+      "unit": "minutes",
+      "matches": true
+    },
+    {
+      "location": "comparison.versions[1].evidence",
+      "document": "issue_markdown",
+      "snapshot_id": "s-d2f57864759bf75b9284f59c",
+      "metric": "row_count",
+      "value": "60",
+      "unit": "candles",
+      "matches": true
+    },
+    {
+      "location": "comparison.versions[1].evidence",
+      "document": "issue_markdown",
+      "snapshot_id": "s-d2f57864759bf75b9284f59c",
+      "metric": "base_volume",
+      "value": "8894.44440000",
+      "unit": "ETH",
+      "matches": true
+    },
+    {
+      "location": "comparison.versions[1].evidence",
+      "document": "issue_markdown",
+      "snapshot_id": "s-d2f57864759bf75b9284f59c",
+      "metric": "quote_volume",
+      "value": "29821272.00821100",
+      "unit": "USDT",
+      "matches": true
+    },
+    {
+      "location": "comparison.versions[1].evidence",
+      "document": "issue_markdown",
+      "snapshot_id": "s-d2f57864759bf75b9284f59c",
+      "metric": "coverage_expected",
+      "value": "60",
+      "unit": "minutes",
+      "matches": true
+    },
+    {
+      "location": "comparison.versions[1].evidence",
+      "document": "issue_markdown",
+      "snapshot_id": "s-d2f57864759bf75b9284f59c",
+      "metric": "coverage_observed",
+      "value": "60",
+      "unit": "minutes",
+      "matches": true
+    },
+    {
+      "location": "comparison.versions[1].evidence",
+      "document": "issue_markdown",
+      "snapshot_id": "s-d2f57864759bf75b9284f59c",
+      "metric": "coverage_missing",
+      "value": "0",
+      "unit": "minutes",
+      "matches": true
+    }
+  ],
+  "source_window_and_versions_consistent": true
+}

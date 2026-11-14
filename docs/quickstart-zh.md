@@ -1,56 +1,52 @@
-# 中文快速上手
+# 中文上手教程
 
-产品定位为**规则诊断＋模型整理证据**。本轮正确性修复见 [correctness-v2.md](correctness-v2.md)：系统报告正确率可以包含模板降级，真实模型完成率/正确率单独计数，失败留在分母，降级不计为模型成功。
+本地工作台以简体中文为主。首发案例不需要钱包、交易账户或模型密钥；依赖安装需要网络，缓存完成后固定回放可离线运行。
 
-本项目用于排查“成交量下降是否伴随数据缺失、延迟或格式错误”。默认不需要模型密钥。Binance 固定样本是真实公开历史数据；DEX 固定样本为明确标注的合成数据。报告不解释未经证实的市场经济原因。
+## 安装与启动
 
-## Windows 启动
+在仓库根目录打开 PowerShell。需要 Python 3.12 和 uv：
 
 ```powershell
-cd 'D:\web3 intern\marketdata-sentinel'
 uv sync --all-extras --frozen
 .\scripts\start.ps1 -SkipInstall
 ```
 
-打开 http://127.0.0.1:8501 ，API 文档 http://127.0.0.1:8000/docs 。首次依赖安装需要网络。脚本自动迁移、导入、创建缺失与过期场景。默认 SQLite 为便捷演示后端；真实 PostgreSQL 已独立验证，两者测试结果分开记录。
+打开[工作台](http://127.0.0.1:8501)和[API 文档](http://127.0.0.1:8000/docs)。默认 SQLite 保存于忽略的 `data/`。脚本迁移数据库、准备完整/缺失/延迟版本，再启动仅监听本机的 API 与 UI。
 
-当前机器已准备 PostgreSQL 17.2（`.local/`，不入库），仅监听 `127.0.0.1:55432`。若使用它，在启动前设置：
+如需与已有本地数据分开，启动前设置一个新文件；两项服务必须使用相同环境：
 
 ```powershell
-$env:DATABASE_URL='postgresql+psycopg://sentinel@127.0.0.1:55432/sentinel_clean'
+$env:DATABASE_URL = 'sqlite:///./data/workbench-demo.db'
 .\scripts\start.ps1 -SkipInstall
 ```
 
-如需换库先运行 `scripts/stop.ps1`，否则现有监听服务会被复用。若 PostgreSQL 已停止，启动命令见英文 README。新电脑需自行准备 PostgreSQL，或使用默认 SQLite；Docker Compose 已提供，但本环境没有 Docker，因此容器启动未执行。
-
-## 两分钟演示
-
-1. Overview 选择 CEX，`Demo view → Missing data`，查看 57 条 K 线、缺失三分钟和红色标记。
-2. Investigate 保持 `deterministic`，点击 Run investigation，查看 `observed_data_issue`，打开 report evidence。
-3. Data & Runs 打开原始样本，核对清单、checksum 和原始行。
-4. 终端执行恢复：
+更改数据库前先停止本项目服务。脚本会复用已响应的本地服务，不能将端口健康检查视为数据库切换成功。日志位于 `data/api.*.log` 和 `data/ui.*.log`。停止：
 
 ```powershell
-uv run python -m sentinel.cli restore s-fd9247e2bf8d19aad3323bdb
+.\scripts\stop.ps1
 ```
 
-5. 切换 `Normal data`，重新调查，覆盖为 60/60，状态为 `no_issue_found_in_checks`。旧故障快照仍保留供对比；恢复返回由原始数据确定的正常快照，不会修改旧报告。
+PostgreSQL 为可选启动后端，需要自己提供数据库并设置 `DATABASE_URL`，格式见 [环境示例](../.env.example)。本次 PostgreSQL 集成证据与 SQLite 演示分开记录，不要求新机器安装仓库忽略的便携数据库。
 
-一次性完整 CLI 演示：`uv run python -m sentinel.cli demo`；输出保存在 `data/demo-result.json`。
+## 完成一个任务
 
-## 验证与模型
+1. 进入“数据核验 / Engineering”，默认选择缺失演练，核对来源 Binance ETHUSDT，以及 UTC 2025-01-01 00:00–01:00 窗口。
+2. 点击“检查数据”。先读判断和下一步，再看覆盖、缺失分钟和 ETH 数量。判断不只依赖颜色。
+3. 查看关键证据表、缺失时间和公开原始来源；点击“查看登记原始样本”。图上的缺失标记不是零成交。
+4. 点击“从原始输入恢复”。对照同一窗口的前后版本，确认“实际重放”和“恢复后核验”分别是什么状态。旧报告不会被修改。
+5. 切到“用户说明 / Product & Content”，阅读中文、英文、问题单及 FAQ；下载双语 Markdown、问题单和结构化 JSON。它们来自同一份事实，不是手抄数字。
+6. 试着修改结束时间：旧报告和下载应消失，重新检查才能形成该窗口的说明。不要拿一小时报告解释半小时窗口。
 
-```powershell
-uv run pytest -m 'not postgres and not external and not live_llm'
-uv run ruff check .
-uv run ruff format --check .
-$env:TEST_POSTGRES_URL='postgresql+psycopg://sentinel@127.0.0.1:55432/sentinel_test'
-uv run pytest -m postgres
-uv run python -m sentinel.evaluation --split all --baseline A
-```
+高级工程入口保留来源切换、运行记录、原始证据查询和可选模型。DEX 回放是合成数据；真实模型功能不是固定案例依赖。
 
-本轮实测见 `docs/verification/correctness-v2/final/results.json` 与 `evals/results/correctness-v2/`：78 项离线测试、21 项真实 PostgreSQL 测试通过。A 基线在两后端均为16/16系统报告正确，真实 B/C 未执行。旧结果仍保留在原目录；新评测默认使用带时间戳的文件名，指定已存在路径会在执行前报错。离线测试不访问公网；测试适配器不是模型成绩。
+## 出错时
 
-真实模型需要在环境或 `.env` 设置 provider/base URL/model/key；密钥不提交。真实模型 B/C 尚未执行。真实 DEX 的公开 RPC 后续请求 403，尚未完成真实链上采集；请提供可合法访问、支持所选历史范围的 Ethereum RPC。无此条件仍能完整演示回放、SQL 查询、确定性调查与恢复。
+| 状态 | 应做什么 |
+|---|---|
+| 请求失败 / 无版本 | 检查服务与迁移日志，准备样本后刷新；不能判为正常 |
+| 时间窗无效 | 使用带时区、整分钟边界，结束晚于开始，最长七天 |
+| 窗口无记录 | 空数据不是零成交；阅读报告覆盖与不足之处 |
+| 旧报告失效 | 来源、版本、窗口、问题或模式变化后重新检查 |
+| 恢复失败 / 核验未通过 | 保留旧报告与失败回执，暂缓引用并继续调查 |
 
-依赖就绪后可用 `uv run --offline python -m sentinel.cli demo` 离线回放。停止服务运行 `scripts/stop.ps1`。研究材料保持在父目录未修改。详细限制、工程取舍与简历材料见英文 README 的文档链接。
+所有说明为草稿，需要人工校审；[真人使用验证待完成](workbench/human-testing.md)。[完整案例](workbench/case.md) · [作品入口](workbench/index.md)

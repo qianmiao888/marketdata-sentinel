@@ -1,0 +1,178 @@
+{
+  "captured_at_utc": "2026-11-13T15:47:11.330615+00:00",
+  "api": "http://127.0.0.1:8000",
+  "ready": {
+    "status": "ready"
+  },
+  "context": {
+    "source": "cex",
+    "snapshot_id": "s-fd9247e2bf8d19aad3323bdb",
+    "start": "2025-01-01T00:00:00+00:00",
+    "end": "2025-01-01T01:00:00+00:00"
+  },
+  "before_run_id": "0b99aade8e5847f39f41b1d5033d4575",
+  "after_run_id": "3bb1e340dfe24a3b873148d802ac44d0",
+  "recovery_id": "recovery-4a03ef0464134a25a88b1a112c82796d",
+  "old_report_preserved": true,
+  "versions": [
+    {
+      "role": "before",
+      "snapshot_id": "s-fd9247e2bf8d19aad3323bdb",
+      "diagnosis": "observed_data_issue",
+      "metrics": {
+        "row_count": {
+          "value": "57",
+          "unit": "candles"
+        },
+        "base_volume": {
+          "value": "6933.44030000",
+          "unit": "ETH"
+        },
+        "quote_volume": {
+          "value": "23244130.10138200",
+          "unit": "USDT"
+        },
+        "number_of_trades": {
+          "value": "50253",
+          "unit": "trades"
+        },
+        "coverage_expected": {
+          "value": "60",
+          "unit": "minutes"
+        },
+        "coverage_observed": {
+          "value": "57",
+          "unit": "minutes"
+        },
+        "coverage_missing": {
+          "value": "3",
+          "unit": "minutes"
+        },
+        "lag_seconds": {
+          "value": "0",
+          "unit": "seconds relative to reference clock"
+        },
+        "quarantined_rows": {
+          "value": "0",
+          "unit": "rows"
+        }
+      }
+    },
+    {
+      "role": "after",
+      "snapshot_id": "s-d2f57864759bf75b9284f59c",
+      "diagnosis": "no_issue_found_in_checks",
+      "metrics": {
+        "row_count": {
+          "value": "60",
+          "unit": "candles"
+        },
+        "base_volume": {
+          "value": "8894.44440000",
+          "unit": "ETH"
+        },
+        "quote_volume": {
+          "value": "29821272.00821100",
+          "unit": "USDT"
+        },
+        "number_of_trades": {
+          "value": "54290",
+          "unit": "trades"
+        },
+        "coverage_expected": {
+          "value": "60",
+          "unit": "minutes"
+        },
+        "coverage_observed": {
+          "value": "60",
+          "unit": "minutes"
+        },
+        "coverage_missing": {
+          "value": "0",
+          "unit": "minutes"
+        },
+        "lag_seconds": {
+          "value": "0",
+          "unit": "seconds relative to reference clock"
+        },
+        "quarantined_rows": {
+          "value": "0",
+          "unit": "rows"
+        },
+        "change_pct": {
+          "value": "56.40967363971576444606342890530705181891866367362103517451303334381521990686688107832667577864331178",
+          "unit": "% (equal adjacent subwindows)"
+        }
+      }
+    }
+  ],
+  "human_usability": "PENDING: no real participants tested",
+  "commands": [
+    {
+      "method": "GET",
+      "path": "/ready",
+      "status_code": 200
+    },
+    {
+      "method": "GET",
+      "path": "/snapshots",
+      "status_code": 200,
+      "params": {
+        "limit": 200
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/investigations",
+      "status_code": 200,
+      "json": {
+        "context": {
+          "source": "cex",
+          "snapshot_id": "s-fd9247e2bf8d19aad3323bdb",
+          "start": "2025-01-01T00:00:00+00:00",
+          "end": "2025-01-01T01:00:00+00:00"
+        },
+        "question": "这张行情图的成交数量能否作为完整时间窗口的数字引用？请检查完整性并提供依据。",
+        "mode": "deterministic",
+        "baseline": "A"
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/recoveries",
+      "status_code": 200,
+      "json": {
+        "before_run_id": "0b99aade8e5847f39f41b1d5033d4575"
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/investigations/0b99aade8e5847f39f41b1d5033d4575/communication",
+      "status_code": 200,
+      "params": {
+        "recovery_id": "recovery-4a03ef0464134a25a88b1a112c82796d"
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/investigations/3bb1e340dfe24a3b873148d802ac44d0",
+      "status_code": 200
+    },
+    {
+      "method": "GET",
+      "path": "/raw-samples",
+      "status_code": 200,
+      "params": {
+        "source": "cex",
+        "snapshot_id": "s-fd9247e2bf8d19aad3323bdb",
+        "start": "2025-01-01T00:00:00+00:00",
+        "end": "2025-01-01T01:00:00+00:00"
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/investigations/0b99aade8e5847f39f41b1d5033d4575",
+      "status_code": 200
+    }
+  ]
+}

@@ -142,3 +142,22 @@ def investigation(run_id: str):
         return result
     except (KeyError, ValueError):
         raise HTTPException(status_code=404, detail="Unknown investigation")
+
+
+class RecoveryRequest(BaseModel):
+    model_config = ConfigDict(extra="forbid")
+    before_run_id: str = Field(min_length=1, max_length=100)
+
+
+@app.post("/recoveries")
+def create_recovery(request: RecoveryRequest):
+    from sentinel.communication import recover
+
+    return recover(request.before_run_id)
+
+
+@app.get("/investigations/{run_id}/communication")
+def communication(run_id: str, recovery_id: str | None = Query(None, max_length=120)):
+    from sentinel.communication import build_bundle
+
+    return build_bundle(run_id, recovery_id)

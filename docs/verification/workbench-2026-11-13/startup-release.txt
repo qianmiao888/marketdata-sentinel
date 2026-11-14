@@ -1,0 +1,54 @@
+{
+  "snapshots": [
+    {
+      "snapshot_id": "s-d2f57864759bf75b9284f59c",
+      "source": "cex",
+      "start": "2025-01-01T00:00:00+00:00",
+      "end": "2025-01-01T01:00:00+00:00",
+      "status": "imported"
+    },
+    {
+      "snapshot_id": "s-b6b4ad142782e77791d5a751",
+      "source": "dex",
+      "start": "2024-01-15T00:00:00+00:00",
+      "end": "2024-01-15T00:04:00+00:00",
+      "status": "imported"
+    }
+  ]
+}
+{
+  "snapshots": [
+    {
+      "snapshot_id": "s-fd9247e2bf8d19aad3323bdb",
+      "source": "cex",
+      "start": "2025-01-01T00:00:00+00:00",
+      "end": "2025-01-01T01:00:00+00:00",
+      "status": "imported"
+    },
+    {
+      "snapshot_id": "s-2fa550b4a3fc2eac0df1bcb0",
+      "source": "dex",
+      "start": "2024-01-15T00:00:00+00:00",
+      "end": "2024-01-15T00:04:00+00:00",
+      "status": "imported"
+    }
+  ]
+}
+{
+  "snapshots": [
+    {
+      "snapshot_id": "s-4dc6409bac17075a8206fb18",
+      "source": "cex",
+      "start": "2025-01-01T00:00:00+00:00",
+      "end": "2025-01-01T01:00:00+00:00",
+      "status": "imported"
+    },
+    {
+      "snapshot_id": "s-a332c1f3354b257bded90d7d",
+      "source": "dex",
+      "start": "2024-01-15T00:00:00+00:00",
+      "end": "2024-01-15T00:04:00+00:00",
+      "status": "imported"
+    }
+  ]
+}

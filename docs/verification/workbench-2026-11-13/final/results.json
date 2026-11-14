@@ -1,0 +1,85 @@
+{
+  "created_at": "2026-11-13T15:46:38.981500+00:00",
+  "platform": "Windows-11-10.0.26300-SP0",
+  "python": "3.12.9 (tags/v3.12.9:fdb8142, Feb  4 2025, 15:27:58) [MSC v.1942 64 bit (AMD64)]",
+  "cpu": "Intel64 Family 6 Model 183 Stepping 1, GenuineIntel",
+  "dependencies": {
+    "fastapi": "0.162.0",
+    "streamlit": "1.66.1",
+    "sqlalchemy": "2.1.6",
+    "alembic": "1.20.1",
+    "psycopg": "3.3.6",
+    "pytest": "9.2.0",
+    "ruff": "0.17.3"
+  },
+  "checks": [
+    {
+      "name": "lint",
+      "status": "PASS",
+      "exit_code": 0,
+      "started_at": "2026-11-13T15:46:39.169959+00:00",
+      "elapsed_seconds": 0.115916,
+      "command": [
+        "ruff",
+        "check",
+        "."
+      ],
+      "log": "lint.txt"
+    },
+    {
+      "name": "format",
+      "status": "PASS",
+      "exit_code": 0,
+      "started_at": "2026-11-13T15:46:39.285875+00:00",
+      "elapsed_seconds": 0.125717,
+      "command": [
+        "ruff",
+        "format",
+        "--check",
+        "."
+      ],
+      "log": "format.txt"
+    },
+    {
+      "name": "offline",
+      "status": "PASS",
+      "exit_code": 0,
+      "started_at": "2026-11-13T15:46:39.411592+00:00",
+      "elapsed_seconds": 9.713262,
+      "command": [
+        "pytest",
+        "-m",
+        "not postgres and not external and not live_llm",
+        "-q"
+      ],
+      "log": "offline.txt"
+    },
+    {
+      "name": "postgres",
+      "status": "PASS",
+      "exit_code": 0,
+      "started_at": "2026-11-13T15:46:49.124854+00:00",
+      "elapsed_seconds": 12.037897,
+      "command": [
+        "pytest",
+        "-m",
+        "postgres",
+        "-q"
+      ],
+      "log": "postgres.txt"
+    },
+    {
+      "name": "external-cex",
+      "status": "NOT RUN",
+      "command": [
+        "pytest",
+        "tests/test_external.py",
+        "-k",
+        "binance",
+        "-q"
+      ]
+    }
+  ],
+  "live_llm": "NOT RUN: use the separately opt-in live evaluation runner",
+  "docker_compose": "NOT RUN: this script does not exercise Docker Compose"
+}

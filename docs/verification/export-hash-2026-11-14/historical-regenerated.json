@@ -1,0 +1,1247 @@
+{
+  "schema_version": "communication-v1",
+  "status": "draft_requires_review",
+  "run_id": "0b99aade8e5847f39f41b1d5033d4575",
+  "created_at": "2026-11-13T15:47:11.268151+00:00",
+  "context": {
+    "source": "cex",
+    "snapshot_id": "s-fd9247e2bf8d19aad3323bdb",
+    "start": "2025-01-01T00:00:00Z",
+    "end": "2025-01-01T01:00:00Z"
+  },
+  "provenance": {
+    "provider": "binance",
+    "symbol": "ETHUSDT",
+    "interval": "1m",
+    "chain_id": null,
+    "pool": null,
+    "mode": "snapshot replay",
+    "synthetic": false,
+    "transform": "missing",
+    "checksum": "84ab06bfcd55018956ab0666b4fa242f15801d4edcef93f0a2e728876967d59a",
+    "input_checksum": "454ad76b7344bd936b7d339705a28051fa3ae6d1340c962c68fb05f90575346a",
+    "provenance": {
+      "url": "https://data.binance.vision/data/spot/daily/klines/ETHUSDT/1m/ETHUSDT-1m-2025-01-01.zip",
+      "archive_sha256": "26cc71cf7a2bd0232cf0e8aaaf529fc6674ba20059028023eb346232ee4dbf91",
+      "slice": "first 60 minutes UTC",
+      "synthetic": false
+    }
+  },
+  "report": {
+    "question": "这张行情图的成交数量能否作为完整时间窗口的数字引用？请检查完整性并提供依据。",
+    "source": "cex",
+    "snapshot_id": "s-fd9247e2bf8d19aad3323bdb",
+    "window": {
+      "start": "2025-01-01T00:00:00+00:00",
+      "end": "2025-01-01T01:00:00+00:00"
+    },
+    "diagnosis": "observed_data_issue",
+    "facts": [
+      {
+        "id": "fact.row_count",
+        "statement": "Observed records: 57 candles.",
+        "metric_refs": [
+          "metric.row_count"
+        ],
+        "evidence_refs": [
+          "e-8d661b61b34ed767f638ba4e07bcf018"
+        ]
+      },
+      {
+        "id": "fact.base_volume",
+        "statement": "CEX base volume: 6933.44030000 ETH.",
+        "metric_refs": [
+          "metric.base_volume"
+        ],
+        "evidence_refs": [
+          "e-8d661b61b34ed767f638ba4e07bcf018"
+        ]
+      },
+      {
+        "id": "fact.quote_volume",
+        "statement": "CEX quote volume: 23244130.10138200 USDT.",
+        "metric_refs": [
+          "metric.quote_volume"
+        ],
+        "evidence_refs": [
+          "e-8d661b61b34ed767f638ba4e07bcf018"
+        ]
+      },
+      {
+        "id": "fact.number_of_trades",
+        "statement": "Source-reported trades: 50253 trades.",
+        "metric_refs": [
+          "metric.number_of_trades"
+        ],
+        "evidence_refs": [
+          "e-8d661b61b34ed767f638ba4e07bcf018"
+        ]
+      },
+      {
+        "id": "fact.coverage_expected",
+        "statement": "Coverage expected: 60 minutes.",
+        "metric_refs": [
+          "metric.coverage_expected"
+        ],
+        "evidence_refs": [
+          "e-8d661b61b34ed767f638ba4e07bcf018"
+        ]
+      },
+      {
+        "id": "fact.coverage_observed",
+        "statement": "Coverage observed: 57 minutes.",
+        "metric_refs": [
+          "metric.coverage_observed"
+        ],
+        "evidence_refs": [
+          "e-8d661b61b34ed767f638ba4e07bcf018"
+        ]
+      },
+      {
+        "id": "fact.coverage_missing",
+        "statement": "Coverage missing: 3 minutes.",
+        "metric_refs": [
+          "metric.coverage_missing"
+        ],
+        "evidence_refs": [
+          "e-8d661b61b34ed767f638ba4e07bcf018"
+        ]
+      },
+      {
+        "id": "fact.lag_seconds",
+        "statement": "Data lag: 0 seconds relative to reference clock.",
+        "metric_refs": [
+          "metric.lag_seconds"
+        ],
+        "evidence_refs": [
+          "e-e1beec2ca77f32534e6e9cbdee0feee2"
+        ]
+      },
+      {
+        "id": "fact.quarantined_rows",
+        "statement": "Quarantined records in query window: 0 rows.",
+        "metric_refs": [
+          "metric.quarantined_rows"
+        ],
+        "evidence_refs": [
+          "e-e1beec2ca77f32534e6e9cbdee0feee2"
+        ]
+      },
+      {
+        "id": "fact.quality.0",
+        "statement": "Quality rule missing_candles returned error.",
+        "metric_refs": [],
+        "evidence_refs": [
+          "e-de74e0a06d75c309743364ef8c8be39b"
+        ]
+      },
+      {
+        "id": "fact.checks",
+        "statement": "Implemented quality checks observed a data issue.",
+        "metric_refs": [],
+        "evidence_refs": [
+          "e-9ea63d18e16ca3c1b114f9072d0559a2",
+          "e-de74e0a06d75c309743364ef8c8be39b"
+        ]
+      }
+    ],
+    "metrics": [
+      {
+        "id": "metric.row_count",
+        "name": "row_count",
+        "value": "57",
+        "unit": "candles",
+        "evidence_ids": [
+          "e-8d661b61b34ed767f638ba4e07bcf018"
+        ]
+      },
+      {
+        "id": "metric.base_volume",
+        "name": "base_volume",
+        "value": "6933.44030000",
+        "unit": "ETH",
+        "evidence_ids": [
+          "e-8d661b61b34ed767f638ba4e07bcf018"
+        ]
+      },
+      {
+        "id": "metric.quote_volume",
+        "name": "quote_volume",
+        "value": "23244130.10138200",
+        "unit": "USDT",
+        "evidence_ids": [
+          "e-8d661b61b34ed767f638ba4e07bcf018"
+        ]
+      },
+      {
+        "id": "metric.number_of_trades",
+        "name": "number_of_trades",
+        "value": "50253",
+        "unit": "trades",
+        "evidence_ids": [
+          "e-8d661b61b34ed767f638ba4e07bcf018"
+        ]
+      },
+      {
+        "id": "metric.coverage_expected",
+        "name": "coverage_expected",
+        "value": "60",
+        "unit": "minutes",
+        "evidence_ids": [
+          "e-8d661b61b34ed767f638ba4e07bcf018"
+        ]
+      },
+      {
+        "id": "metric.coverage_observed",
+        "name": "coverage_observed",
+        "value": "57",
+        "unit": "minutes",
+        "evidence_ids": [
+          "e-8d661b61b34ed767f638ba4e07bcf018"
+        ]
+      },
+      {
+        "id": "metric.coverage_missing",
+        "name": "coverage_missing",
+        "value": "3",
+        "unit": "minutes",
+        "evidence_ids": [
+          "e-8d661b61b34ed767f638ba4e07bcf018"
+        ]
+      },
+      {
+        "id": "metric.lag_seconds",
+        "name": "lag_seconds",
+        "value": "0",
+        "unit": "seconds relative to reference clock",
+        "evidence_ids": [
+          "e-e1beec2ca77f32534e6e9cbdee0feee2"
+        ]
+      },
+      {
+        "id": "metric.quarantined_rows",
+        "name": "quarantined_rows",
+        "value": "0",
+        "unit": "rows",
+        "evidence_ids": [
+          "e-e1beec2ca77f32534e6e9cbdee0feee2"
+        ]
+      }
+    ],
+    "evidence_refs": [
+      "e-8d661b61b34ed767f638ba4e07bcf018",
+      "e-9ea63d18e16ca3c1b114f9072d0559a2",
+      "e-de74e0a06d75c309743364ef8c8be39b",
+      "e-e1beec2ca77f32534e6e9cbdee0feee2"
+    ],
+    "limitations": [
+      "This report is pinned to the registered input version and UTC [start, end) window; collection mode is recorded in ingestion evidence.",
+      "Only implemented completeness, freshness, format and volume checks were evaluated; no economic cause or absolute correctness is established.",
+      "CEX ETH/USDT and DEX token amounts are separate units; token0 volume is not dollar volume."
+    ],
+    "recommendations": [
+      "Inspect coverage and raw evidence for the selected UTC window.",
+      "Use the deterministic restore task to rebuild an isolated snapshot from registered raw inputs."
+    ]
+  },
+  "metrics": [
+    {
+      "id": "metric.row_count",
+      "name": "row_count",
+      "value": "57",
+      "unit": "candles",
+      "evidence_ids": [
+        "e-8d661b61b34ed767f638ba4e07bcf018"
+      ]
+    },
+    {
+      "id": "metric.base_volume",
+      "name": "base_volume",
+      "value": "6933.44030000",
+      "unit": "ETH",
+      "evidence_ids": [
+        "e-8d661b61b34ed767f638ba4e07bcf018"
+      ]
+    },
+    {
+      "id": "metric.quote_volume",
+      "name": "quote_volume",
+      "value": "23244130.10138200",
+      "unit": "USDT",
+      "evidence_ids": [
+        "e-8d661b61b34ed767f638ba4e07bcf018"
+      ]
+    },
+    {
+      "id": "metric.number_of_trades",
+      "name": "number_of_trades",
+      "value": "50253",
+      "unit": "trades",
+      "evidence_ids": [
+        "e-8d661b61b34ed767f638ba4e07bcf018"
+      ]
+    },
+    {
+      "id": "metric.coverage_expected",
+      "name": "coverage_expected",
+      "value": "60",
+      "unit": "minutes",
+      "evidence_ids": [
+        "e-8d661b61b34ed767f638ba4e07bcf018"
+      ]
+    },
+    {
+      "id": "metric.coverage_observed",
+      "name": "coverage_observed",
+      "value": "57",
+      "unit": "minutes",
+      "evidence_ids": [
+        "e-8d661b61b34ed767f638ba4e07bcf018"
+      ]
+    },
+    {
+      "id": "metric.coverage_missing",
+      "name": "coverage_missing",
+      "value": "3",
+      "unit": "minutes",
+      "evidence_ids": [
+        "e-8d661b61b34ed767f638ba4e07bcf018"
+      ]
+    },
+    {
+      "id": "metric.lag_seconds",
+      "name": "lag_seconds",
+      "value": "0",
+      "unit": "seconds relative to reference clock",
+      "evidence_ids": [
+        "e-e1beec2ca77f32534e6e9cbdee0feee2"
+      ]
+    },
+    {
+      "id": "metric.quarantined_rows",
+      "name": "quarantined_rows",
+      "value": "0",
+      "unit": "rows",
+      "evidence_ids": [
+        "e-e1beec2ca77f32534e6e9cbdee0feee2"
+      ]
+    }
+  ],
+  "evidence": [
+    {
+      "id": "e-8d661b61b34ed767f638ba4e07bcf018",
+      "kind": "window_metrics",
+      "source": "cex",
+      "snapshot_id": "s-fd9247e2bf8d19aad3323bdb",
+      "start": "2025-01-01T00:00:00+00:00",
+      "end": "2025-01-01T01:00:00+00:00",
+      "row_count": 57,
+      "base_volume": "6933.44030000",
+      "volume_unit": "ETH",
+      "number_of_trades": 50253,
+      "coverage": {
+        "expected": 60,
+        "observed": 57,
+        "missing": 3,
+        "missing_items": [
+          "2025-01-01T00:30:00+00:00",
+          "2025-01-01T00:31:00+00:00",
+          "2025-01-01T00:32:00+00:00"
+        ],
+        "complete": false,
+        "coverage_known": true,
+        "window_covered": true,
+        "unit": "candles"
+      },
+      "comparison": {
+        "baseline_start": "2025-01-01T00:00:00+00:00",
+        "baseline_end": "2025-01-01T00:30:00+00:00",
+        "current_start": "2025-01-01T00:30:00+00:00",
+        "current_end": "2025-01-01T01:00:00+00:00",
+        "baseline_volume": "3468.84120000",
+        "current_volume": "3464.59910000",
+        "change_pct": null,
+        "status": "insufficient_samples"
+      },
+      "quote_volume": "23244130.10138200",
+      "quote_unit": "USDT",
+      "close_price": "3363.70000000"
+    },
+    {
+      "id": "e-9ea63d18e16ca3c1b114f9072d0559a2",
+      "kind": "quality_findings",
+      "source": "cex",
+      "snapshot_id": "s-fd9247e2bf8d19aad3323bdb",
+      "start": "2025-01-01T00:00:00+00:00",
+      "end": "2025-01-01T01:00:00+00:00",
+      "findings": [
+        {
+          "rule": "missing_candles",
+          "severity": "error",
+          "expected": {
+            "missing": 0
+          },
+          "actual": {
+            "missing": 3,
+            "items": [
+              "2025-01-01T00:30:00+00:00",
+              "2025-01-01T00:31:00+00:00",
+              "2025-01-01T00:32:00+00:00"
+            ]
+          },
+          "detection_version": "quality-v2",
+          "evidence_ids": [
+            "e-de74e0a06d75c309743364ef8c8be39b"
+          ],
+          "id": "f-61201a3c01f9e4e4a63ab1d0be650c1c"
+        }
+      ],
+      "has_data_issue": true,
+      "has_unresolved_evidence": false,
+      "quarantine_scope": {
+        "in_window": 0,
+        "outside_window": 0,
+        "unknown_time": 0
+      },
+      "checks": [
+        "coverage",
+        "freshness",
+        "invalid_rows",
+        "record_conflicts",
+        "volume_change"
+      ],
+      "detection_version": "quality-v2"
+    },
+    {
+      "id": "e-de74e0a06d75c309743364ef8c8be39b",
+      "kind": "quality_finding",
+      "source": "cex",
+      "snapshot_id": "s-fd9247e2bf8d19aad3323bdb",
+      "start": "2025-01-01T00:00:00+00:00",
+      "end": "2025-01-01T01:00:00+00:00",
+      "rule": "missing_candles",
+      "severity": "error",
+      "expected": {
+        "missing": 0
+      },
+      "actual": {
+        "missing": 3,
+        "items": [
+          "2025-01-01T00:30:00+00:00",
+          "2025-01-01T00:31:00+00:00",
+          "2025-01-01T00:32:00+00:00"
+        ]
+      },
+      "detection_version": "quality-v2"
+    },
+    {
+      "id": "e-e1beec2ca77f32534e6e9cbdee0feee2",
+      "kind": "ingestion_status",
+      "source": "cex",
+      "snapshot_id": "s-fd9247e2bf8d19aad3323bdb",
+      "start": "2025-01-01T00:00:00+00:00",
+      "end": "2025-01-01T01:00:00+00:00",
+      "status": "partial",
+      "checkpoint": {
+        "processed": 57,
+        "total": 57
+      },
+      "last_success_at": null,
+      "lag_seconds": 0,
+      "quarantined_rows": 0,
+      "quarantine_scope": {
+        "in_window": 0,
+        "outside_window": 0,
+        "unknown_time": 0
+      },
+      "quarantined_rows_total": 0,
+      "identical_duplicates": 0,
+      "record_conflicts": 0,
+      "coverage": {
+        "expected": 60,
+        "observed": 57,
+        "missing": 3,
+        "missing_items": [
+          "2025-01-01T00:30:00+00:00",
+          "2025-01-01T00:31:00+00:00",
+          "2025-01-01T00:32:00+00:00"
+        ],
+        "complete": false,
+        "coverage_known": true,
+        "window_covered": true,
+        "unit": "candles"
+      },
+      "mode": "snapshot replay",
+      "synthetic": false,
+      "schema_version": "binance-spot-kline-v1",
+      "input_checksum": "454ad76b7344bd936b7d339705a28051fa3ae6d1340c962c68fb05f90575346a",
+      "retries": 0,
+      "error": null
+    }
+  ],
+  "recovery": {
+    "id": "recovery-4a03ef0464134a25a88b1a112c82796d",
+    "created_at": "2026-11-13T15:47:11.278617+00:00",
+    "source": "cex",
+    "snapshot_id": "s-fd9247e2bf8d19aad3323bdb",
+    "start": "2025-01-01T00:00:00+00:00",
+    "end": "2025-01-01T01:00:00+00:00",
+    "before_run_id": "0b99aade8e5847f39f41b1d5033d4575",
+    "after_run_id": "3bb1e340dfe24a3b873148d802ac44d0",
+    "restored_snapshot_id": "s-d2f57864759bf75b9284f59c",
+    "action": "replay_registered_raw_input",
+    "restore_status": "completed",
+    "verification_status": "no_issue_found_in_checks",
+    "error": null
+  },
+  "comparison": {
+    "versions": [
+      {
+        "role": "before",
+        "run_id": "0b99aade8e5847f39f41b1d5033d4575",
+        "report": {
+          "question": "这张行情图的成交数量能否作为完整时间窗口的数字引用？请检查完整性并提供依据。",
+          "source": "cex",
+          "snapshot_id": "s-fd9247e2bf8d19aad3323bdb",
+          "window": {
+            "start": "2025-01-01T00:00:00+00:00",
+            "end": "2025-01-01T01:00:00+00:00"
+          },
+          "diagnosis": "observed_data_issue",
+          "facts": [
+            {
+              "id": "fact.row_count",
+              "statement": "Observed records: 57 candles.",
+              "metric_refs": [
+                "metric.row_count"
+              ],
+              "evidence_refs": [
+                "e-8d661b61b34ed767f638ba4e07bcf018"
+              ]
+            },
+            {
+              "id": "fact.base_volume",
+              "statement": "CEX base volume: 6933.44030000 ETH.",
+              "metric_refs": [
+                "metric.base_volume"
+              ],
+              "evidence_refs": [
+                "e-8d661b61b34ed767f638ba4e07bcf018"
+              ]
+            },
+            {
+              "id": "fact.quote_volume",
+              "statement": "CEX quote volume: 23244130.10138200 USDT.",
+              "metric_refs": [
+                "metric.quote_volume"
+              ],
+              "evidence_refs": [
+                "e-8d661b61b34ed767f638ba4e07bcf018"
+              ]
+            },
+            {
+              "id": "fact.number_of_trades",
+              "statement": "Source-reported trades: 50253 trades.",
+              "metric_refs": [
+                "metric.number_of_trades"
+              ],
+              "evidence_refs": [
+                "e-8d661b61b34ed767f638ba4e07bcf018"
+              ]
+            },
+            {
+              "id": "fact.coverage_expected",
+              "statement": "Coverage expected: 60 minutes.",
+              "metric_refs": [
+                "metric.coverage_expected"
+              ],
+              "evidence_refs": [
+                "e-8d661b61b34ed767f638ba4e07bcf018"
+              ]
+            },
+            {
+              "id": "fact.coverage_observed",
+              "statement": "Coverage observed: 57 minutes.",
+              "metric_refs": [
+                "metric.coverage_observed"
+              ],
+              "evidence_refs": [
+                "e-8d661b61b34ed767f638ba4e07bcf018"
+              ]
+            },
+            {
+              "id": "fact.coverage_missing",
+              "statement": "Coverage missing: 3 minutes.",
+              "metric_refs": [
+                "metric.coverage_missing"
+              ],
+              "evidence_refs": [
+                "e-8d661b61b34ed767f638ba4e07bcf018"
+              ]
+            },
+            {
+              "id": "fact.lag_seconds",
+              "statement": "Data lag: 0 seconds relative to reference clock.",
+              "metric_refs": [
+                "metric.lag_seconds"
+              ],
+              "evidence_refs": [
+                "e-e1beec2ca77f32534e6e9cbdee0feee2"
+              ]
+            },
+            {
+              "id": "fact.quarantined_rows",
+              "statement": "Quarantined records in query window: 0 rows.",
+              "metric_refs": [
+                "metric.quarantined_rows"
+              ],
+              "evidence_refs": [
+                "e-e1beec2ca77f32534e6e9cbdee0feee2"
+              ]
+            },
+            {
+              "id": "fact.quality.0",
+              "statement": "Quality rule missing_candles returned error.",
+              "metric_refs": [],
+              "evidence_refs": [
+                "e-de74e0a06d75c309743364ef8c8be39b"
+              ]
+            },
+            {
+              "id": "fact.checks",
+              "statement": "Implemented quality checks observed a data issue.",
+              "metric_refs": [],
+              "evidence_refs": [
+                "e-9ea63d18e16ca3c1b114f9072d0559a2",
+                "e-de74e0a06d75c309743364ef8c8be39b"
+              ]
+            }
+          ],
+          "metrics": [
+            {
+              "id": "metric.row_count",
+              "name": "row_count",
+              "value": "57",
+              "unit": "candles",
+              "evidence_ids": [
+                "e-8d661b61b34ed767f638ba4e07bcf018"
+              ]
+            },
+            {
+              "id": "metric.base_volume",
+              "name": "base_volume",
+              "value": "6933.44030000",
+              "unit": "ETH",
+              "evidence_ids": [
+                "e-8d661b61b34ed767f638ba4e07bcf018"
+              ]
+            },
+            {
+              "id": "metric.quote_volume",
+              "name": "quote_volume",
+              "value": "23244130.10138200",
+              "unit": "USDT",
+              "evidence_ids": [
+                "e-8d661b61b34ed767f638ba4e07bcf018"
+              ]
+            },
+            {
+              "id": "metric.number_of_trades",
+              "name": "number_of_trades",
+              "value": "50253",
+              "unit": "trades",
+              "evidence_ids": [
+                "e-8d661b61b34ed767f638ba4e07bcf018"
+              ]
+            },
+            {
+              "id": "metric.coverage_expected",
+              "name": "coverage_expected",
+              "value": "60",
+              "unit": "minutes",
+              "evidence_ids": [
+                "e-8d661b61b34ed767f638ba4e07bcf018"
+              ]
+            },
+            {
+              "id": "metric.coverage_observed",
+              "name": "coverage_observed",
+              "value": "57",
+              "unit": "minutes",
+              "evidence_ids": [
+                "e-8d661b61b34ed767f638ba4e07bcf018"
+              ]
+            },
+            {
+              "id": "metric.coverage_missing",
+              "name": "coverage_missing",
+              "value": "3",
+              "unit": "minutes",
+              "evidence_ids": [
+                "e-8d661b61b34ed767f638ba4e07bcf018"
+              ]
+            },
+            {
+              "id": "metric.lag_seconds",
+              "name": "lag_seconds",
+              "value": "0",
+              "unit": "seconds relative to reference clock",
+              "evidence_ids": [
+                "e-e1beec2ca77f32534e6e9cbdee0feee2"
+              ]
+            },
+            {
+              "id": "metric.quarantined_rows",
+              "name": "quarantined_rows",
+              "value": "0",
+              "unit": "rows",
+              "evidence_ids": [
+                "e-e1beec2ca77f32534e6e9cbdee0feee2"
+              ]
+            }
+          ],
+          "evidence_refs": [
+            "e-8d661b61b34ed767f638ba4e07bcf018",
+            "e-9ea63d18e16ca3c1b114f9072d0559a2",
+            "e-de74e0a06d75c309743364ef8c8be39b",
+            "e-e1beec2ca77f32534e6e9cbdee0feee2"
+          ],
+          "limitations": [
+            "This report is pinned to the registered input version and UTC [start, end) window; collection mode is recorded in ingestion evidence.",
+            "Only implemented completeness, freshness, format and volume checks were evaluated; no economic cause or absolute correctness is established.",
+            "CEX ETH/USDT and DEX token amounts are separate units; token0 volume is not dollar volume."
+          ],
+          "recommendations": [
+            "Inspect coverage and raw evidence for the selected UTC window.",
+            "Use the deterministic restore task to rebuild an isolated snapshot from registered raw inputs."
+          ]
+        },
+        "evidence": [
+          {
+            "id": "e-8d661b61b34ed767f638ba4e07bcf018",
+            "kind": "window_metrics",
+            "source": "cex",
+            "snapshot_id": "s-fd9247e2bf8d19aad3323bdb",
+            "start": "2025-01-01T00:00:00+00:00",
+            "end": "2025-01-01T01:00:00+00:00",
+            "row_count": 57,
+            "base_volume": "6933.44030000",
+            "volume_unit": "ETH",
+            "number_of_trades": 50253,
+            "coverage": {
+              "expected": 60,
+              "observed": 57,
+              "missing": 3,
+              "missing_items": [
+                "2025-01-01T00:30:00+00:00",
+                "2025-01-01T00:31:00+00:00",
+                "2025-01-01T00:32:00+00:00"
+              ],
+              "complete": false,
+              "coverage_known": true,
+              "window_covered": true,
+              "unit": "candles"
+            },
+            "comparison": {
+              "baseline_start": "2025-01-01T00:00:00+00:00",
+              "baseline_end": "2025-01-01T00:30:00+00:00",
+              "current_start": "2025-01-01T00:30:00+00:00",
+              "current_end": "2025-01-01T01:00:00+00:00",
+              "baseline_volume": "3468.84120000",
+              "current_volume": "3464.59910000",
+              "change_pct": null,
+              "status": "insufficient_samples"
+            },
+            "quote_volume": "23244130.10138200",
+            "quote_unit": "USDT",
+            "close_price": "3363.70000000"
+          },
+          {
+            "id": "e-9ea63d18e16ca3c1b114f9072d0559a2",
+            "kind": "quality_findings",
+            "source": "cex",
+            "snapshot_id": "s-fd9247e2bf8d19aad3323bdb",
+            "start": "2025-01-01T00:00:00+00:00",
+            "end": "2025-01-01T01:00:00+00:00",
+            "findings": [
+              {
+                "rule": "missing_candles",
+                "severity": "error",
+                "expected": {
+                  "missing": 0
+                },
+                "actual": {
+                  "missing": 3,
+                  "items": [
+                    "2025-01-01T00:30:00+00:00",
+                    "2025-01-01T00:31:00+00:00",
+                    "2025-01-01T00:32:00+00:00"
+                  ]
+                },
+                "detection_version": "quality-v2",
+                "evidence_ids": [
+                  "e-de74e0a06d75c309743364ef8c8be39b"
+                ],
+                "id": "f-61201a3c01f9e4e4a63ab1d0be650c1c"
+              }
+            ],
+            "has_data_issue": true,
+            "has_unresolved_evidence": false,
+            "quarantine_scope": {
+              "in_window": 0,
+              "outside_window": 0,
+              "unknown_time": 0
+            },
+            "checks": [
+              "coverage",
+              "freshness",
+              "invalid_rows",
+              "record_conflicts",
+              "volume_change"
+            ],
+            "detection_version": "quality-v2"
+          },
+          {
+            "id": "e-de74e0a06d75c309743364ef8c8be39b",
+            "kind": "quality_finding",
+            "source": "cex",
+            "snapshot_id": "s-fd9247e2bf8d19aad3323bdb",
+            "start": "2025-01-01T00:00:00+00:00",
+            "end": "2025-01-01T01:00:00+00:00",
+            "rule": "missing_candles",
+            "severity": "error",
+            "expected": {
+              "missing": 0
+            },
+            "actual": {
+              "missing": 3,
+              "items": [
+                "2025-01-01T00:30:00+00:00",
+                "2025-01-01T00:31:00+00:00",
+                "2025-01-01T00:32:00+00:00"
+              ]
+            },
+            "detection_version": "quality-v2"
+          },
+          {
+            "id": "e-e1beec2ca77f32534e6e9cbdee0feee2",
+            "kind": "ingestion_status",
+            "source": "cex",
+            "snapshot_id": "s-fd9247e2bf8d19aad3323bdb",
+            "start": "2025-01-01T00:00:00+00:00",
+            "end": "2025-01-01T01:00:00+00:00",
+            "status": "partial",
+            "checkpoint": {
+              "processed": 57,
+              "total": 57
+            },
+            "last_success_at": null,
+            "lag_seconds": 0,
+            "quarantined_rows": 0,
+            "quarantine_scope": {
+              "in_window": 0,
+              "outside_window": 0,
+              "unknown_time": 0
+            },
+            "quarantined_rows_total": 0,
+            "identical_duplicates": 0,
+            "record_conflicts": 0,
+            "coverage": {
+              "expected": 60,
+              "observed": 57,
+              "missing": 3,
+              "missing_items": [
+                "2025-01-01T00:30:00+00:00",
+                "2025-01-01T00:31:00+00:00",
+                "2025-01-01T00:32:00+00:00"
+              ],
+              "complete": false,
+              "coverage_known": true,
+              "window_covered": true,
+              "unit": "candles"
+            },
+            "mode": "snapshot replay",
+            "synthetic": false,
+            "schema_version": "binance-spot-kline-v1",
+            "input_checksum": "454ad76b7344bd936b7d339705a28051fa3ae6d1340c962c68fb05f90575346a",
+            "retries": 0,
+            "error": null
+          }
+        ],
+        "provenance": {
+          "provider": "binance",
+          "symbol": "ETHUSDT",
+          "interval": "1m",
+          "chain_id": null,
+          "pool": null,
+          "mode": "snapshot replay",
+          "synthetic": false,
+          "transform": "missing",
+          "checksum": "84ab06bfcd55018956ab0666b4fa242f15801d4edcef93f0a2e728876967d59a",
+          "input_checksum": "454ad76b7344bd936b7d339705a28051fa3ae6d1340c962c68fb05f90575346a",
+          "provenance": {
+            "url": "https://data.binance.vision/data/spot/daily/klines/ETHUSDT/1m/ETHUSDT-1m-2025-01-01.zip",
+            "archive_sha256": "26cc71cf7a2bd0232cf0e8aaaf529fc6674ba20059028023eb346232ee4dbf91",
+            "slice": "first 60 minutes UTC",
+            "synthetic": false
+          }
+        }
+      },
+      {
+        "role": "after",
+        "run_id": "3bb1e340dfe24a3b873148d802ac44d0",
+        "report": {
+          "question": "这张行情图的成交数量能否作为完整时间窗口的数字引用？请检查完整性并提供依据。",
+          "source": "cex",
+          "snapshot_id": "s-d2f57864759bf75b9284f59c",
+          "window": {
+            "start": "2025-01-01T00:00:00+00:00",
+            "end": "2025-01-01T01:00:00+00:00"
+          },
+          "diagnosis": "no_issue_found_in_checks",
+          "facts": [
+            {
+              "id": "fact.row_count",
+              "statement": "Observed records: 60 candles.",
+              "metric_refs": [
+                "metric.row_count"
+              ],
+              "evidence_refs": [
+                "e-72c482c68748377631f96303684895f4"
+              ]
+            },
+            {
+              "id": "fact.base_volume",
+              "statement": "CEX base volume: 8894.44440000 ETH.",
+              "metric_refs": [
+                "metric.base_volume"
+              ],
+              "evidence_refs": [
+                "e-72c482c68748377631f96303684895f4"
+              ]
+            },
+            {
+              "id": "fact.quote_volume",
+              "statement": "CEX quote volume: 29821272.00821100 USDT.",
+              "metric_refs": [
+                "metric.quote_volume"
+              ],
+              "evidence_refs": [
+                "e-72c482c68748377631f96303684895f4"
+              ]
+            },
+            {
+              "id": "fact.number_of_trades",
+              "statement": "Source-reported trades: 54290 trades.",
+              "metric_refs": [
+                "metric.number_of_trades"
+              ],
+              "evidence_refs": [
+                "e-72c482c68748377631f96303684895f4"
+              ]
+            },
+            {
+              "id": "fact.coverage_expected",
+              "statement": "Coverage expected: 60 minutes.",
+              "metric_refs": [
+                "metric.coverage_expected"
+              ],
+              "evidence_refs": [
+                "e-72c482c68748377631f96303684895f4"
+              ]
+            },
+            {
+              "id": "fact.coverage_observed",
+              "statement": "Coverage observed: 60 minutes.",
+              "metric_refs": [
+                "metric.coverage_observed"
+              ],
+              "evidence_refs": [
+                "e-72c482c68748377631f96303684895f4"
+              ]
+            },
+            {
+              "id": "fact.coverage_missing",
+              "statement": "Coverage missing: 0 minutes.",
+              "metric_refs": [
+                "metric.coverage_missing"
+              ],
+              "evidence_refs": [
+                "e-72c482c68748377631f96303684895f4"
+              ]
+            },
+            {
+              "id": "fact.lag_seconds",
+              "statement": "Data lag: 0 seconds relative to reference clock.",
+              "metric_refs": [
+                "metric.lag_seconds"
+              ],
+              "evidence_refs": [
+                "e-dfc09013e8dc1f0d5abfda201e3e81d6"
+              ]
+            },
+            {
+              "id": "fact.quarantined_rows",
+              "statement": "Quarantined records in query window: 0 rows.",
+              "metric_refs": [
+                "metric.quarantined_rows"
+              ],
+              "evidence_refs": [
+                "e-dfc09013e8dc1f0d5abfda201e3e81d6"
+              ]
+            },
+            {
+              "id": "fact.change_pct",
+              "statement": "Volume change awaiting investigation: 56.40967363971576444606342890530705181891866367362103517451303334381521990686688107832667577864331178 % (equal adjacent subwindows).",
+              "metric_refs": [
+                "metric.change_pct"
+              ],
+              "evidence_refs": [
+                "e-72c482c68748377631f96303684895f4"
+              ]
+            },
+            {
+              "id": "fact.checks",
+              "statement": "Implemented quality checks did not find a data issue; this is not proof of absolute correctness.",
+              "metric_refs": [],
+              "evidence_refs": [
+                "e-9bfbac4880b9e98dd1c2c6c4c7291a81"
+              ]
+            }
+          ],
+          "metrics": [
+            {
+              "id": "metric.row_count",
+              "name": "row_count",
+              "value": "60",
+              "unit": "candles",
+              "evidence_ids": [
+                "e-72c482c68748377631f96303684895f4"
+              ]
+            },
+            {
+              "id": "metric.base_volume",
+              "name": "base_volume",
+              "value": "8894.44440000",
+              "unit": "ETH",
+              "evidence_ids": [
+                "e-72c482c68748377631f96303684895f4"
+              ]
+            },
+            {
+              "id": "metric.quote_volume",
+              "name": "quote_volume",
+              "value": "29821272.00821100",
+              "unit": "USDT",
+              "evidence_ids": [
+                "e-72c482c68748377631f96303684895f4"
+              ]
+            },
+            {
+              "id": "metric.number_of_trades",
+              "name": "number_of_trades",
+              "value": "54290",
+              "unit": "trades",
+              "evidence_ids": [
+                "e-72c482c68748377631f96303684895f4"
+              ]
+            },
+            {
+              "id": "metric.coverage_expected",
+              "name": "coverage_expected",
+              "value": "60",
+              "unit": "minutes",
+              "evidence_ids": [
+                "e-72c482c68748377631f96303684895f4"
+              ]
+            },
+            {
+              "id": "metric.coverage_observed",
+              "name": "coverage_observed",
+              "value": "60",
+              "unit": "minutes",
+              "evidence_ids": [
+                "e-72c482c68748377631f96303684895f4"
+              ]
+            },
+            {
+              "id": "metric.coverage_missing",
+              "name": "coverage_missing",
+              "value": "0",
+              "unit": "minutes",
+              "evidence_ids": [
+                "e-72c482c68748377631f96303684895f4"
+              ]
+            },
+            {
+              "id": "metric.lag_seconds",
+              "name": "lag_seconds",
+              "value": "0",
+              "unit": "seconds relative to reference clock",
+              "evidence_ids": [
+                "e-dfc09013e8dc1f0d5abfda201e3e81d6"
+              ]
+            },
+            {
+              "id": "metric.quarantined_rows",
+              "name": "quarantined_rows",
+              "value": "0",
+              "unit": "rows",
+              "evidence_ids": [
+                "e-dfc09013e8dc1f0d5abfda201e3e81d6"
+              ]
+            },
+            {
+              "id": "metric.change_pct",
+              "name": "change_pct",
+              "value": "56.40967363971576444606342890530705181891866367362103517451303334381521990686688107832667577864331178",
+              "unit": "% (equal adjacent subwindows)",
+              "evidence_ids": [
+                "e-72c482c68748377631f96303684895f4"
+              ]
+            }
+          ],
+          "evidence_refs": [
+            "e-72c482c68748377631f96303684895f4",
+            "e-9bfbac4880b9e98dd1c2c6c4c7291a81",
+            "e-dfc09013e8dc1f0d5abfda201e3e81d6"
+          ],
+          "limitations": [
+            "This report is pinned to the registered input version and UTC [start, end) window; collection mode is recorded in ingestion evidence.",
+            "Only implemented completeness, freshness, format and volume checks were evaluated; no economic cause or absolute correctness is established.",
+            "CEX ETH/USDT and DEX token amounts are separate units; token0 volume is not dollar volume."
+          ],
+          "recommendations": [
+            "Compare the registered input and upstream source before drawing a stronger conclusion.",
+            "If explaining market behavior is required, obtain independent market evidence; these checks do not establish an economic cause."
+          ]
+        },
+        "evidence": [
+          {
+            "id": "e-72c482c68748377631f96303684895f4",
+            "kind": "window_metrics",
+            "source": "cex",
+            "snapshot_id": "s-d2f57864759bf75b9284f59c",
+            "start": "2025-01-01T00:00:00+00:00",
+            "end": "2025-01-01T01:00:00+00:00",
+            "row_count": 60,
+            "base_volume": "8894.44440000",
+            "volume_unit": "ETH",
+            "number_of_trades": 54290,
+            "coverage": {
+              "expected": 60,
+              "observed": 60,
+              "missing": 0,
+              "missing_items": [],
+              "complete": true,
+              "coverage_known": true,
+              "window_covered": true,
+              "unit": "candles"
+            },
+            "comparison": {
+              "baseline_start": "2025-01-01T00:00:00+00:00",
+              "baseline_end": "2025-01-01T00:30:00+00:00",
+              "current_start": "2025-01-01T00:30:00+00:00",
+              "current_end": "2025-01-01T01:00:00+00:00",
+              "baseline_volume": "3468.84120000",
+              "current_volume": "5425.60320000",
+              "change_pct": "56.40967363971576444606342890530705181891866367362103517451303334381521990686688107832667577864331178",
+              "status": "available"
+            },
+            "quote_volume": "29821272.00821100",
+            "quote_unit": "USDT",
+            "close_price": "3363.70000000"
+          },
+          {
+            "id": "e-9bfbac4880b9e98dd1c2c6c4c7291a81",
+            "kind": "quality_findings",
+            "source": "cex",
+            "snapshot_id": "s-d2f57864759bf75b9284f59c",
+            "start": "2025-01-01T00:00:00+00:00",
+            "end": "2025-01-01T01:00:00+00:00",
+            "findings": [],
+            "has_data_issue": false,
+            "has_unresolved_evidence": false,
+            "quarantine_scope": {
+              "in_window": 0,
+              "outside_window": 0,
+              "unknown_time": 0
+            },
+            "checks": [
+              "coverage",
+              "freshness",
+              "invalid_rows",
+              "record_conflicts",
+              "volume_change"
+            ],
+            "detection_version": "quality-v2"
+          },
+          {
+            "id": "e-dfc09013e8dc1f0d5abfda201e3e81d6",
+            "kind": "ingestion_status",
+            "source": "cex",
+            "snapshot_id": "s-d2f57864759bf75b9284f59c",
+            "start": "2025-01-01T00:00:00+00:00",
+            "end": "2025-01-01T01:00:00+00:00",
+            "status": "success",
+            "checkpoint": {
+              "processed": 60,
+              "total": 60
+            },
+            "last_success_at": "2026-11-13T15:47:11.281137+00:00",
+            "lag_seconds": 0,
+            "quarantined_rows": 0,
+            "quarantine_scope": {
+              "in_window": 0,
+              "outside_window": 0,
+              "unknown_time": 0
+            },
+            "quarantined_rows_total": 0,
+            "identical_duplicates": 0,
+            "record_conflicts": 0,
+            "coverage": {
+              "expected": 60,
+              "observed": 60,
+              "missing": 0,
+              "missing_items": [],
+              "complete": true,
+              "coverage_known": true,
+              "window_covered": true,
+              "unit": "candles"
+            },
+            "mode": "snapshot replay",
+            "synthetic": false,
+            "schema_version": "binance-spot-kline-v1",
+            "input_checksum": "454ad76b7344bd936b7d339705a28051fa3ae6d1340c962c68fb05f90575346a",
+            "retries": 0,
+            "error": null
+          }
+        ],
+        "provenance": {
+          "provider": "binance",
+          "symbol": "ETHUSDT",
+          "interval": "1m",
+          "chain_id": null,
+          "pool": null,
+          "mode": "snapshot replay",
+          "synthetic": false,
+          "transform": null,
+          "checksum": "84ab06bfcd55018956ab0666b4fa242f15801d4edcef93f0a2e728876967d59a",
+          "input_checksum": "454ad76b7344bd936b7d339705a28051fa3ae6d1340c962c68fb05f90575346a",
+          "provenance": {
+            "url": "https://data.binance.vision/data/spot/daily/klines/ETHUSDT/1m/ETHUSDT-1m-2025-01-01.zip",
+            "archive_sha256": "26cc71cf7a2bd0232cf0e8aaaf529fc6674ba20059028023eb346232ee4dbf91",
+            "slice": "first 60 minutes UTC",
+            "synthetic": false
+          }
+        }
+      }
+    ],
+    "meaning": "same_window_versions_not_market_change"
+  },
+  "judgment_zh": "发现数据问题：不能将当前数字直接作为完整窗口的成交数量引用。",
+  "judgment_en": "Data issue observed: do not cite this value as the complete-window quantity.",
+  "markdown_zh": "# MarketData Sentinel · 用户说明草稿\n\n草稿 · 待人工校审，尚未批准对外发布。\n\nReport / 报告：`0b99aade8e5847f39f41b1d5033d4575` · 2026-11-13T15:47:11.268151+00:00\n\n## 用户问题\n这张行情图的成交数量能否作为完整时间窗口的数字引用？请检查完整性并提供依据。\n\n## 当前判断\n发现数据问题：不能将当前数字直接作为完整窗口的成交数量引用。\n\n真实公开历史数据，人为构造的故障演练；不是交易所真实事故。\n\nSource / 来源：cex · ETHUSDT\n\nVersion / 版本：`s-fd9247e2bf8d19aad3323bdb`\n\nUTC [2025-01-01T00:00:00Z, 2025-01-01T01:00:00Z)\n\n## 关键数字与证据\n| 指标 | 精确原值 | 单位 | 证据 |\n|---|---|---|---|\n| 观测记录 | 57 | candles | e-8d661b61b34ed767f638ba4e07bcf018 |\n| 基础资产成交数量 | 6933.44030000 | ETH | e-8d661b61b34ed767f638ba4e07bcf018 |\n| 计价资产成交数量 | 23244130.10138200 | USDT | e-8d661b61b34ed767f638ba4e07bcf018 |\n| 预期覆盖 | 60 | minutes | e-8d661b61b34ed767f638ba4e07bcf018 |\n| 实际覆盖 | 57 | minutes | e-8d661b61b34ed767f638ba4e07bcf018 |\n| 缺失覆盖 | 3 | minutes | e-8d661b61b34ed767f638ba4e07bcf018 |\n\nOriginal source / 原始来源：https://data.binance.vision/data/spot/daily/klines/ETHUSDT/1m/ETHUSDT-1m-2025-01-01.zip\n\nInput checksum / 输入校验值：`454ad76b7344bd936b7d339705a28051fa3ae6d1340c962c68fb05f90575346a`\n\n其他精确指标与完整证据保留在结构化 JSON 导出中。\n\n## 实际处理与验证\n\nRecovery / 恢复记录：`recovery-4a03ef0464134a25a88b1a112c82796d`\n\nReplay / 重放：重放已完成 · Verification / 核验：已执行检查未发现问题\n\n### before · `s-fd9247e2bf8d19aad3323bdb`\n\nReport / 报告：`0b99aade8e5847f39f41b1d5033d4575`\n\n| 指标 | 精确原值 | 单位 | 证据 |\n|---|---|---|---|\n| 观测记录 | 57 | candles | e-8d661b61b34ed767f638ba4e07bcf018 |\n| 基础资产成交数量 | 6933.44030000 | ETH | e-8d661b61b34ed767f638ba4e07bcf018 |\n| 计价资产成交数量 | 23244130.10138200 | USDT | e-8d661b61b34ed767f638ba4e07bcf018 |\n| 预期覆盖 | 60 | minutes | e-8d661b61b34ed767f638ba4e07bcf018 |\n| 实际覆盖 | 57 | minutes | e-8d661b61b34ed767f638ba4e07bcf018 |\n| 缺失覆盖 | 3 | minutes | e-8d661b61b34ed767f638ba4e07bcf018 |\n\n### after · `s-d2f57864759bf75b9284f59c`\n\nReport / 报告：`3bb1e340dfe24a3b873148d802ac44d0`\n\n| 指标 | 精确原值 | 单位 | 证据 |\n|---|---|---|---|\n| 观测记录 | 60 | candles | e-72c482c68748377631f96303684895f4 |\n| 基础资产成交数量 | 8894.44440000 | ETH | e-72c482c68748377631f96303684895f4 |\n| 计价资产成交数量 | 29821272.00821100 | USDT | e-72c482c68748377631f96303684895f4 |\n| 预期覆盖 | 60 | minutes | e-72c482c68748377631f96303684895f4 |\n| 实际覆盖 | 60 | minutes | e-72c482c68748377631f96303684895f4 |\n| 缺失覆盖 | 0 | minutes | e-72c482c68748377631f96303684895f4 |\n\n这是同一时间窗口的数据版本对照，不能解释为市场涨跌。\n\n真实公开历史数据，人为构造的故障演练；不是交易所真实事故。\n\n## 不确定性与下一步\n\n仅执行已实现的检查；通过不代表排除全部错误，也不证明市场因果。引用前继续核对来源与使用语境，完成数字、单位、遗漏、因果及确定程度的双语校审。真人使用验证待完成。\n\n- This report is pinned to the registered input version and UTC [start, end) window; collection mode is recorded in ingestion evidence.\n- Only implemented completeness, freshness, format and volume checks were evaluated; no economic cause or absolute correctness is established.\n- CEX ETH/USDT and DEX token amounts are separate units; token0 volume is not dollar volume.\n\nNext checks / 下一步：\n- Inspect coverage and raw evidence for the selected UTC window.\n- Use the deterministic restore task to rebuild an isolated snapshot from registered raw inputs.\n",
+  "markdown_en": "# MarketData Sentinel · User communication draft\n\nDRAFT · Human editorial review pending. Not approved for publication.\n\nReport / 报告：`0b99aade8e5847f39f41b1d5033d4575` · 2026-11-13T15:47:11.268151+00:00\n\n## User question\n这张行情图的成交数量能否作为完整时间窗口的数字引用？请检查完整性并提供依据。\n\n## Current judgment\nData issue observed: do not cite this value as the complete-window quantity.\n\nPublic historical data with a deliberately injected fault; this is not an exchange incident.\n\nSource / 来源：cex · ETHUSDT\n\nVersion / 版本：`s-fd9247e2bf8d19aad3323bdb`\n\nUTC [2025-01-01T00:00:00Z, 2025-01-01T01:00:00Z)\n\n## Key figures and evidence\n| Metric | Exact value | Unit | Evidence |\n|---|---|---|---|\n| Observed records | 57 | candles | e-8d661b61b34ed767f638ba4e07bcf018 |\n| Base-asset quantity | 6933.44030000 | ETH | e-8d661b61b34ed767f638ba4e07bcf018 |\n| Quote-asset quantity | 23244130.10138200 | USDT | e-8d661b61b34ed767f638ba4e07bcf018 |\n| Expected coverage | 60 | minutes | e-8d661b61b34ed767f638ba4e07bcf018 |\n| Observed coverage | 57 | minutes | e-8d661b61b34ed767f638ba4e07bcf018 |\n| Missing coverage | 3 | minutes | e-8d661b61b34ed767f638ba4e07bcf018 |\n\nOriginal source / 原始来源：https://data.binance.vision/data/spot/daily/klines/ETHUSDT/1m/ETHUSDT-1m-2025-01-01.zip\n\nInput checksum / 输入校验值：`454ad76b7344bd936b7d339705a28051fa3ae6d1340c962c68fb05f90575346a`\n\nAdditional exact metrics and full evidence are retained in the structured JSON export.\n\n## Actual handling and verification\n\nRecovery / 恢复记录：`recovery-4a03ef0464134a25a88b1a112c82796d`\n\nReplay / 重放：Replay completed · Verification / 核验：No issue found in executed checks\n\n### before · `s-fd9247e2bf8d19aad3323bdb`\n\nReport / 报告：`0b99aade8e5847f39f41b1d5033d4575`\n\n| Metric | Exact value | Unit | Evidence |\n|---|---|---|---|\n| Observed records | 57 | candles | e-8d661b61b34ed767f638ba4e07bcf018 |\n| Base-asset quantity | 6933.44030000 | ETH | e-8d661b61b34ed767f638ba4e07bcf018 |\n| Quote-asset quantity | 23244130.10138200 | USDT | e-8d661b61b34ed767f638ba4e07bcf018 |\n| Expected coverage | 60 | minutes | e-8d661b61b34ed767f638ba4e07bcf018 |\n| Observed coverage | 57 | minutes | e-8d661b61b34ed767f638ba4e07bcf018 |\n| Missing coverage | 3 | minutes | e-8d661b61b34ed767f638ba4e07bcf018 |\n\n### after · `s-d2f57864759bf75b9284f59c`\n\nReport / 报告：`3bb1e340dfe24a3b873148d802ac44d0`\n\n| Metric | Exact value | Unit | Evidence |\n|---|---|---|---|\n| Observed records | 60 | candles | e-72c482c68748377631f96303684895f4 |\n| Base-asset quantity | 8894.44440000 | ETH | e-72c482c68748377631f96303684895f4 |\n| Quote-asset quantity | 29821272.00821100 | USDT | e-72c482c68748377631f96303684895f4 |\n| Expected coverage | 60 | minutes | e-72c482c68748377631f96303684895f4 |\n| Observed coverage | 60 | minutes | e-72c482c68748377631f96303684895f4 |\n| Missing coverage | 0 | minutes | e-72c482c68748377631f96303684895f4 |\n\nThese are versions of the same window, not market growth or decline.\n\nPublic historical data with a deliberately injected fault; this is not an exchange incident.\n\n## Uncertainty and next steps\n\nOnly implemented checks were evaluated; passing them does not rule out all errors or establish a market cause. Verify the source and editorial context before citation. Human usability validation is pending.\n\n- This report is pinned to the registered input version and UTC [start, end) window; collection mode is recorded in ingestion evidence.\n- Only implemented completeness, freshness, format and volume checks were evaluated; no economic cause or absolute correctness is established.\n- CEX ETH/USDT and DEX token amounts are separate units; token0 volume is not dollar volume.\n\nNext checks / 下一步：\n- Inspect coverage and raw evidence for the selected UTC window.\n- Use the deterministic restore task to rebuild an isolated snapshot from registered raw inputs.\n",
+  "issue_markdown": "# 问题单 · 0b99aade8e5847f39f41b1d5033d4575\n\n状态：草稿待校审；真人使用验证待完成。\n\n## 现象\n这张行情图的成交数量能否作为完整时间窗口的数字引用？请检查完整性并提供依据。\n\n## 当前判断\n发现数据问题：不能将当前数字直接作为完整窗口的成交数量引用。\n\n## 已知影响范围\n仅限来源 cex、版本 `s-fd9247e2bf8d19aad3323bdb`、UTC [2025-01-01T00:00:00Z, 2025-01-01T01:00:00Z)；不外推至整个交易所或市场。\n\n## 复现步骤\n1. 启动工作台并选择上述来源、版本和 UTC 窗口。\n2. 运行数据检查，查看覆盖情况及登记证据。\n3. 如需复现恢复，点击从原始输入恢复，保持相同时间窗，再对照报告。\n\n## 实际处理与验证\n记录 `recovery-4a03ef0464134a25a88b1a112c82796d`；重放：重放已完成；核验：已执行检查未发现问题。\n\n## 证据\n| 指标 | 精确原值 | 单位 | 证据 |\n|---|---|---|---|\n| 观测记录 | 57 | candles | e-8d661b61b34ed767f638ba4e07bcf018 |\n| 基础资产成交数量 | 6933.44030000 | ETH | e-8d661b61b34ed767f638ba4e07bcf018 |\n| 计价资产成交数量 | 23244130.10138200 | USDT | e-8d661b61b34ed767f638ba4e07bcf018 |\n| 预期覆盖 | 60 | minutes | e-8d661b61b34ed767f638ba4e07bcf018 |\n| 实际覆盖 | 57 | minutes | e-8d661b61b34ed767f638ba4e07bcf018 |\n| 缺失覆盖 | 3 | minutes | e-8d661b61b34ed767f638ba4e07bcf018 |\n\n## 待解决项\n人工内容校审待完成；真人使用验证待完成；检查范围以外的数据错误和市场原因尚未排除。\n\n## 用户说明\n# MarketData Sentinel · 用户说明草稿\n\n草稿 · 待人工校审，尚未批准对外发布。\n\nReport / 报告：`0b99aade8e5847f39f41b1d5033d4575` · 2026-11-13T15:47:11.268151+00:00\n\n## 用户问题\n这张行情图的成交数量能否作为完整时间窗口的数字引用？请检查完整性并提供依据。\n\n## 当前判断\n发现数据问题：不能将当前数字直接作为完整窗口的成交数量引用。\n\n真实公开历史数据，人为构造的故障演练；不是交易所真实事故。\n\nSource / 来源：cex · ETHUSDT\n\nVersion / 版本：`s-fd9247e2bf8d19aad3323bdb`\n\nUTC [2025-01-01T00:00:00Z, 2025-01-01T01:00:00Z)\n\n## 关键数字与证据\n| 指标 | 精确原值 | 单位 | 证据 |\n|---|---|---|---|\n| 观测记录 | 57 | candles | e-8d661b61b34ed767f638ba4e07bcf018 |\n| 基础资产成交数量 | 6933.44030000 | ETH | e-8d661b61b34ed767f638ba4e07bcf018 |\n| 计价资产成交数量 | 23244130.10138200 | USDT | e-8d661b61b34ed767f638ba4e07bcf018 |\n| 预期覆盖 | 60 | minutes | e-8d661b61b34ed767f638ba4e07bcf018 |\n| 实际覆盖 | 57 | minutes | e-8d661b61b34ed767f638ba4e07bcf018 |\n| 缺失覆盖 | 3 | minutes | e-8d661b61b34ed767f638ba4e07bcf018 |\n\nOriginal source / 原始来源：https://data.binance.vision/data/spot/daily/klines/ETHUSDT/1m/ETHUSDT-1m-2025-01-01.zip\n\nInput checksum / 输入校验值：`454ad76b7344bd936b7d339705a28051fa3ae6d1340c962c68fb05f90575346a`\n\n其他精确指标与完整证据保留在结构化 JSON 导出中。\n\n## 实际处理与验证\n\nRecovery / 恢复记录：`recovery-4a03ef0464134a25a88b1a112c82796d`\n\nReplay / 重放：重放已完成 · Verification / 核验：已执行检查未发现问题\n\n### before · `s-fd9247e2bf8d19aad3323bdb`\n\nReport / 报告：`0b99aade8e5847f39f41b1d5033d4575`\n\n| 指标 | 精确原值 | 单位 | 证据 |\n|---|---|---|---|\n| 观测记录 | 57 | candles | e-8d661b61b34ed767f638ba4e07bcf018 |\n| 基础资产成交数量 | 6933.44030000 | ETH | e-8d661b61b34ed767f638ba4e07bcf018 |\n| 计价资产成交数量 | 23244130.10138200 | USDT | e-8d661b61b34ed767f638ba4e07bcf018 |\n| 预期覆盖 | 60 | minutes | e-8d661b61b34ed767f638ba4e07bcf018 |\n| 实际覆盖 | 57 | minutes | e-8d661b61b34ed767f638ba4e07bcf018 |\n| 缺失覆盖 | 3 | minutes | e-8d661b61b34ed767f638ba4e07bcf018 |\n\n### after · `s-d2f57864759bf75b9284f59c`\n\nReport / 报告：`3bb1e340dfe24a3b873148d802ac44d0`\n\n| 指标 | 精确原值 | 单位 | 证据 |\n|---|---|---|---|\n| 观测记录 | 60 | candles | e-72c482c68748377631f96303684895f4 |\n| 基础资产成交数量 | 8894.44440000 | ETH | e-72c482c68748377631f96303684895f4 |\n| 计价资产成交数量 | 29821272.00821100 | USDT | e-72c482c68748377631f96303684895f4 |\n| 预期覆盖 | 60 | minutes | e-72c482c68748377631f96303684895f4 |\n| 实际覆盖 | 60 | minutes | e-72c482c68748377631f96303684895f4 |\n| 缺失覆盖 | 0 | minutes | e-72c482c68748377631f96303684895f4 |\n\n这是同一时间窗口的数据版本对照，不能解释为市场涨跌。\n\n真实公开历史数据，人为构造的故障演练；不是交易所真实事故。\n\n## 不确定性与下一步\n\n仅执行已实现的检查；通过不代表排除全部错误，也不证明市场因果。引用前继续核对来源与使用语境，完成数字、单位、遗漏、因果及确定程度的双语校审。真人使用验证待完成。\n\n- This report is pinned to the registered input version and UTC [start, end) window; collection mode is recorded in ingestion evidence.\n- Only implemented completeness, freshness, format and volume checks were evaluated; no economic cause or absolute correctness is established.\n- CEX ETH/USDT and DEX token amounts are separate units; token0 volume is not dollar volume.\n\nNext checks / 下一步：\n- Inspect coverage and raw evidence for the selected UTC window.\n- Use the deterministic restore task to rebuild an isolated snapshot from registered raw inputs.\n\n"
+}

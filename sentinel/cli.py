@@ -87,7 +87,8 @@ def main():
         child = sub.add_parser(command)
         child.add_argument("snapshot_id")
     sub.add_parser("snapshots")
-    sub.add_parser("demo", help="Seed -> missing -> investigate -> restore -> compare")
+    demo = sub.add_parser("demo", help="Seed -> missing -> investigate -> restore -> compare")
+    demo.add_argument("--output", type=Path, default=Path("data/demo-result.json"))
     for command in ("check", "investigate"):
         child = sub.add_parser(command)
         child.add_argument("snapshot_id")
@@ -181,10 +182,8 @@ def main():
                 "restored": restored,
                 "after": after,
             }
-            Path("data").mkdir(exist_ok=True)
-            Path("data/demo-result.json").write_text(
-                json.dumps(artifact, indent=2, default=str), encoding="utf8"
-            )
+            args.output.parent.mkdir(parents=True, exist_ok=True)
+            args.output.write_text(json.dumps(artifact, indent=2, default=str), encoding="utf8")
             output(artifact)
     except httpx.HTTPStatusError as exc:
         parser.exit(

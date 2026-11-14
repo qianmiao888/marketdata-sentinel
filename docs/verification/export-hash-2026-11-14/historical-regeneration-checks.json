@@ -1,0 +1,91 @@
+{
+  "checked_at_utc": "2026-11-14T01:18:11.024733+00:00",
+  "historical_input": "docs/verification/workbench-2026-11-13/http-release/evidence.json",
+  "request": {
+    "method": "GET",
+    "path": "/investigations/0b99aade8e5847f39f41b1d5033d4575/communication",
+    "recovery_id": "recovery-4a03ef0464134a25a88b1a112c82796d",
+    "status": 200
+  },
+  "unchanged_fields": {
+    "report": true,
+    "metrics": true,
+    "context": true,
+    "provenance": true,
+    "recovery": true,
+    "markdown_zh": true,
+    "markdown_en": true,
+    "issue_markdown": true,
+    "comparison_reports": true
+  },
+  "hash_checks": [
+    {
+      "location": "evidence[0]",
+      "id": "e-8d661b61b34ed767f638ba4e07bcf018",
+      "recomputed_id": "e-8d661b61b34ed767f638ba4e07bcf018",
+      "matches": true
+    },
+    {
+      "location": "evidence[1]",
+      "id": "e-9ea63d18e16ca3c1b114f9072d0559a2",
+      "recomputed_id": "e-9ea63d18e16ca3c1b114f9072d0559a2",
+      "matches": true
+    },
+    {
+      "location": "evidence[2]",
+      "id": "e-de74e0a06d75c309743364ef8c8be39b",
+      "recomputed_id": "e-de74e0a06d75c309743364ef8c8be39b",
+      "matches": true
+    },
+    {
+      "location": "evidence[3]",
+      "id": "e-e1beec2ca77f32534e6e9cbdee0feee2",
+      "recomputed_id": "e-e1beec2ca77f32534e6e9cbdee0feee2",
+      "matches": true
+    },
+    {
+      "location": "comparison.versions[0].evidence[0]",
+      "id": "e-8d661b61b34ed767f638ba4e07bcf018",
+      "recomputed_id": "e-8d661b61b34ed767f638ba4e07bcf018",
+      "matches": true
+    },
+    {
+      "location": "comparison.versions[0].evidence[1]",
+      "id": "e-9ea63d18e16ca3c1b114f9072d0559a2",
+      "recomputed_id": "e-9ea63d18e16ca3c1b114f9072d0559a2",
+      "matches": true
+    },
+    {
+      "location": "comparison.versions[0].evidence[2]",
+      "id": "e-de74e0a06d75c309743364ef8c8be39b",
+      "recomputed_id": "e-de74e0a06d75c309743364ef8c8be39b",
+      "matches": true
+    },
+    {
+      "location": "comparison.versions[0].evidence[3]",
+      "id": "e-e1beec2ca77f32534e6e9cbdee0feee2",
+      "recomputed_id": "e-e1beec2ca77f32534e6e9cbdee0feee2",
+      "matches": true
+    },
+    {
+      "location": "comparison.versions[1].evidence[0]",
+      "id": "e-72c482c68748377631f96303684895f4",
+      "recomputed_id": "e-72c482c68748377631f96303684895f4",
+      "matches": true
+    },
+    {
+      "location": "comparison.versions[1].evidence[1]",
+      "id": "e-9bfbac4880b9e98dd1c2c6c4c7291a81",
+      "recomputed_id": "e-9bfbac4880b9e98dd1c2c6c4c7291a81",
+      "matches": true
+    },
+    {
+      "location": "comparison.versions[1].evidence[2]",
+      "id": "e-dfc09013e8dc1f0d5abfda201e3e81d6",
+      "recomputed_id": "e-dfc09013e8dc1f0d5abfda201e3e81d6",
+      "matches": true
+    }
+  ],
+  "hashes_checked": 11,
+  "hash_mismatches": 0
+}

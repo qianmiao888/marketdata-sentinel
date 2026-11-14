@@ -11,7 +11,9 @@ if ($LASTEXITCODE -ne 0) { throw 'Migration failed' }
 uv run python -m sentinel.cli seed
 if ($LASTEXITCODE -ne 0) { throw 'Seed failed' }
 uv run python -m sentinel.cli scenario missing
+if ($LASTEXITCODE -ne 0) { throw 'Missing scenario preparation failed' }
 uv run python -m sentinel.cli scenario stale
+if ($LASTEXITCODE -ne 0) { throw 'Stale scenario preparation failed' }
 $pythonExe = Join-Path $projectRoot '.venv\Scripts\python.exe'
 $apiResponds = $false
 try {

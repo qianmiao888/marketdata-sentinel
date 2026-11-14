@@ -1,0 +1,18 @@
+{
+  "checked_at_utc": "2026-11-13T15:54:01.036341+00:00",
+  "local_markdown_targets_checked": 147,
+  "missing_local_targets": [],
+  "cross_file_fragments": "NOT independently validated; target file existence checked",
+  "external_links": "Not fetched this round; source provenance preserved",
+  "english_case_words": 205,
+  "english_case_in_requested_range": true,
+  "browser_download_run_id": "e84eb4f2960b487292a4d43b7119dcdb",
+  "downloaded_json_equals_bound_api_bundle": true,
+  "downloaded_markdown_equals_bundle": true,
+  "downloaded_issue_equals_bundle": true,
+  "api_ready_http_status": 200,
+  "ui_health_http_status": 200,
+  "lint": "All checks passed!",
+  "format": "83 files already formatted",
+  "human_usability": "PENDING; no real participants tested"
+}

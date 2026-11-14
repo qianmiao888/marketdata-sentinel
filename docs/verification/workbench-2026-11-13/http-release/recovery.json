@@ -1,0 +1,15 @@
+{
+  "id": "recovery-4a03ef0464134a25a88b1a112c82796d",
+  "created_at": "2026-11-13T15:47:11.278617+00:00",
+  "source": "cex",
+  "snapshot_id": "s-fd9247e2bf8d19aad3323bdb",
+  "start": "2025-01-01T00:00:00+00:00",
+  "end": "2025-01-01T01:00:00+00:00",
+  "before_run_id": "0b99aade8e5847f39f41b1d5033d4575",
+  "after_run_id": "3bb1e340dfe24a3b873148d802ac44d0",
+  "restored_snapshot_id": "s-d2f57864759bf75b9284f59c",
+  "action": "replay_registered_raw_input",
+  "restore_status": "completed",
+  "verification_status": "no_issue_found_in_checks",
+  "error": null
+}

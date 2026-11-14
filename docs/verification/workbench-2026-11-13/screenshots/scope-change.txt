@@ -1,0 +1,50 @@
+- link "Skip to main content":
+  - /url: "#stMain"
+- region "Sidebar":
+  - paragraph: 阅读入口 / Workspace
+  - radiogroup "阅读入口 / Workspace":
+    - radio "数据核验 / Engineering" [checked]
+    - paragraph: 数据核验 / Engineering
+    - radio "用户说明 / Product & Content"
+    - paragraph: 用户说明 / Product & Content
+    - radio "高级工程 / Advanced"
+    - paragraph: 高级工程 / Advanced
+  - heading "核验范围 / Scope" [level=3]
+  - paragraph: 数据版本 / Version
+  - combobox "数据版本 / Version": 缺失演练 · s-fd9247e2bf8d19aad3323bdb
+  - button "Open":
+  - paragraph: 开始时间 · UTC（含）
+  - textbox "开始时间 · UTC（含）":
+    - /placeholder: ""
+    - text: 2025-01-01T00:00:00+00:00
+  - paragraph: 结束时间 · UTC（不含）
+  - textbox "结束时间 · UTC（不含）":
+    - /placeholder: ""
+    - text: 2025-01-01T00:30:00+00:00
+  - paragraph: 窗口为 [开始, 结束)。来源：Binance ETHUSDT / 1m。ETH 数量与 USDT 计价数量分别展示。
+  - button "刷新版本 / Refresh" [active]:
+    - paragraph: 刷新版本 / Refresh
+  - paragraph: 更多来源、运行记录和可选模型见高级工程入口。
+- banner:
+  - button "Deploy":
+    - generic: Deploy
+  - button "Main menu":
+- main:
+  - heading "◈ MarketData Sentinel" [level=1]:
+    - text: ◈ MarketData Sentinel
+    - link "Link to heading":
+      - /url: "#market-data-sentinel"
+  - paragraph: Web3 数据核验与用户沟通工作台 / Web3 Data Verification & User Communication
+  - paragraph: 引用行情数字前，先检查来源与完整性，再给出有证据的说明。
+  - status:
+    - paragraph: 首发案例：真实公开历史数据 + 人为删去三分钟的故障演练。不是交易所真实事故，也不是实时行情。
+  - paragraph: 用户问题 / Question
+  - textbox "用户问题 / Question":
+    - /placeholder: ""
+    - text: 这张行情图的成交数量能否作为完整时间窗口的数字引用？请检查完整性并提供依据。
+  - alert:
+    - paragraph: 查询条件已改变：旧报告和导出已失效，请重新检查。 / Scope changed; run a new check.
+  - button "1. 检查数据 / Run checks":
+    - paragraph: 1. 检查数据 / Run checks
+  - paragraph: 先运行检查，再查看证据、恢复对照和双语交付物。未执行检查时不作正常判断。
+  - paragraph: 流程：检查数据 → 查看证据 → 从原始输入恢复 → 对照版本 → 用户说明与导出。
